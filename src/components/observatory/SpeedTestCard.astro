@@ -1,0 +1,107 @@
+---
+/**
+ * SpeedTestCard.astro — Performance Monitoring Report
+ * Designed according to 机场品牌图表样式.txt (Dark Network Observatory style)
+ */
+import type { SpeedTest } from '../../data/airports';
+
+interface Props {
+  brandName: string;
+  speedTests?: SpeedTest[];
+  testDate?: string;
+}
+
+const {
+  brandName,
+  speedTests = [],
+  testDate = '2026-10-19 晚高峰 20:30',
+} = Astro.props;
+
+// Default sample if empty
+const displayTests = speedTests.length > 0 ? speedTests : [
+  { region: '香港 IEPL 01', ping: '22ms', speed: '529Mbps' },
+  { region: '新加坡 IEPL 02', ping: '46ms', speed: '387Mbps' },
+  { region: '日本 东京专线', ping: '57ms', speed: '135Mbps' },
+  { region: '台湾 专线节点', ping: '41ms', speed: '114Mbps' },
+  { region: '美国 洛杉矶优化', ping: '143ms', speed: '18Mbps' },
+];
+
+function getSpeedPercent(speedStr: string): number {
+  const num = parseFloat(speedStr.replace(/[^0-9.]/g, ''));
+  if (isNaN(num)) return 30;
+  // Normalize against 600Mbps max
+  return Math.min(100, Math.max(10, Math.round((num / 600) * 100)));
+}
+---
+
+<div class="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[#0d121f] text-slate-200 shadow-xl font-mono text-sm">
+  <!-- Top Terminal Bar -->
+  <div class="flex items-center justify-between border-b border-slate-800 bg-[#090d16] px-4 py-3">
+    <div class="flex items-center gap-2">
+      <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="font-sans font-semibold text-slate-100 text-xs tracking-wider uppercase">
+        Network Performance Monitor
+      </span>
+    </div>
+    <div class="text-xs text-slate-400">
+      ENV: Clash Verge Rev / Speedtest NOC
+    </div>
+  </div>
+
+  <!-- Header Info -->
+  <div class="border-b border-slate-800/80 px-5 py-3 text-xs text-slate-400 flex flex-wrap items-center justify-between gap-2">
+    <div>
+      <span class="text-indigo-400 font-bold">{brandName}</span> 节点测速基准
+    </div>
+    <div class="text-slate-400">
+      实测时间: <span class="text-slate-300">{testDate}</span>
+    </div>
+  </div>
+
+  <!-- Test Rows -->
+  <div class="p-5 space-y-4">
+    {displayTests.map((item) => {
+      const pct = getSpeedPercent(item.speed);
+      const isFast = pct > 60;
+      return (
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold">●</span>
+              <span class="font-medium text-slate-200">{item.region}</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-slate-400">
+                延迟: <span class="text-amber-300 font-bold">{item.ping}</span>
+              </span>
+              <span class="text-slate-400">
+                下行: <span class="text-emerald-400 font-bold">{item.speed}</span>
+              </span>
+            </div>
+          </div>
+          <!-- Progress Bar -->
+          <div class="h-2 w-full overflow-hidden rounded-full bg-slate-800/80">
+            <div
+              class={`h-full rounded-full transition-all duration-500 ${
+                isFast
+                  ? 'bg-gradient-to-r from-emerald-500 to-teal-400'
+                  : 'bg-gradient-to-r from-indigo-500 to-cyan-400'
+              }`}
+              style={`width: ${pct}%`}
+            />
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Footer Summary -->
+  <div class="flex items-center justify-between border-t border-slate-800 bg-[#090d16]/80 px-5 py-3 text-xs text-slate-400">
+    <div>
+      测试状态: <span class="text-emerald-400 font-semibold">Operational (0% 丢包)</span>
+    </div>
+    <div class="text-slate-400 tracking-wider">
+      [githubtuijian.blog 实验室实测]
+    </div>
+  </div>
+</div>

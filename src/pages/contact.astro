@@ -4,28 +4,27 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import ContactForm from '../components/marketing/ContactForm.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
+import { SITE, getSiteBaseUrl } from '../config/site';
 
-const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
+const siteUrl = getSiteBaseUrl(Astro.site);
 ---
 
 <BaseLayout
-  title="Contact Sales"
-  description="Get in touch with our team to see how Astro SEO Theme can accelerate your business."
+  title="Contact Us"
+  description="Get in touch with the GitHubTuijian team for project recommendations, technical collaboration, or inquiries."
 >
   <Fragment slot="head">
     <JsonLd
       type="Organization"
       data={{
-        name: 'Astro SEO Theme',
+        name: SITE.name,
         url: siteUrl,
         logo: `${siteUrl}/favicon.svg`,
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+1-555-123-4567',
-          contactType: 'customer service',
-          email: 'hello@astroseotheme.com',
-          areaServed: 'US',
-          availableLanguage: ['English', 'Spanish'],
+          contactType: 'technical support',
+          email: SITE.contact.email,
+          availableLanguage: ['Chinese', 'English'],
         },
       }}
     />
@@ -38,50 +37,47 @@ const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
       <!-- Contact Info (Left) -->
       <div>
         <h1 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-          Let's talk about your project
+          商务合作与技术咨询
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
-          Whether you need a custom implementation, have questions about our open-source offering,
-          or just want to say hi, our team is ready to help.
+          如果您有优质网络加速服务希望纳入评测实验室，或探讨技术可观测性与性能基准合作，欢迎通过以下官方通道联系我们。
         </p>
 
         <dl class="mt-12 space-y-8">
           <div>
             <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Email
+              官方联系邮箱
             </dt>
             <dd class="mt-2 text-lg text-[var(--text-secondary)]">
               <a
-                href="mailto:hello@astroseotheme.com"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
+                href={`mailto:${SITE.contact.email}`}
+                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors font-mono"
               >
-                hello@astroseotheme.com
+                {SITE.contact.email}
               </a>
             </dd>
           </div>
           <div>
             <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Phone
+              Telegram 官方频道
             </dt>
             <dd class="mt-2 text-lg text-[var(--text-secondary)]">
               <a
-                href="tel:+15551234567"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
+                href={SITE.contact.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors font-mono"
               >
-                +1 (555) 123-4567
+                {SITE.contact.telegram}
               </a>
             </dd>
           </div>
           <div>
             <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Headquarters
+              实验室分布
             </dt>
             <dd class="mt-2 text-lg leading-relaxed text-[var(--text-secondary)]">
-              123 Innovation Drive
-              <br />
-              San Francisco, CA 94105
-              <br />
-              United States
+              {SITE.contact.address}
             </dd>
           </div>
         </dl>
@@ -90,7 +86,7 @@ const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
       <!-- Contact Form (Right) -->
       <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-8 shadow-sm sm:p-10">
         <h2 class="mb-8 font-display text-2xl font-bold text-[var(--text-primary)]">
-          Send us a message
+          在线提交评测申请
         </h2>
         <ContactForm />
       </div>

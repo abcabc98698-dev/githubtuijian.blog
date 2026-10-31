@@ -1,5 +1,23 @@
 User-agent: *
 Allow: /
 
+# Search Spiders Explicit Compatibility
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: yisouspider
+Allow: /
+
+# Disallow Internal Build Artifacts
+Disallow: /_astro/
+Disallow: /api/
+
 # Sitemaps
-Sitemap: https://astro-seo-theme.vercel.app/sitemap-index.xml
+Sitemap: https://githubtuijian.blog/sitemap.xml
+Sitemap: https://githubtuijian.blog/sitemap-index.xml

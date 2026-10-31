@@ -13,6 +13,8 @@
  *   ]} />
  */
 
+import { getSiteBaseUrl } from '../../config/site';
+
 export interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -23,7 +25,7 @@ interface Props {
 }
 
 const { items } = Astro.props;
-const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
+const siteUrl = getSiteBaseUrl(Astro.site);
 
 // Build BreadcrumbList JSON-LD
 const breadcrumbSchema = {

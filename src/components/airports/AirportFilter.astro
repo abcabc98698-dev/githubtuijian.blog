@@ -1,0 +1,253 @@
+---
+/**
+ * AirportFilter.astro — High-Performance Native Astro Component
+ * Zero-JS SSR HTML with instant vanilla client-side search & filtering.
+ * Eliminates React 19 hydration issues while ensuring 100% SEO indexability.
+ */
+import type { AirportBrand } from '../../data/airports';
+import AirportCard from './AirportCard.astro';
+
+interface Props {
+  airports: AirportBrand[];
+}
+
+const { airports } = Astro.props;
+---
+
+<div class="space-y-8">
+  <!-- Search & Control Bar -->
+  <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 shadow-sm">
+    <div class="grid gap-4 md:grid-cols-12 items-center">
+      <!-- Search Input -->
+      <div class="md:col-span-5 relative">
+        <input
+          type="text"
+          id="airport-search-input"
+          placeholder="搜索 42 家机场名称、专线类型、协议或特性..."
+          class="w-full rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-4 py-2.5 pl-10 text-sm text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+        />
+        <svg
+          class="absolute left-3 top-3 h-4 w-4 text-[var(--text-tertiary)]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+
+      <!-- Line Type Filter -->
+      <div class="md:col-span-3">
+        <select
+          id="airport-line-select"
+          class="w-full cursor-pointer rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-3 py-2.5 text-sm font-medium text-[var(--text-primary)] focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="ALL">全部线路架构</option>
+          <option value="IEPL">IEPL 专线</option>
+          <option value="IPLC">IPLC 专线</option>
+          <option value="BGP">BGP 智能中继</option>
+        </select>
+      </div>
+
+      <!-- Tag Filter -->
+      <div class="md:col-span-2">
+        <select
+          id="airport-tag-select"
+          class="w-full cursor-pointer rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-3 py-2.5 text-sm font-medium text-[var(--text-primary)] focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="ALL">全部特性</option>
+          <option value="COUPON">含专属优惠码</option>
+          <option value="FOREVER">不限时按量套餐</option>
+          <option value="CLIENT">支持自研客户端</option>
+        </select>
+      </div>
+
+      <!-- Sort Filter -->
+      <div class="md:col-span-2">
+        <select
+          id="airport-sort-select"
+          class="w-full cursor-pointer rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-3 py-2.5 text-sm font-medium text-[var(--text-primary)] focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="rank">按综合推荐排序</option>
+          <option value="established">按运营资历排序</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Active Filter Counter -->
+    <div class="mt-4 flex items-center justify-between border-t border-[var(--border)] pt-4 text-xs text-[var(--text-tertiary)]">
+      <div>
+        当前展示: <strong id="airport-count-display" class="font-mono text-indigo-600 dark:text-indigo-400 font-bold">{airports.length}</strong> 家机场品牌
+      </div>
+      <button
+        type="button"
+        id="airport-reset-btn"
+        class="text-xs text-[var(--text-secondary)] hover:text-indigo-600 dark:hover:text-indigo-400 underline cursor-pointer"
+      >
+        重置筛选条件
+      </button>
+    </div>
+  </div>
+
+  <!-- 42 Airport Cards Grid (SSR Rendered for 100% SEO & Zero Hydration Bug) -->
+  <div id="airport-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {airports.map((airport) => (
+      <AirportCard airport={airport} />
+    ))}
+  </div>
+
+  <!-- Empty State (Hidden by default) -->
+  <div
+    id="airport-empty-state"
+    class="hidden rounded-2xl border border-dashed border-[var(--border)] p-12 text-center space-y-3"
+  >
+    <div class="text-3xl">🔍</div>
+    <div class="font-display text-base font-bold text-[var(--text-primary)]">
+      未找到匹配的机场品牌
+    </div>
+    <p class="text-xs text-[var(--text-secondary)] max-w-sm mx-auto">
+      尝试缩短搜索词或重置筛选选项以查看更多机场
+    </p>
+    <button
+      type="button"
+      id="airport-empty-reset-btn"
+      class="rounded-xl bg-indigo-600 text-white px-4 py-2 text-xs font-bold hover:bg-indigo-700 transition-colors"
+    >
+      重置所有筛选
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    initAirportFilter();
+  });
+
+  // Also run immediately in case DOM is already parsed
+  initAirportFilter();
+
+  function initAirportFilter() {
+    const searchInput = document.getElementById('airport-search-input');
+    const lineSelect = document.getElementById('airport-line-select');
+    const tagSelect = document.getElementById('airport-tag-select');
+    const sortSelect = document.getElementById('airport-sort-select');
+    const countDisplay = document.getElementById('airport-count-display');
+    const grid = document.getElementById('airport-grid');
+    const emptyState = document.getElementById('airport-empty-state');
+    const resetBtn = document.getElementById('airport-reset-btn');
+    const emptyResetBtn = document.getElementById('airport-empty-reset-btn');
+
+    if (!grid || !searchInput) return;
+
+    const cards = Array.from(grid.querySelectorAll('.airport-card'));
+
+    function applyFilter() {
+      const q = searchInput.value.trim().toLowerCase();
+      const lineVal = lineSelect.value;
+      const tagVal = tagSelect.value;
+      const sortVal = sortSelect.value;
+
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const name = card.getAttribute('data-name') || '';
+        const desc = card.getAttribute('data-desc') || '';
+        const line = card.getAttribute('data-line') || '';
+        const tags = card.getAttribute('data-tags') || '';
+        const coupon = card.getAttribute('data-coupon') || '';
+
+        // Search match
+        let matchSearch = true;
+        if (q) {
+          matchSearch = name.includes(q) || desc.includes(q) || line.toLowerCase().includes(q) || tags.toLowerCase().includes(q);
+        }
+
+        // Line match
+        let matchLine = true;
+        if (lineVal !== 'ALL') {
+          matchLine = line.includes(lineVal);
+        }
+
+        // Tag match
+        let matchTag = true;
+        if (tagVal === 'COUPON') {
+          matchTag = Boolean(coupon && coupon.length > 0);
+        } else if (tagVal === 'FOREVER') {
+          matchTag = tags.includes('不限时套餐');
+        } else if (tagVal === 'CLIENT') {
+          matchTag = tags.includes('自研客户端');
+        }
+
+        const isVisible = matchSearch && matchLine && matchTag;
+        if (isVisible) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Sort visible cards in DOM
+      const sortedCards = cards.slice().sort((a, b) => {
+        if (sortVal === 'established') {
+          const estA = parseInt(a.getAttribute('data-established') || '2025', 10);
+          const estB = parseInt(b.getAttribute('data-established') || '2025', 10);
+          return estA - estB;
+        } else {
+          const rankA = parseInt(a.getAttribute('data-rank') || '999', 10);
+          const rankB = parseInt(b.getAttribute('data-rank') || '999', 10);
+          return rankA - rankB;
+        }
+      });
+
+      sortedCards.forEach((card) => grid.appendChild(card));
+
+      if (countDisplay) {
+        countDisplay.textContent = visibleCount.toString();
+      }
+
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          grid.classList.add('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+          grid.classList.remove('hidden');
+        }
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilter);
+    lineSelect.addEventListener('change', applyFilter);
+    tagSelect.addEventListener('change', applyFilter);
+    sortSelect.addEventListener('change', applyFilter);
+
+    function resetFilters() {
+      searchInput.value = '';
+      lineSelect.value = 'ALL';
+      tagSelect.value = 'ALL';
+      sortSelect.value = 'rank';
+      applyFilter();
+    }
+
+    if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+    if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetFilters);
+
+    // Copy button handling for all cards
+    grid.addEventListener('click', (e) => {
+      const target = e.target.closest('.copy-btn');
+      if (target) {
+        const coupon = target.getAttribute('data-coupon');
+        if (coupon) {
+          navigator.clipboard.writeText(coupon).then(() => {
+            const orig = target.textContent;
+            target.textContent = '已复制✓';
+            setTimeout(() => {
+              target.textContent = orig;
+            }, 2000);
+          });
+        }
+      }
+    });
+  }
+</script>

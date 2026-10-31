@@ -31,18 +31,19 @@ export const ui = {
     'nav.caseStudies': 'Case Studies',
     'nav.caseStudiesDesc': 'See how other companies succeed.',
     'nav.docs': 'Documentation',
-    'nav.docsDesc': 'Guides, tutorials, and API reference.',
+    'nav.docsDesc': 'Guides, tutorials, and architecture reference.',
     'nav.about': 'About',
     'nav.contact': 'Contact',
+    'nav.getStarted': 'Get Started',
 
     // Hero
-    'hero.badge': 'v1.0 is now live',
-    'hero.titleStart': 'The SEO Theme',
-    'hero.titleHighlight': 'Your SaaS Deserves',
+    'hero.badge': 'Curated Open Source',
+    'hero.titleStart': 'Discover High-Performance',
+    'hero.titleHighlight': 'Open-Source Projects',
     'hero.description':
-      'Advanced technical SEO, GEO & AEO optimization out of the box. Lighthouse 100/100. Built with Astro, Tailwind & React.',
-    'hero.primaryCta': 'Get Started on GitHub',
-    'hero.secondaryCta': 'Read the Docs',
+      'In-depth technical architecture reviews, developer tools, and benchmarks for modern software engineers. Lighthouse 100/100.',
+    'hero.primaryCta': 'Explore Documentation',
+    'hero.secondaryCta': 'Browse Articles',
 
     // Bento Grid
     'bento.title': 'Everything you need to rank higher',
@@ -50,7 +51,7 @@ export const ui = {
 
     // FAQ
     'faq.title': 'Frequently Asked Questions',
-    'faq.description': 'Everything you need to know about the product and billing.',
+    'faq.description': 'Everything you need to know about the platform and technical architecture.',
 
     // Footer
     'footer.navigation': 'Footer navigation',
@@ -60,8 +61,7 @@ export const ui = {
     'footer.documentation': 'Documentation',
     'footer.rssFeed': 'RSS Feed',
     'footer.license': 'License (MIT)',
-    'footer.copyright':
-      'Astro SEO Theme Crafted by <a href="https://davidrueda.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">druedaro</a>.',
+    'footer.copyright': 'GitHubTuijian. All rights reserved.',
     'footer.builtWith': 'Built with',
     'footer.privacyPolicy': 'Privacy Policy',
     'footer.termsOfService': 'Terms of Service',
@@ -82,13 +82,13 @@ export const ui = {
 
     // About Page
     'about.title': 'About Us',
-    'about.subtitle': 'Building the ultimate open-source SEO theme for Astro.',
+    'about.subtitle': 'Curating high-performance open-source projects and developer tools.',
     'about.missionTitle': 'Our Mission',
     'about.missionText':
-      "We believe that technical SEO shouldn't be an afterthought. It should be baked into the foundation of every marketing website. That's why we created Astro SEO Theme—to provide a robust, lightning-fast starting point for B2B SaaS companies.",
-    'about.openSourceTitle': 'Open Source',
+      'We believe that exceptional open-source software and technical performance drive modern engineering. We curate top GitHub projects, developer architectures, and SEO benchmarks to empower builders worldwide.',
+    'about.openSourceTitle': 'Open Source & Community',
     'about.openSourceText':
-      'This project is 100% open-source and free to use under the MIT license. We encourage contributions from the community to help make this the best SEO template available.',
+      'This platform is dedicated to promoting open-source transparency, accessibility, and high standards in web engineering.',
 
     // Misc
     skipToContent: 'Skip to main content',
@@ -107,18 +107,19 @@ export const ui = {
     'nav.caseStudies': 'Casos de Éxito',
     'nav.caseStudiesDesc': 'Mira cómo otras empresas tienen éxito.',
     'nav.docs': 'Documentación',
-    'nav.docsDesc': 'Guías, tutoriales y referencia.',
+    'nav.docsDesc': 'Guías, tutoriales y referencia de arquitectura.',
     'nav.about': 'Nosotros',
     'nav.contact': 'Contacto',
+    'nav.getStarted': 'Comenzar',
 
     // Hero
-    'hero.badge': 'v1.0 disponible',
-    'hero.titleStart': 'El Tema SEO',
-    'hero.titleHighlight': 'Que Tu SaaS Merece',
+    'hero.badge': 'Código Abierto Seleccionado',
+    'hero.titleStart': 'Descubre Proyectos',
+    'hero.titleHighlight': 'De Alto Rendimiento',
     'hero.description':
-      'SEO técnico avanzado, optimización GEO y AEO incluidos. Lighthouse 100/100. Construido con Astro, Tailwind y React.',
-    'hero.primaryCta': 'Empezar en GitHub',
-    'hero.secondaryCta': 'Leer la Documentación',
+      'Análisis técnico de arquitecturas, herramientas para desarrolladores y benchmarks de rendimiento web. Lighthouse 100/100.',
+    'hero.primaryCta': 'Explorar Documentación',
+    'hero.secondaryCta': 'Leer Artículos',
 
     // Bento Grid
     'bento.title': 'Todo lo que necesitas para posicionar mejor',
@@ -126,7 +127,7 @@ export const ui = {
 
     // FAQ
     'faq.title': 'Preguntas Frecuentes',
-    'faq.description': 'Todo lo que necesitas saber sobre el producto y la facturación.',
+    'faq.description': 'Todo lo que necesitas saber sobre la plataforma y la arquitectura técnica.',
 
     // Footer
     'footer.navigation': 'Navegación del pie de página',
@@ -136,8 +137,7 @@ export const ui = {
     'footer.documentation': 'Documentación',
     'footer.rssFeed': 'Feed RSS',
     'footer.license': 'Licencia (MIT)',
-    'footer.copyright':
-      'Astro SEO Theme Creado por <a href="https://davidrueda.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">druedaro</a>.',
+    'footer.copyright': 'GitHubTuijian. Todos los derechos reservados.',
     'footer.builtWith': 'Hecho con',
     'footer.privacyPolicy': 'Política de Privacidad',
     'footer.termsOfService': 'Términos de Servicio',
@@ -158,13 +158,13 @@ export const ui = {
 
     // About Page
     'about.title': 'Sobre Nosotros',
-    'about.subtitle': 'Creando el tema SEO open-source definitivo para Astro.',
+    'about.subtitle': 'Seleccionando proyectos de código abierto de alto rendimiento y herramientas de desarrollo.',
     'about.missionTitle': 'Nuestra Misión',
     'about.missionText':
-      'Creemos que el SEO técnico no debería ser una ocurrencia tardía. Debería estar integrado en los cimientos de cada sitio web de marketing. Por eso creamos Astro SEO Theme: para proporcionar un punto de partida robusto y ultrarrápido para empresas B2B SaaS.',
-    'about.openSourceTitle': 'Código Abierto',
+      'Creemos que el software de código abierto excepcional y el rendimiento técnico impulsan la ingeniería moderna. Seleccionamos los mejores proyectos de GitHub, arquitecturas de desarrollo y estándares SEO para capacitar a los creadores de todo el mundo.',
+    'about.openSourceTitle': 'Código Abierto y Comunidad',
     'about.openSourceText':
-      'Este proyecto es 100% open-source y de uso gratuito bajo la licencia MIT. Fomentamos las contribuciones de la comunidad para ayudar a convertir esto en la mejor plantilla SEO disponible.',
+      'Esta plataforma está dedicada a promover la transparencia del código abierto, la accesibilidad y altos estándares en la ingeniería web.',
 
     // Misc
     skipToContent: 'Saltar al contenido principal',

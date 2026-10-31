@@ -1,194 +1,121 @@
 ---
 /**
  * Header.astro — Site header with navigation and dark mode toggle
- *
- * Features:
- * - Sticky header with backdrop blur
- * - Responsive nav (mobile hamburger menu)
- * - Dark mode toggle (React Island)
- * - Language picker (i18n)
- * - Active link highlighting
- * - Megamenu support (hover on desktop, accordion on mobile)
+ * Designed for Maximum SEO Crawlability & High Conversion
  */
-import DarkModeToggle from '../ui/DarkModeToggle.tsx';
-import LanguagePicker from '../ui/LanguagePicker.astro';
-import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
+import DarkModeToggle from '../ui/DarkModeToggle.astro';
+import { PRIMARY_AIRPORT } from '../../data/airports';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const currentPath = Astro.url.pathname;
 
-// Megamenu Icons
-const Icons = {
-  features: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-  pricing: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
-  caseStudies: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
-  blog: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
-  docs: `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-};
+// All 8 Core Pillars as explicit crawler-friendly navigation links
+const navLinks = [
+  { label: '机场推荐', href: '/jichang' },
+  { label: 'VPN', href: '/vpn' },
+  { label: 'Clash', href: '/clash' },
+  { label: '节点', href: '/nodes' },
+  { label: '梯子', href: '/tizi' },
+  { label: '免费资源', href: '/free' },
+  { label: '使用教程', href: '/tutorial' },
+  { label: '品牌库', href: '/brands' },
+];
 
-const navItems = [
-  {
-    label: t('nav.product'),
-    dropdown: [
-      {
-        title: t('nav.features'),
-        description: t('nav.featuresDesc'),
-        href: getLocalizedPath(lang, '/#features'),
-        icon: Icons.features,
-      },
-      {
-        title: t('nav.pricing'),
-        description: t('nav.pricingDesc'),
-        href: getLocalizedPath(lang, '/pricing'),
-        icon: Icons.pricing,
-      },
-      {
-        title: t('nav.caseStudies'),
-        description: t('nav.caseStudiesDesc'),
-        href: getLocalizedPath(lang, '/case-studies'),
-        icon: Icons.caseStudies,
-      },
-    ],
-  },
-  {
-    label: t('nav.resources'),
-    dropdown: [
-      {
-        title: t('nav.blog'),
-        description: t('nav.blogDesc'),
-        href: getLocalizedPath(lang, '/blog'),
-        icon: Icons.blog,
-      },
-      {
-        title: t('nav.docs'),
-        description: t('nav.docsDesc'),
-        href: getLocalizedPath(lang, '/docs'),
-        icon: Icons.docs,
-      },
-    ],
-  },
-  { label: t('nav.about'), href: getLocalizedPath(lang, '/about') },
-  { label: t('nav.contact'), href: getLocalizedPath(lang, '/contact') },
+const secondaryLinks = [
+  { label: '⚠️ 跑路预警', href: '/alert' },
+  { label: '📖 技术百科', href: '/faq' },
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-lg">
+<header class="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur-lg">
   <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
-    <!-- Logo -->
+    <!-- Brand Logo -->
     <a
-      href={getLocalizedPath(lang, '/')}
+      href="/"
       class="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-7 text-[var(--color-primary-500)] dark:text-[var(--color-primary-400)]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-      <span>
-        Astro
-        <span class="text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]">
-          SEO
+      <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white shadow-md shadow-indigo-500/30">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+      </div>
+      <span class="text-[var(--text-primary)]">
+        GitHub
+        <span class="text-indigo-600 dark:text-indigo-400">
+          推荐
         </span>
+      </span>
+      <span class="hidden lg:inline-block rounded-full bg-indigo-500/10 px-2 py-0.5 text-[10px] font-semibold text-indigo-500 border border-indigo-500/20">
+        42家机场精选
       </span>
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-2" aria-label="Main navigation">
-      {navItems.map((item) =>
-        item.dropdown ? (
-          <div class="group relative inline-block">
-            <button
-              class="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] focus:outline-none"
-              aria-haspopup="true"
-              aria-expanded="false"
-              tabindex="0"
-            >
-              {item.label}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 opacity-70 transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+    <!-- Desktop Navigation: Direct HTML Anchors for 100% Crawlability -->
+    <nav class="hidden xl:flex items-center gap-1" aria-label="Main navigation">
+      {navLinks.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'rounded-lg px-2.5 py-1.5 text-sm font-medium transition-colors',
+            currentPath === item.href || currentPath.startsWith(item.href + '/')
+              ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 font-bold'
+              : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+
+      <!-- Dropdown for Alert and FAQ -->
+      <div class="group relative inline-block ml-1">
+        <button
+          class="inline-flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]"
+          aria-haspopup="true"
+        >
+          <span>专题</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
+          <div class="w-48 rounded-xl border border-[var(--border)] bg-[var(--bg)] p-2 shadow-xl backdrop-blur-xl space-y-1">
+            {secondaryLinks.map((sub) => (
+              <a
+                href={sub.href}
+                class="block rounded-lg px-3 py-2 text-xs font-semibold text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 z-50">
-              <div class="w-80 rounded-xl border border-[var(--border)] bg-[var(--bg)] p-3 shadow-xl ring-1 ring-black/5">
-                <div class="flex flex-col gap-1">
-                  {item.dropdown.map((subItem) => (
-                    <a
-                      href={subItem.href}
-                      class="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-[var(--bg-secondary)]"
-                    >
-                      <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[var(--color-primary-50)] text-[var(--color-primary-500)] dark:bg-[var(--color-primary-500)]/10 dark:text-[var(--color-primary-400)]">
-                        <Fragment set:html={subItem.icon} />
-                      </div>
-                      <div>
-                        <div class="text-sm font-semibold text-[var(--text-primary)]">
-                          {subItem.title}
-                        </div>
-                        <div class="mt-1 text-xs text-[var(--text-secondary)]">
-                          {subItem.description}
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
+                {sub.label}
+              </a>
+            ))}
           </div>
-        ) : (
-          <a
-            href={item.href}
-            class:list={[
-              'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-              currentPath === item.href || currentPath.startsWith(item.href + '/')
-                ? 'text-[var(--text-primary)] bg-[var(--bg-secondary)]'
-                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]',
-            ]}
-          >
-            {item.label}
-          </a>
-        )
-      )}
+        </div>
+      </div>
     </nav>
 
-    <!-- Right side: CTA + Dark mode + Language -->
+    <!-- Compact desktop nav for md to lg screens -->
+    <nav class="hidden md:flex xl:hidden items-center gap-1">
+      <a href="/jichang" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">机场推荐</a>
+      <a href="/vpn" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">VPN</a>
+      <a href="/clash" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">Clash</a>
+      <a href="/nodes" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">节点</a>
+      <a href="/tizi" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">梯子</a>
+      <a href="/free" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">免费</a>
+      <a href="/tutorial" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">教程</a>
+      <a href="/brands" class="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)]">品牌库</a>
+    </nav>
+
+    <!-- Right side: CTA + Dark mode -->
     <div class="flex items-center gap-2 md:gap-3">
-      <LanguagePicker />
-      <DarkModeToggle client:load />
+      <DarkModeToggle />
+
+      <!-- Primary High-Conversion Button: 光速云 8折直达 -->
       <a
-        href="https://github.com/druedaro/astro-seo-theme"
+        href={PRIMARY_AIRPORT.affUrl}
         target="_blank"
-        rel="noopener noreferrer"
-        class="hidden items-center gap-2 rounded-lg bg-[var(--color-primary-600)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-700)] sm:inline-flex"
+        rel="nofollow sponsored noopener"
+        class="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 px-3 py-1.5 text-xs font-bold text-white shadow-md shadow-indigo-500/25 transition-all hover:from-indigo-500 hover:to-indigo-600"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-        Star on GitHub
+        <span class="animate-pulse">🔥</span>
+        <span>光速云 8折</span>
       </a>
 
       <!-- Mobile menu button -->
@@ -197,7 +124,6 @@ const navItems = [
         class="flex h-9 w-9 items-center justify-center rounded-lg text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-secondary)] md:hidden"
         aria-label="Open menu"
         aria-expanded="false"
-        aria-controls="mobile-menu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -216,95 +142,46 @@ const navItems = [
   <!-- Mobile Navigation -->
   <nav
     id="mobile-menu"
-    class="hidden border-t border-[var(--border)] px-6 py-4 md:hidden overflow-y-auto max-h-[calc(100vh-4rem)]"
+    class="hidden border-t border-[var(--border)] px-4 py-4 md:hidden overflow-y-auto max-h-[calc(100vh-4rem)] bg-[var(--bg)]"
     aria-label="Mobile navigation"
   >
-    <div class="flex flex-col gap-2">
-      {navItems.map((item, idx) =>
-        item.dropdown ? (
-          <div class="mobile-dropdown group border-b border-[var(--border)] pb-2 last:border-0 last:pb-0">
-            <button
-              class="mobile-dropdown-btn flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-secondary)] focus:outline-none"
-              aria-expanded="false"
-              aria-controls={`mobile-dropdown-panel-${idx}`}
-            >
-              {item.label}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 opacity-70 transition-transform duration-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <div
-              id={`mobile-dropdown-panel-${idx}`}
-              class="mobile-dropdown-panel hidden flex-col pl-4 mt-1 space-y-1"
-            >
-              {item.dropdown.map((subItem) => (
-                <a
-                  href={subItem.href}
-                  class="block rounded-lg px-3 py-2 text-sm text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                >
-                  {subItem.title}
-                </a>
-              ))}
-            </div>
-          </div>
-        ) : (
+    <div class="space-y-2">
+      <a
+        href={PRIMARY_AIRPORT.affUrl}
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="block w-full rounded-xl bg-indigo-600 p-2.5 text-center text-xs font-bold text-white shadow-md"
+      >
+        🔥 光速云 8折直达 (优惠码 AMM)
+      </a>
+
+      <div class="grid grid-cols-2 gap-2 pt-2">
+        {navLinks.map((item) => (
           <a
             href={item.href}
-            class:list={[
-              'block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors border-b border-[var(--border)] last:border-0',
-              currentPath === item.href || currentPath.startsWith(item.href + '/')
-                ? 'text-[var(--text-primary)] bg-[var(--bg-secondary)]'
-                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]',
-            ]}
+            class="rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)] p-2.5 text-center text-xs font-semibold text-[var(--text-primary)]"
           >
             {item.label}
           </a>
-        )
-      )}
+        ))}
+      </div>
+
+      <div class="border-t border-[var(--border)] pt-2 space-y-1">
+        <a href="/alert" class="block py-1.5 px-3 text-xs text-red-500 font-semibold rounded-lg hover:bg-[var(--bg-secondary)]">
+          ⚠️ 跑路预警与防坑雷达
+        </a>
+        <a href="/faq" class="block py-1.5 px-3 text-xs text-[var(--text-secondary)] font-semibold rounded-lg hover:bg-[var(--bg-secondary)]">
+          📖 机场技术百科 FAQ
+        </a>
+      </div>
     </div>
   </nav>
 </header>
 
 <script>
-  // Mobile Menu Toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-
   btn?.addEventListener('click', () => {
-    const isOpen = menu?.classList.toggle('hidden') === false;
-    btn.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  // Mobile Dropdown Accordion
-  const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
-  dropdownBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const panel = btn.nextElementSibling;
-      const icon = btn.querySelector('svg');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
-      if (panel && icon) {
-        if (isExpanded) {
-          panel.classList.add('hidden');
-          panel.classList.remove('flex');
-          icon.classList.remove('rotate-180');
-          btn.setAttribute('aria-expanded', 'false');
-        } else {
-          panel.classList.remove('hidden');
-          panel.classList.add('flex');
-          icon.classList.add('rotate-180');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      }
-    });
+    menu?.classList.toggle('hidden');
   });
 </script>

@@ -40,13 +40,27 @@ export function getLocalizedPath(lang: Lang, path: string): string {
   return `/${lang}${path}`;
 }
 
+const SUPPORTED_ES_PATHS = new Set([
+  '/',
+  '/contact',
+  '/privacy',
+  '/terms',
+]);
+
 /**
  * Get the alternate language path for hreflang tags.
- * If current lang is 'en', returns the /es/ version and vice versa.
+ * Only returns locales that actually exist for the given path.
  */
 export function getAlternateLocales(currentPath: string): { lang: Lang; href: string }[] {
   // Strip any existing locale prefix
   const cleanPath = currentPath.replace(/^\/(es)\//, '/').replace(/^\/(es)$/, '/');
+  const normalized = cleanPath === '/' ? '/' : cleanPath.replace(/\/$/, '');
+
+  const hasEsVersion = SUPPORTED_ES_PATHS.has(normalized);
+
+  if (!hasEsVersion) {
+    return [{ lang: 'en', href: cleanPath }];
+  }
 
   return [
     { lang: 'en', href: cleanPath },

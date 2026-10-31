@@ -1,0 +1,14 @@
+{
+  "name": "Equipo Editorial GitHubTuijian",
+  "role": "Especialistas en Código Abierto y SEO Técnico",
+  "avatar": "../../../assets/authors/team.png",
+  "bio": "Seleccionando arquitecturas de código abierto de alto impacto, optimización de rendimiento y estándares web modernos.",
+  "credentials": [
+    "Colaboradores de la Comunidad Open-Source",
+    "Especialistas en Arquitectura Técnica y Web Vitals"
+  ],
+  "social": {
+    "github": "https://githubtuijian.blog",
+    "website": "https://githubtuijian.blog"
+  }
+}

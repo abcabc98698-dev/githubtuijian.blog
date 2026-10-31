@@ -1,26 +1,20 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { SITE } from '../config/site';
+import { AIRPORTS } from '../data/airports';
 
 export async function GET(context) {
-  const blog = await getCollection('blog');
-
-  // Filter out drafts and sort by date
-  const items = blog
-    .filter((post) => !post.data.draft)
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      // Astro 5 Content Layer API uses post.id for the slug
-      link: `/blog/${post.id}/`,
-    }));
+  const items = AIRPORTS.map((airport) => ({
+    title: `${airport.name} · ${airport.lineType} 评测与测速报告`,
+    pubDate: new Date('2026-10-31'),
+    description: airport.description,
+    link: `/airports/${airport.slug}`,
+  }));
 
   return rss({
-    title: 'Astro SEO Theme Blog',
-    description: 'Insights and strategies on technical SEO, B2B marketing, and web performance.',
-    site: context.site || 'https://astro-seo-theme.vercel.app',
+    title: `${SITE.name} - 42家机场品牌测速与评测数据库`,
+    description: SITE.description,
+    site: context.site || SITE.url,
     items,
-    customData: `<language>en-us</language>`,
+    customData: `<language>zh-cn</language>`,
   });
 }

@@ -1,9 +1,9 @@
 {
-  "name": "astro-seo-theme",
+  "name": "githubtuijian-blog",
   "type": "module",
   "version": "0.1.0",
-  "description": "The ultimate open-source Astro theme for B2B/SaaS marketing websites with advanced SEO, GEO & AEO optimization.",
-  "author": "David Rueda",
+  "description": "Curated Open Source & High-Performance Web Architecture Blog",
+  "author": "GitHubTuijian Team",
   "license": "MIT",
   "keywords": [
     "astro",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node -e \"import('node:fs').then(fs => { if (fs.existsSync('dist/sitemap-index.xml')) { fs.copyFileSync('dist/sitemap-index.xml', 'dist/sitemap.xml'); console.log('✓ sitemap.xml mirrored from sitemap-index.xml'); } })\"",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",

@@ -1,0 +1,137 @@
+---
+/**
+ * UnlockMatrixCard.astro — Service Availability Matrix
+ * Designed according to 机场品牌图表样式.txt (Matrix with AI & Streaming zones)
+ */
+import type { Unlocks } from '../../data/airports';
+
+interface Props {
+  brandName: string;
+  unlocks: Unlocks;
+}
+
+const { brandName, unlocks } = Astro.props;
+
+interface ServiceItem {
+  name: string;
+  category: 'AI 模型' | '流媒体';
+  status: 'yes' | 'no' | 'partial';
+  note: string;
+}
+
+const services: ServiceItem[] = [
+  {
+    name: 'ChatGPT / OpenAI',
+    category: 'AI 模型',
+    status: unlocks.chatgpt,
+    note: unlocks.chatgpt === 'yes' ? '原生IP支持 / 免降级' : unlocks.chatgpt === 'partial' ? '视节点而定 / 需选特定节点' : '不支持',
+  },
+  {
+    name: 'Claude 3.5 Sonnet',
+    category: 'AI 模型',
+    status: unlocks.claude,
+    note: unlocks.claude === 'yes' ? '高纯净度出口 / 网页与API畅通' : '易触发风控限制',
+  },
+  {
+    name: 'Google Gemini',
+    category: 'AI 模型',
+    status: unlocks.gemini,
+    note: unlocks.gemini === 'yes' ? '美区/日区原生支持' : unlocks.gemini === 'partial' ? '部分节点区域限制' : '受限',
+  },
+  {
+    name: 'Netflix 奈飞',
+    category: '流媒体',
+    status: unlocks.netflix,
+    note: unlocks.netflix === 'yes' ? '原创剧与非自制剧全解锁' : '仅自制剧',
+  },
+  {
+    name: 'Disney+ 迪士尼',
+    category: '流媒体',
+    status: unlocks.disney,
+    note: unlocks.disney === 'yes' ? '全区解锁 / IMAX 增强版' : '受限',
+  },
+  {
+    name: 'YouTube Premium',
+    category: '流媒体',
+    status: unlocks.youtube,
+    note: '4K/8K 极速秒开 / 无送中',
+  },
+  {
+    name: 'TikTok 国际版',
+    category: '流媒体',
+    status: unlocks.tiktok,
+    note: unlocks.tiktok === 'yes' ? '原生原生 IP / 正常加载评论' : unlocks.tiktok === 'partial' ? '部分地区需搭配配置' : '网络受阻',
+  },
+];
+---
+
+<div class="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[#0d121f] text-slate-200 shadow-xl font-mono text-sm">
+  <!-- Top Bar -->
+  <div class="flex items-center justify-between border-b border-slate-800 bg-[#090d16] px-4 py-3">
+    <div class="flex items-center gap-2">
+      <span class="h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
+      <span class="font-sans font-semibold text-slate-100 text-xs tracking-wider uppercase">
+        Service Availability Matrix
+      </span>
+    </div>
+    <div class="text-xs text-slate-400 font-sans">
+      测试标准: RegionRestrictionCheck
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="border-b border-slate-800/80 px-5 py-3 text-xs text-slate-400 flex items-center justify-between">
+    <div>
+      <span class="text-cyan-400 font-bold">{brandName}</span> 业务流媒体 & AI 可用性实测
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="flex items-center gap-1 text-emerald-400">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span> 已解锁
+      </span>
+      <span class="flex items-center gap-1 text-amber-400">
+        <span class="inline-block h-2 w-2 rounded-full bg-amber-500"></span> 视节点
+      </span>
+    </div>
+  </div>
+
+  <!-- Grid of Services -->
+  <div class="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    {services.map((svc) => {
+      const isGreen = svc.status === 'yes';
+      const isYellow = svc.status === 'partial';
+      return (
+        <div class="rounded-xl border border-slate-800 bg-[#090d16]/60 p-3.5 flex flex-col justify-between transition-colors hover:border-slate-700">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-sans font-semibold text-slate-100 text-sm">
+              {svc.name}
+            </span>
+            <span
+              class={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ${
+                isGreen
+                  ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                  : isYellow
+                  ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30'
+                  : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
+              }`}
+            >
+              {isGreen ? 'Stable' : isYellow ? 'Conditional' : 'Restricted'}
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 font-sans">
+            {svc.note}
+          </p>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Footer -->
+  <div class="flex items-center justify-between border-t border-slate-800 bg-[#090d16]/80 px-5 py-3 text-xs text-slate-400">
+    <div class="text-slate-400">
+      报告类型: <span class="text-slate-300">第三方自动化探针验证</span>
+    </div>
+    <div class="text-slate-400">
+      [githubtuijian.blog]
+    </div>
+  </div>
+</div>

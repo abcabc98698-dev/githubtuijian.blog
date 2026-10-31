@@ -1,0 +1,96 @@
+---
+/**
+ * TopologyCard.astro — Network Path Observatory
+ * Designed according to 机场品牌图表样式.txt (Topology path visualization)
+ */
+interface Props {
+  brandName: string;
+  lineType: string;
+  protocol: string;
+}
+
+const { brandName, lineType, protocol } = Astro.props;
+---
+
+<div class="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[#0d121f] text-slate-200 shadow-xl font-mono text-sm">
+  <!-- Top Bar -->
+  <div class="flex items-center justify-between border-b border-slate-800 bg-[#090d16] px-4 py-3">
+    <div class="flex items-center gap-2">
+      <span class="h-2.5 w-2.5 rounded-full bg-indigo-500"></span>
+      <span class="font-sans font-semibold text-slate-100 text-xs tracking-wider uppercase">
+        Network Path Observatory
+      </span>
+    </div>
+    <div class="text-xs text-slate-400 font-sans">
+      专线架构: {lineType}
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="p-6">
+    <div class="text-xs text-slate-400 mb-6 font-sans">
+      <span class="text-indigo-400 font-bold">{brandName}</span> 跨境专线传输架构示意图（全程内网低延迟，绕过公网 QoS 干扰）：
+    </div>
+
+    <!-- Node Steps Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+      <!-- Step 1: User Client -->
+      <div class="rounded-xl border border-slate-800 bg-[#090d16] p-4 text-center flex flex-col items-center justify-between">
+        <div class="w-10 h-10 rounded-lg bg-indigo-950/80 border border-indigo-700/50 flex items-center justify-center text-indigo-400 mb-3 text-lg">
+          📱
+        </div>
+        <div class="font-sans font-bold text-slate-100 text-sm">用户终端</div>
+        <div class="text-[11px] text-slate-400 mt-1">Windows/Mac/iOS/Android</div>
+        <div class="mt-3 px-2 py-0.5 rounded text-[10px] bg-slate-800 text-indigo-300 font-mono">
+          加密 {protocol} 流量
+        </div>
+      </div>
+
+      <!-- Step 2: Domestic BGP Transit -->
+      <div class="rounded-xl border border-slate-800 bg-[#090d16] p-4 text-center flex flex-col items-center justify-between">
+        <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-700/50 flex items-center justify-center text-emerald-400 mb-3 text-lg">
+          🏢
+        </div>
+        <div class="font-sans font-bold text-slate-100 text-sm">国内中转入口</div>
+        <div class="text-[11px] text-slate-400 mt-1">华东/华南 BGP 多线优化</div>
+        <div class="mt-3 px-2 py-0.5 rounded text-[10px] bg-slate-800 text-emerald-300 font-mono">
+          隐藏真实IP · 智能分流
+        </div>
+      </div>
+
+      <!-- Step 3: IEPL / IPLC Border -->
+      <div class="rounded-xl border border-indigo-600/50 bg-indigo-950/20 p-4 text-center flex flex-col items-center justify-between shadow-lg shadow-indigo-950/50">
+        <div class="w-10 h-10 rounded-lg bg-indigo-900 border border-indigo-500 flex items-center justify-center text-white mb-3 text-lg">
+          ⚡
+        </div>
+        <div class="font-sans font-bold text-indigo-200 text-sm">IEPL 专线直连</div>
+        <div class="text-[11px] text-indigo-300 mt-1">跨境物理光纤内网直达</div>
+        <div class="mt-3 px-2 py-0.5 rounded text-[10px] bg-indigo-900/60 text-indigo-200 font-mono font-bold">
+          抗 QoS · 0 丢包
+        </div>
+      </div>
+
+      <!-- Step 4: Overseas Edge -->
+      <div class="rounded-xl border border-slate-800 bg-[#090d16] p-4 text-center flex flex-col items-center justify-between">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/80 border border-cyan-700/50 flex items-center justify-center text-cyan-400 mb-3 text-lg">
+          🌐
+        </div>
+        <div class="font-sans font-bold text-slate-100 text-sm">海外原生机房</div>
+        <div class="text-[11px] text-slate-400 mt-1">香港/日本/新加坡/美国</div>
+        <div class="mt-3 px-2 py-0.5 rounded text-[10px] bg-slate-800 text-cyan-300 font-mono">
+          原生住宅 IP · AI 全解
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="border-t border-slate-800 bg-[#090d16]/80 px-5 py-3 text-xs text-slate-400 flex items-center justify-between">
+    <div>
+      传输特点: <span class="text-slate-300">企业级 SLA 保证 · 晚高峰无拥塞</span>
+    </div>
+    <div class="text-slate-400">
+      [githubtuijian.blog]
+    </div>
+  </div>
+</div>

@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { PRIMARY_AIRPORT } from '../../data/airports';
+
+const breadcrumbs = [
+  { label: '首页', href: '/' },
+  { label: '高速节点', href: '/nodes' },
+];
+
+const nodeRegions = [
+  {
+    region: '香港 (Hong Kong)',
+    latency: '25ms ~ 45ms',
+    speed: '最高 1000Mbps',
+    streaming: 'Disney+、TVB、Netflix、YouTube Premium',
+    aiSupport: '不支持官方 ChatGPT 网页访问 (需套 Cloudflare Warp 或专用规则)',
+    recommendation: '日常网页极速加载、游戏联机、大文件下载第一首选。',
+    tag: '延迟最低',
+  },
+  {
+    region: '日本 (Japan)',
+    latency: '45ms ~ 75ms',
+    speed: '最高 1000Mbps',
+    streaming: 'AbemaTV、DMM、Netflix 日区、Amazon Prime',
+    aiSupport: '全面支持 ChatGPT、Claude、Google Gemini',
+    recommendation: '兼顾极佳低延迟与 AI 原生支持，二次元玩家与 AI 创作者黄金节点。',
+    tag: 'AI与流媒体双优',
+  },
+  {
+    region: '新加坡 (Singapore)',
+    latency: '55ms ~ 85ms',
+    speed: '最高 1000Mbps',
+    streaming: 'Netflix 新马区、HBO GO、YouTube',
+    aiSupport: '全面支持 ChatGPT、Claude、Perplexity',
+    recommendation: '东南亚核心骨干节点，华南地区电信/联通用户延迟极低且稳定性极佳。',
+    tag: '备用主力',
+  },
+  {
+    region: '美国 (United States)',
+    latency: '140ms ~ 210ms',
+    speed: '最高 2500Mbps (超大带宽)',
+    streaming: 'Hulu、HBO Max、Paramount+、Disney+ 美区',
+    aiSupport: '首发支持所有 OpenAI、Claude 灰度功能与企业级 API',
+    recommendation: '算力最充沛，适合 AI 开发者、跨国学术研究及美区流媒体深度用户。',
+    tag: 'AI首发首选',
+  },
+];
+---
+
+<BaseLayout
+  title="高速节点购买与测速指南：香港/日本/新加坡/美国原生IP节点对比"
+  description="全面解析网络加速节点核心指标：延迟、丢包率、带宽吞吐与原生IP属性。深度对比香港直连低延迟节点、日本原生动漫解锁节点、美国AI原生算力节点与新加坡中继节点的网络拓扑与选型策略。"
+  canonicalUrl="https://githubtuijian.blog/nodes/"
+>
+  <Header slot="header" />
+
+  <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Hero Header -->
+    <header class="mt-6 space-y-4">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-500">
+        <span>🌐 全球节点拓扑与性能测评</span>
+      </div>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+        全球高速节点选型指南：测速指标、地区拓扑与原生IP解锁
+      </h1>
+      <p class="max-w-4xl text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+        节点不是越多越好。低质量广播机房的 100 个节点，不如 3 个全天候不丢包的 IEPL 原生住宅 IP 节点。本文深度横评香港、日本、新加坡、美国 4 大核心地区节点的网络拓扑特性、流媒体与 AI 解锁策略。
+      </p>
+    </header>
+
+    <!-- Region Comparison Cards -->
+    <section class="mt-10 grid gap-6 md:grid-cols-2">
+      {nodeRegions.map((item) => (
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 shadow-sm transition-all hover:border-indigo-500/50">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-bold text-[var(--text-primary)]">{item.region}</h2>
+            <span class="rounded-lg bg-indigo-500/10 px-2.5 py-1 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+              {item.tag}
+            </span>
+          </div>
+
+          <div class="mt-4 grid grid-cols-2 gap-3 text-xs">
+            <div class="rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)] p-2.5">
+              <span class="text-[var(--text-tertiary)]">国内直连延迟</span>
+              <div class="mt-0.5 font-bold text-emerald-500">{item.latency}</div>
+            </div>
+            <div class="rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)] p-2.5">
+              <span class="text-[var(--text-tertiary)]">晚高峰峰值速率</span>
+              <div class="mt-0.5 font-bold text-indigo-500">{item.speed}</div>
+            </div>
+          </div>
+
+          <div class="mt-4 space-y-2 text-xs text-[var(--text-secondary)]">
+            <div>
+              <strong class="text-[var(--text-primary)]">流媒体解锁：</strong>
+              <span>{item.streaming}</span>
+            </div>
+            <div>
+              <strong class="text-[var(--text-primary)]">AI 支持状况：</strong>
+              <span>{item.aiSupport}</span>
+            </div>
+            <div class="border-t border-[var(--border)] pt-2 text-[var(--text-primary)]">
+              <strong class="text-indigo-500">选型建议：</strong>
+              <span>{item.recommendation}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Native Residential IP vs Datacenter IP Analysis -->
+    <section class="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-6 md:p-8 space-y-6">
+      <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+        二、原生双 ISP 住宅 IP 与机房广播 IP 的本质区别
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2 text-sm text-[var(--text-secondary)]">
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5 space-y-2">
+          <div class="text-base font-bold text-red-500">❌ 机房广播型 IP (Datacenter IP)</div>
+          <p class="text-xs leading-relaxed">
+            大量廉价机场采购廉价机房 IP 或通过 BGP 跨区广播。这类 IP 在 IP2Location/MaxMind 数据库中被清晰标记为“数据中心/托管服务”。OpenAI 与 Netflix 对此类 IP 设有严苛风控，极易弹出 Cloudflare 验证码、出现 1020 报错甚至导致 ChatGPT 封号。
+          </p>
+        </div>
+        <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-5 space-y-2">
+          <div class="text-base font-bold text-emerald-500">✓ 原生双 ISP 住宅 IP (Residential IP)</div>
+          <p class="text-xs leading-relaxed">
+            优质专线机场在香港、日本、美国出口部署与当地电信运营商（如 HKT、NTT、AT&T）直接签约的双 ISP 住宅宽带 IP。欺诈分值（Fraud Score）为 0，系统判定为真实海外家庭网络，100% 顺畅使用 ChatGPT Plus、Claude 3.5 及 4K Netflix。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship Node Solution Spotlight -->
+    <section class="mt-12 rounded-2xl border border-indigo-500/30 bg-gradient-to-r from-indigo-950/30 to-[var(--bg)] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2">
+        <h2 class="text-xl font-bold text-[var(--text-primary)]">
+          需要全天候稳定、原生住宅 IP 的高速节点？
+        </h2>
+        <p class="text-sm text-[var(--text-secondary)]">
+          光速云提供全内网 IEPL 节点矩阵，晚高峰丢包低于 0.1%，支持 147 永久不限时套餐。
+        </p>
+      </div>
+      <a
+        href={PRIMARY_AIRPORT.affUrl}
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-indigo-700 whitespace-nowrap"
+      >
+        直达光速云节点 · 8折特惠购 →
+      </a>
+    </section>
+
+    <!-- Internal Navigation Hub Links -->
+    <section class="mt-12 border-t border-[var(--border)] pt-8">
+      <h2 class="font-display text-xl font-bold text-[var(--text-primary)]">
+        相关节点与技术专题导航
+      </h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <a href="/jichang" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">✈️ 机场推荐</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">42 家主流专线机场实测与选型指南</p>
+        </a>
+        <a href="/clash" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">⚡ Clash 客户端</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">全平台客户端下载与保姆级订阅配置</p>
+        </a>
+        <a href="/faq" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">📖 技术百科 FAQ</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">60+ 核心技术全科问答与疑难解惑</p>
+        </a>
+        <a href="/free" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">🎁 免费资源</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">应急节点、WARP 脚本与安全避坑</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

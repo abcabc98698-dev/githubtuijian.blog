@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import { PLATFORMS } from '../../data/clients';
+import { PRIMARY_AIRPORT } from '../../data/airports';
+import { SITE, getSiteBaseUrl } from '../../config/site';
+
+const siteUrl = getSiteBaseUrl(Astro.site);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: '第三方代理客户端下载与配置中心',
+  description: '全平台代理客户端官方下载与保姆级配置教程。涵盖 Windows, Android, iOS, macOS, Linux, OpenWrt 软路由主流协议客户端。',
+  url: `${siteUrl}/clients`,
+  hasPart: PLATFORMS.map((platform) => ({
+    '@type': 'WebPage',
+    name: `${platform.name} 客户端下载与配置教程`,
+    url: `${siteUrl}/clients/${platform.slug}`,
+    description: platform.tagline,
+  })),
+};
+---
+
+<BaseLayout
+  title="第三方代理客户端下载中心 · 跨平台全协议配置指引"
+  description="Windows, Android, iOS, macOS, Linux, OpenWrt 6大系统主流代理客户端官方下载与配置教程。支持 Clash Verge Rev, v2rayN, Shadowrocket, Surge, Loon, Sing-box, OpenClash 等。"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <main class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        官方原版渠道 · 纯净无篡改 · 芯片架构适配
+      </div>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
+        全平台代理客户端中心
+      </h1>
+      <p class="mt-4 text-base text-[var(--text-secondary)] sm:text-lg leading-relaxed">
+        收录各主流操作系统最新内核（Mihomo / Xray / sing-box）客户端官方开源发布版本。提供从软件选型、安装防坑到 4 步导入订阅的保姆级指引。
+      </p>
+    </div>
+
+    <!-- 6 Operating System Grid -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
+      {PLATFORMS.map((platform) => (
+        <div class="group relative flex flex-col justify-between rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/50 hover:shadow-xl">
+          <div>
+            <!-- Header Icon & Name -->
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 font-display font-black text-xl">
+                  {platform.slug === 'windows' && '🪟'}
+                  {platform.slug === 'android' && '🤖'}
+                  {platform.slug === 'ios' && '🍎'}
+                  {platform.slug === 'macos' && '💻'}
+                  {platform.slug === 'linux' && '🐧'}
+                  {platform.slug === 'openwrt' && '📡'}
+                </div>
+                <div>
+                  <h2 class="font-display text-xl font-bold text-[var(--text-primary)]">
+                    <a href={`/clients/${platform.slug}`} class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                      {platform.name}
+                    </a>
+                  </h2>
+                  <span class="text-xs text-[var(--text-tertiary)]">
+                    收录 {platform.clients.length} 款客户端
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tagline -->
+            <p class="text-xs text-[var(--text-secondary)] line-clamp-2 leading-relaxed mb-4">
+              {platform.tagline}
+            </p>
+
+            <!-- Featured Clients Pills -->
+            <div class="space-y-2 mb-6">
+              <div class="text-[11px] font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">
+                推荐客户端清单:
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                {platform.clients.map((app) => (
+                  <span
+                    class:list={[
+                      'rounded-md px-2 py-0.5 text-xs font-medium border',
+                      app.isRecommended
+                        ? 'border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold'
+                        : 'border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)]',
+                    ]}
+                  >
+                    {app.name}
+                    {app.isRecommended && ' ★'}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="pt-4 border-t border-[var(--border)]">
+            <a
+              href={`/clients/${platform.slug}`}
+              class="flex items-center justify-center gap-1 w-full rounded-xl bg-[var(--bg-secondary)] hover:bg-indigo-600 hover:text-white px-4 py-2.5 text-center text-xs font-bold text-[var(--text-primary)] transition-all border border-[var(--border)] hover:border-transparent"
+            >
+              查看 {platform.name} 下载与配置指南 →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- PRIMARY AIRPORT CALLOUT BANNER -->
+    <div class="rounded-3xl border border-indigo-500/40 bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-950 p-6 sm:p-8 shadow-xl mb-16">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-xs font-bold text-amber-400">
+            搭配全内网专线节点体验最佳
+          </div>
+          <h3 class="font-display text-2xl font-bold text-white">
+            推荐搭配：{PRIMARY_AIRPORT.name}（全协议自动兼容）
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            支持一键导入 Clash Verge、v2rayN、Shadowrocket 等全平台客户端。全 IEPL 专线，晚高峰 529Mbps 满速，更有独创 <strong>¥147 永久不限时套餐</strong>（200G 不过期），输入专属券码 <strong>{PRIMARY_AIRPORT.coupon}</strong> 享 8 折特惠！
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 min-w-[240px]">
+          <a
+            href={PRIMARY_AIRPORT.affUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            class="rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 px-6 py-3 text-center text-xs font-bold text-white shadow-lg shadow-indigo-500/30 transition-all hover:scale-[1.02]"
+          >
+            直达光速云官网选购 →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNIVERSAL 4-STEP SETUP WORKFLOW -->
+    <section class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-6 sm:p-10 mb-16 shadow-sm">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+          全平台通用 4 步接入极速上手流程
+        </h2>
+        <p class="text-xs text-[var(--text-secondary)] mt-2">
+          不论使用 Windows、Mac、iPhone 还是软路由，现代代理客户端的订阅配置逻辑完全一致
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-4">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-5">
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500 text-white font-mono font-bold text-sm mb-3">
+            01
+          </div>
+          <h3 class="font-display text-sm font-bold text-[var(--text-primary)] mb-1">
+            复制订阅链接
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            在机场用户中心点击「复制订阅地址」，或选择针对客户端的一键导入链接。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-5">
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500 text-white font-mono font-bold text-sm mb-3">
+            02
+          </div>
+          <h3 class="font-display text-sm font-bold text-[var(--text-primary)] mb-1">
+            导入并下载配置
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            打开客户端订阅/配置页面，粘贴链接并点击「保存/下载」，解析全部全球节点。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-5">
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500 text-white font-mono font-bold text-sm mb-3">
+            03
+          </div>
+          <h3 class="font-display text-sm font-bold text-[var(--text-primary)] mb-1">
+            选择规则分流模式
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            将路由模式选为「Rule（规则分流）」，保证国内网站直连不消耗流量，外网走加速。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-5">
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500 text-white font-mono font-bold text-sm mb-3">
+            04
+          </div>
+          <h3 class="font-display text-sm font-bold text-[var(--text-primary)] mb-1">
+            启动系统代理/TUN
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            开启「系统代理」开关；若需要接管终端命令或游戏流量，开启「TUN 虚拟网卡模式」。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KERNEL EXPLANATION GUIDE -->
+    <section class="space-y-6">
+      <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+        代理内核选型科普：Mihomo vs Xray vs Sing-box
+      </h2>
+
+      <div class="grid gap-6 md:grid-cols-3 text-xs leading-relaxed">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5 space-y-2">
+          <h3 class="font-display text-sm font-bold text-indigo-600 dark:text-indigo-400">
+            Mihomo (Clash Meta)
+          </h3>
+          <p class="text-[var(--text-secondary)]">
+            当前最流行、分流规则最完善的内核。支持 VLESS、Trojan、Shadowsocks、Wireguard 等几乎所有协议，搭配 TUN 模式与 Fake-IP，路由判定速度极快。
+          </p>
+          <div class="text-[11px] text-[var(--text-tertiary)] pt-1">
+            代表软件：Clash Verge Rev, FlClash, Clash Nyanpasu
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5 space-y-2">
+          <h3 class="font-display text-sm font-bold text-emerald-600 dark:text-emerald-400">
+            Xray-core
+          </h3>
+          <p class="text-[var(--text-secondary)]">
+            由 XTLS 团队维护的经典内核，XTLS/Vision 协议的原生发源地。稳定性极强，内存占用适中，适合高吞吐量与精细化多协议路由控制。
+          </p>
+          <div class="text-[11px] text-[var(--text-tertiary)] pt-1">
+            代表软件：v2rayN, v2rayNG, Nekoray
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5 space-y-2">
+          <h3 class="font-display text-sm font-bold text-amber-600 dark:text-amber-400">
+            Sing-box
+          </h3>
+          <p class="text-[var(--text-secondary)]">
+            新一代通用代理平台，由 Go 语言精心重构，内存占用比传统内核降低 30%~50%，对移动端省电与软路由嵌入式环境表现极为出色。
+          </p>
+          <div class="text-[11px] text-[var(--text-tertiary)] pt-1">
+            代表软件：sing-box 官方客户端, Hiddify, Karing
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>

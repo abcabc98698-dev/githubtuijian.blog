@@ -6,6 +6,7 @@ import Footer from '../components/layout/Footer.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import { Image } from 'astro:assets';
+import { SITE, getSiteBaseUrl } from '../config/site';
 
 interface Props {
   caseStudy: CollectionEntry<'case-studies'>;
@@ -25,7 +26,7 @@ const {
   tags,
 } = caseStudy.data;
 
-const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
+const siteUrl = getSiteBaseUrl(Astro.site);
 const articleUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
 // Keep SEO title within recommended 60 chars
@@ -49,8 +50,8 @@ const pageTitle = title.length > 40 ? title : `${client}: ${title}`;
         datePublished: pubDate.toISOString(),
         dateModified: updatedDate?.toISOString(),
         image: heroImage ? new URL(heroImage.src, siteUrl).toString() : undefined,
-        author: { name: 'Astro SEO Theme' },
-        publisher: { name: 'Astro SEO Theme' },
+        author: { name: SITE.name },
+        publisher: { name: SITE.name },
       }}
     />
   </Fragment>

@@ -3,130 +3,495 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import HeroSection from '../components/marketing/HeroSection.astro';
-import LogoCloud from '../components/marketing/LogoCloud.astro';
-import BentoGrid from '../components/marketing/BentoGrid.astro';
-import FaqAccordion from '../components/marketing/FaqAccordion.astro';
+import AirportCard from '../components/airports/AirportCard.astro';
+import { SITE, getSiteBaseUrl } from '../config/site';
+import { TOP_AIRPORTS, PRIMARY_AIRPORT, AIRPORTS } from '../data/airports';
+import { PLATFORMS } from '../data/clients';
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://astro-seo-theme.vercel.app';
+const siteUrl = getSiteBaseUrl(Astro.site);
+
+const jsonLdWebSite = {
+  name: SITE.name,
+  url: siteUrl,
+  description: SITE.description,
+  searchUrl: `${siteUrl}/airports`,
+};
+
+const jsonLdOrg = {
+  name: SITE.name,
+  url: siteUrl,
+  description: SITE.description,
+};
+
+const faqItems = [
+  {
+    question: '为什么 2026 年强烈建议选择全 IEPL 内网专线机场？',
+    answer:
+      'IEPL（国际以太网专线）采用点对点物理光缆直连海外机房，不经过公网 GFW 审查节点。在晚高峰（20:00-23:00）骨干网高拥堵时段，专线仍能维持极低抖动与 0 丢包率，避免 4K 视频缓冲与游戏断联。',
+  },
+  {
+    question: '新手入门，为什么推荐光速云？优惠码如何使用？',
+    answer:
+      '光速云在综合晚高峰测速、4K 流媒体与 ChatGPT 原生解锁测试中排名第 1。其独创的 147 永久不限时套餐（200G 永久不过期）非常适合低频备用；同时提供 99 元年付高性价比套餐。结账时输入专属优惠码 AMM 即可全场立享 8 折特惠。',
+  },
+  {
+    question: '我应该下载哪个客户端软件？',
+    answer:
+      'Windows 推荐 Clash Verge Rev 或 v2rayN；macOS 推荐 Clash Verge Rev（支持 M 系列 Apple Silicon 原生架构）；iOS 推荐 Shadowrocket（小火箭）；Android 推荐 FlClash 或 Clash Meta；软路由推荐 luci-app-openclash。在本站「客户端中心」均可找到官方开源下载地址与 4 步导入指引。',
+  },
+  {
+    question: '什么是 TUN 模式？为什么访问国外 AI 必须开启 TUN？',
+    answer:
+      'TUN 是操作系统级的虚拟网卡模式。普通系统代理仅代理支持 HTTP/SOCKS 协议的浏览器流量，而许多桌面应用（如 VS Code 插件、Docker、部分终端命令行及某些桌面端 AI 工具）会绕过代理。开启 TUN 模式可全局接管所有进出站流量，实现 100% 透明加速。',
+  },
+];
 ---
 
 <BaseLayout
-  title="Astro SEO Theme - The Ultimate B2B/SaaS Marketing Theme"
-  description="Open-source Astro theme with advanced SEO, GEO & AEO optimization. Built for SaaS companies and B2B marketing websites. Lighthouse 100/100."
+  title={`${SITE.name} · 2026 高速机场测速实验室与全平台客户端中心`}
+  description={SITE.description}
   appendSiteName={false}
 >
   <Fragment slot="head">
-    <JsonLd
-      type="WebSite"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        description: 'The ultimate open-source Astro theme for B2B/SaaS marketing websites.',
-        searchUrl: `${siteUrl}/search`,
-      }}
-    />
-    <JsonLd
-      type="Organization"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        description:
-          'Open-source Astro theme with advanced SEO optimization for B2B and SaaS websites.',
-      }}
+    <JsonLd type="WebSite" data={jsonLdWebSite} />
+    <JsonLd type="Organization" data={jsonLdOrg} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      })}
     />
   </Fragment>
+
   <Header slot="header" />
 
-  <HeroSection
-    badge="v1.0 is now live"
-    titleStart="The SEO Theme"
-    titleHighlight="Your SaaS Deserves"
-    description="Advanced technical SEO, GEO & AEO optimization out of the box. Lighthouse 100/100. Built with Astro, Tailwind & React."
-    primaryCtaText="Get Started on GitHub"
-    primaryCtaHref="https://github.com/druedaro/astro-seo-theme"
-    primaryCtaAriaLabel="View Astro SEO Theme on GitHub"
-    secondaryCtaText="Read the Docs"
-    secondaryCtaHref="/docs"
-  />
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <!-- HERO SECTION -->
+    <section class="py-12 sm:py-16 text-center max-w-4xl mx-auto space-y-6">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3.5 py-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        2026 全球网络可观测实验室 · 42 家主流品牌在测
+      </div>
 
-  <LogoCloud
-    logos={[
-      {
-        name: 'Vercel',
-        src: '/logos/vercel.svg',
-        className: 'dark:invert',
-      },
-      {
-        name: 'Astro',
-        src: '/logos/astro-dark.svg',
-        darkSrc: '/logos/astro-light.svg',
-      },
-      {
-        name: 'Tailwind',
-        src: '/logos/tailwind.svg',
-      },
-      { name: 'React', src: '/logos/react.svg' },
-    ]}
-  />
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)]">
+        高速专线机场晚高峰实测<br />
+        <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500 bg-clip-text text-transparent">
+          与全平台客户端配置中心
+        </span>
+      </h1>
 
-  <BentoGrid
-    title="Everything you need to rank higher"
-    subtitle="Built from the ground up for technical SEO and modern AI search engines."
-    items={[
-      {
-        title: 'Zero-JS by Default',
-        description:
-          'Ship less JavaScript and achieve perfect 100/100 Lighthouse scores. React is only loaded for interactive islands when absolutely necessary.',
-        colSpan: 2,
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>',
-      },
-      {
-        title: 'Automatic JSON-LD',
-        description:
-          'Dynamic Schema.org structured data generation for Articles, FAQs, Organizations, and Breadcrumbs.',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>',
-      },
-      {
-        title: 'GEO & AEO Ready',
-        description:
-          'Optimized content structures and semantic HTML designed for Generative AI and Featured Snippets.',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>',
-      },
-      {
-        title: 'i18n Support',
-        description: 'First-class support for multiple languages with automatic hreflang tags.',
-        colSpan: 2,
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>',
-      },
-    ]}
-  />
+      <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
+        告别虚标与断连。基于晚高峰真实测速、流媒体与 ChatGPT 原生解锁矩阵，为您精选 42 家高速机场品牌，并提供 6 大操作系统官方客户端保姆级落地指南。
+      </p>
 
-  <FaqAccordion
-    title="Frequently Asked Questions"
-    faqs={[
-      {
-        question: 'Is Astro SEO Theme really free?',
-        answer:
-          'Yes! It is 100% open-source and released under the MIT license. You can use it for personal and commercial projects without any attribution required (though it is always appreciated!).',
-      },
-      {
-        question: 'Do I need to know React to use this?',
-        answer:
-          'Not at all. The entire core is built with Astro and standard HTML/CSS. React is only used for highly interactive components (like the Pricing toggle and Dark Mode switch) using Astro Islands, meaning 0kb of JS is loaded for the rest of the site.',
-      },
-      {
-        question: 'How is the JSON-LD generated?',
-        answer:
-          'We have built custom Astro components that automatically read your content (like the Blog frontmatter or the FAQs array) and generate valid Schema.org JSON-LD scripts in the `<head>` of the document. This helps Google understand your content structure instantly.',
-      },
-      {
-        question: 'Can I host this on Vercel or Netlify?',
-        answer:
-          'Absolutely. Astro compiles to static HTML/CSS (SSG) by default, meaning you can deploy it to any static host like Vercel, Netlify, Cloudflare Pages, or even GitHub Pages with zero configuration.',
-      },
-    ]}
-  />
+      <!-- Primary Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a
+          href="/airports"
+          class="w-full sm:w-auto rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3.5 text-sm shadow-xl shadow-indigo-500/25 transition-all hover:scale-[1.02]"
+        >
+          浏览 42 家机场评测榜单 →
+        </a>
+        <a
+          href="/clients"
+          class="w-full sm:w-auto rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] hover:bg-[var(--border)] text-[var(--text-primary)] font-bold px-8 py-3.5 text-sm transition-all"
+        >
+          全平台客户端下载中心
+        </a>
+      </div>
+
+      <!-- Live Benchmarks Ticker -->
+      <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 shadow-sm">
+          <div class="text-[11px] text-[var(--text-tertiary)] uppercase tracking-wider">评测品牌总数</div>
+          <div class="font-mono text-2xl font-black text-indigo-600 dark:text-indigo-400 mt-1">42 家</div>
+          <div class="text-[10px] text-[var(--text-secondary)] mt-0.5">全量实时收录</div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 shadow-sm">
+          <div class="text-[11px] text-[var(--text-tertiary)] uppercase tracking-wider">最高晚高峰下行</div>
+          <div class="font-mono text-2xl font-black text-emerald-500 mt-1">529+ Mbps</div>
+          <div class="text-[10px] text-[var(--text-secondary)] mt-0.5">8K秒开无缓冲</div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 shadow-sm">
+          <div class="text-[11px] text-[var(--text-tertiary)] uppercase tracking-wider">解锁支持度</div>
+          <div class="font-mono text-2xl font-black text-amber-500 mt-1">100%</div>
+          <div class="text-[10px] text-[var(--text-secondary)] mt-0.5">ChatGPT/Claude 双全</div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 shadow-sm">
+          <div class="text-[11px] text-[var(--text-tertiary)] uppercase tracking-wider">覆盖操作系统</div>
+          <div class="font-mono text-2xl font-black text-purple-500 mt-1">6 大平台</div>
+          <div class="text-[10px] text-[var(--text-secondary)] mt-0.5">Win/Mac/iOS/安卓/软路由</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 CORE PILLARS SEO TAXONOMY GRID -->
+    <section class="mb-16">
+      <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg-secondary)]/50 p-6 md:p-8 backdrop-blur-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--border)] pb-4">
+          <div>
+            <h2 class="text-xl font-bold text-[var(--text-primary)]">
+              核心专线与客户端专题矩阵
+            </h2>
+            <p class="text-xs text-[var(--text-secondary)] mt-0.5">
+              一站式获取 2026 最新翻墙工具测评、专线选型、节点拓扑与保姆级配置
+            </p>
+          </div>
+          <span class="text-xs font-semibold text-indigo-500">8 大核心专栏入口</span>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <a href="/jichang" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">✈️</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">机场推荐</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">42家IEPL/BGP专线晚高峰真机测速与综合评测</p>
+          </a>
+          <a href="/vpn" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">🛡️</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">VPN 推荐</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">传统商用VPN与跨境内网专线深度横向对比</p>
+          </a>
+          <a href="/clash" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">⚡</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">Clash 客户端</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">Clash Verge Rev / Mihomo 官方下载与配置教程</p>
+          </a>
+          <a href="/nodes" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">🌐</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">高速节点</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">香港/日本/美国双ISP原生住宅IP解锁矩阵</p>
+          </a>
+          <a href="/tizi" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">🪜</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">梯子推荐</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">抗封锁稳定梯子方案与防跑路资金避险法则</p>
+          </a>
+          <a href="/free" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">🎁</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">免费资源</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">Cloudflare WARP 脚本与开源免费订阅避坑指南</p>
+          </a>
+          <a href="/tutorial" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">📖</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">使用教程</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">Windows/Mac/iOS/安卓/软路由全平台保姆级上手</p>
+          </a>
+          <a href="/brands" class="group rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500 hover:shadow-md">
+            <div class="text-2xl">🏛️</div>
+            <div class="mt-2 text-sm font-bold text-[var(--text-primary)] group-hover:text-indigo-500">品牌库大厅</div>
+            <p class="mt-1 text-xs text-[var(--text-secondary)] line-clamp-2">42家机场全量品牌数据库与多维属性筛选器</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLAGSHIP PRIMARY AIRPORT BANNER: 光速云 -->
+    <section class="mb-20">
+      <div class="overflow-hidden rounded-3xl border border-indigo-500/50 bg-gradient-to-br from-indigo-950/40 via-[#0d121f] to-slate-900 p-6 sm:p-10 shadow-2xl relative">
+        <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-indigo-500/15 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-xs font-bold text-amber-400">
+                ★ 2026 年度编辑部第一主推
+              </span>
+              <span class="rounded-full bg-indigo-500/20 border border-indigo-500/30 px-3 py-1 text-xs font-medium text-indigo-300">
+                全 IEPL 内网专线 · 极速 529Mbps
+              </span>
+            </div>
+
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+              {PRIMARY_AIRPORT.name} — 旗舰级高性价比专线首选
+            </h2>
+
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              全内网专线架构，晚高峰 0 丢包，原生解锁 ChatGPT / Claude 3.5 / Netflix 4K。独创 <strong>¥147 永久不限时套餐</strong>（200G 流量永久有效不重置，备用神器），同时具备 <strong>¥99 年付超值方案</strong> 与至尊定制方案。
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+                <div class="text-[11px] text-slate-400">🔥 永久不限时</div>
+                <div class="font-mono text-base font-extrabold text-amber-400">¥147</div>
+                <div class="text-[10px] text-slate-500">200G 终身有效</div>
+              </div>
+              <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+                <div class="text-[11px] text-slate-400">⭐ 超值年付</div>
+                <div class="font-mono text-base font-extrabold text-emerald-400">¥99<span class="text-xs">/年</span></div>
+                <div class="text-[10px] text-slate-500">1200G 大流量包</div>
+              </div>
+              <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+                <div class="text-[11px] text-slate-400">极速尝鲜</div>
+                <div class="font-mono text-base font-extrabold text-indigo-400">¥25<span class="text-xs">/月</span></div>
+                <div class="text-[10px] text-slate-500">120G 高速体验</div>
+              </div>
+              <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+                <div class="text-[11px] text-slate-400">👑 至尊定制</div>
+                <div class="font-mono text-base font-extrabold text-purple-400">¥680<span class="text-xs">/年</span></div>
+                <div class="text-[10px] text-slate-500">1000G/月 旗舰带宽</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversion Box -->
+          <div class="lg:col-span-5 rounded-2xl border border-indigo-500/30 bg-[#090d16]/95 p-6 text-center space-y-4 shadow-xl">
+            <div class="text-xs text-indigo-300 font-semibold tracking-wider uppercase">
+              EXCLUSIVE 20% OFF COUPON
+            </div>
+
+            <div class="rounded-xl border border-dashed border-amber-500/60 bg-amber-500/10 p-3.5">
+              <div class="text-xs text-amber-300 mb-1">专属 8 折优惠券（全场通用）</div>
+              <div class="flex items-center justify-center gap-2">
+                <span class="font-mono text-2xl font-black tracking-widest text-amber-400">
+                  {PRIMARY_AIRPORT.coupon}
+                </span>
+                <button
+                  type="button"
+                  id="home-copy-coupon-btn"
+                  data-coupon={PRIMARY_AIRPORT.coupon}
+                  class="rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 px-3 py-1 text-xs font-bold transition-colors cursor-pointer"
+                >
+                  复制优惠码
+                </button>
+              </div>
+              <div id="home-copy-status" class="text-[11px] text-amber-400 mt-1 hidden">
+                ✓ 优惠码已复制，结算时粘贴即可享 8 折
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <a
+                href={PRIMARY_AIRPORT.affUrl}
+                target="_blank"
+                rel="nofollow sponsored noopener"
+                class="block w-full rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 py-3.5 px-4 text-center text-sm font-bold text-white shadow-lg shadow-indigo-500/30 hover:from-indigo-400 hover:to-indigo-600 transition-all hover:scale-[1.02]"
+              >
+                直达光速云官网选购 →
+              </a>
+              <a
+                href={`/airports/${PRIMARY_AIRPORT.slug}`}
+                class="block text-xs text-slate-400 hover:text-white transition-colors"
+              >
+                查看光速云完整测速报告与流媒体实测 »
+              </a>
+            </div>
+
+            <div class="text-[11px] text-slate-500 flex items-center justify-center gap-3 pt-1">
+              <span>✓ 极速交付</span>
+              <span>✓ 全协议支持</span>
+              <span>✓ 7×24H 专线可用率</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TOP 10 AIRPORT RANKINGS -->
+    <section class="mb-20">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-1">
+            BENCHMARK RANKINGS
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)]">
+            2026 年度精选 Top 10 机场榜单
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">
+            基于网络丢包率、晚高峰延迟、流媒体与 AI 解锁综合评分排序
+          </p>
+        </div>
+
+        <a
+          href="/airports"
+          class="inline-flex items-center gap-1 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] hover:border-indigo-500 px-4 py-2 text-xs font-bold text-[var(--text-primary)] transition-colors whitespace-nowrap"
+        >
+          查看全量 42 家机场评测 →
+        </a>
+      </div>
+
+      <!-- Top 10 Airport Cards Grid -->
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {TOP_AIRPORTS.map((airport) => (
+          <AirportCard airport={airport} />
+        ))}
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/airports"
+          class="inline-flex items-center gap-2 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 text-sm font-bold shadow-lg shadow-indigo-500/25 transition-all hover:scale-[1.02]"
+        >
+          浏览全部 42 家机场品牌及筛选器 →
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION: 6 OPERATING SYSTEM CLIENT HUB -->
+    <section class="mb-20">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-1">
+          CLIENT DOWNLOAD & SETUP
+        </div>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)]">
+          主流操作系统客户端落地中心
+        </h2>
+        <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-2 leading-relaxed">
+          收录 Windows、macOS、iOS、Android、Linux 与 OpenWrt 官方原版发布地址与 4 步通用配置指南。
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {PLATFORMS.map((platform) => (
+          <a
+            href={`/clients/${platform.slug}`}
+            class="group rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-6 shadow-sm hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-3xl">
+                  {platform.slug === 'windows' && '🪟'}
+                  {platform.slug === 'android' && '🤖'}
+                  {platform.slug === 'ios' && '🍎'}
+                  {platform.slug === 'macos' && '💻'}
+                  {platform.slug === 'linux' && '🐧'}
+                  {platform.slug === 'openwrt' && '📡'}
+                </span>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[var(--text-primary)] group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    {platform.name}
+                  </h3>
+                  <span class="text-xs text-[var(--text-tertiary)]">
+                    收录 {platform.clients.length} 款精选客户端
+                  </span>
+                </div>
+              </div>
+
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed line-clamp-2 mb-4">
+                {platform.tagline}
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {platform.clients.slice(0, 2).map((c) => (
+                  <span class="rounded-md bg-[var(--bg-secondary)] px-2 py-0.5 text-[11px] font-medium text-[var(--text-secondary)] border border-[var(--border)]">
+                    {c.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
+              <span>查看下载与配置教程</span>
+              <span>→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- SECTION: EVALUATION METHODOLOGY -->
+    <section class="rounded-3xl border border-[var(--border)] bg-[var(--bg-secondary)] p-6 sm:p-10 mb-20">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)]">
+          实验室评测标准与方法论
+        </h2>
+        <p class="text-xs text-[var(--text-secondary)] mt-2">
+          拒绝主观推荐。我们通过自动化探针与真机晚高峰压测建立可观测性指标。
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-bold">
+            01
+          </div>
+          <h3 class="font-display text-base font-bold text-[var(--text-primary)]">
+            真实晚高峰压测
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            严禁在凌晨闲时测速伪造数据。所有测速数据均采集自 20:00~23:00 骨干网络最拥堵时段，反映真实可用性。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">
+            02
+          </div>
+          <h3 class="font-display text-base font-bold text-[var(--text-primary)]">
+            AI 与流媒体欺诈值核查
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            每日定时运行 IP 质量嗅探脚本，检查 IP 是否为双 ISP 家宽住宅属性，检测对 OpenAI、Anthropic Claude、Netflix 等平台的原生解锁能力。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold">
+            03
+          </div>
+          <h3 class="font-display text-base font-bold text-[var(--text-primary)]">
+            拓扑与协议透明度
+          </h3>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            清晰标明各机场的物理接入类型（全 IEPL 专线、BGP 隧道中继、直连），杜绝使用廉价直连线路假冒专线的行业乱象。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FAQ ACCORDION -->
+    <section class="max-w-4xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)]">
+          常见问题解答 (FAQ)
+        </h2>
+        <p class="text-xs text-[var(--text-secondary)] mt-2">
+          解答关于专线选型、客户端配置与网络协议的核心疑问
+        </p>
+      </div>
+
+      <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] divide-y divide-[var(--border)] p-6 sm:p-8 shadow-sm">
+        {faqItems.map((item) => (
+          <div class="py-4 first:pt-0 last:pb-0">
+            <h3 class="text-sm font-bold text-[var(--text-primary)]">
+              {item.question}
+            </h3>
+            <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
+              {item.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script is:inline>
+  const copyBtn = document.getElementById('home-copy-coupon-btn');
+  const copyStatus = document.getElementById('home-copy-status');
+  if (copyBtn && copyStatus) {
+    copyBtn.addEventListener('click', () => {
+      const coupon = copyBtn.getAttribute('data-coupon');
+      if (coupon) {
+        navigator.clipboard.writeText(coupon).then(() => {
+          copyStatus.classList.remove('hidden');
+          copyBtn.textContent = '已复制✓';
+          setTimeout(() => {
+            copyStatus.classList.add('hidden');
+            copyBtn.textContent = '复制优惠码';
+          }, 2500);
+        });
+      }
+    });
+  }
+</script>

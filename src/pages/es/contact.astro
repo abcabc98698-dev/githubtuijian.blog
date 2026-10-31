@@ -4,28 +4,27 @@ import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
 import ContactForm from '../../components/marketing/ContactForm.astro';
 import JsonLd from '../../components/seo/JsonLd.astro';
+import { SITE, getSiteBaseUrl } from '../../config/site';
 
-const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
+const siteUrl = getSiteBaseUrl(Astro.site);
 ---
 
 <BaseLayout
-  title="Contactar con Ventas"
-  description="Ponte en contacto con nuestro equipo para ver cómo Astro SEO Theme puede acelerar tu negocio."
+  title="Contacto"
+  description="Ponte en contacto con el equipo de GitHubTuijian para recomendaciones de proyectos de código abierto, colaboraciones o consultas."
 >
   <Fragment slot="head">
     <JsonLd
       type="Organization"
       data={{
-        name: 'Astro SEO Theme',
+        name: SITE.name,
         url: siteUrl,
         logo: `${siteUrl}/favicon.svg`,
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+1-555-123-4567',
-          contactType: 'customer service',
-          email: 'hello@astroseotheme.com',
-          areaServed: 'US',
-          availableLanguage: ['English', 'Spanish'],
+          contactType: 'technical support',
+          email: SITE.contact.email,
+          availableLanguage: ['English', 'Spanish', 'Chinese'],
         },
       }}
     />
@@ -38,11 +37,10 @@ const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
       <!-- Contact Info (Left) -->
       <div>
         <h1 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-          Hablemos de tu proyecto
+          Conectemos
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
-          Ya sea que necesites una implementación personalizada, tengas preguntas sobre nuestra
-          oferta open-source o simplemente quieras saludar, nuestro equipo está listo para ayudarte.
+          ¿Tienes un proyecto de red o proxy que te gustaría que revisemos, o te interesa colaborar en benchmarks de observabilidad técnica? Nuestro equipo está listo para ayudarte.
         </p>
 
         <dl class="mt-12 space-y-8">
@@ -52,36 +50,34 @@ const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
             </dt>
             <dd class="mt-2 text-lg text-[var(--text-secondary)]">
               <a
-                href="mailto:hello@astroseotheme.com"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
+                href={`mailto:${SITE.contact.email}`}
+                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors font-mono"
               >
-                hello@astroseotheme.com
+                {SITE.contact.email}
               </a>
             </dd>
           </div>
           <div>
             <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Teléfono
+              Telegram
             </dt>
             <dd class="mt-2 text-lg text-[var(--text-secondary)]">
               <a
-                href="tel:+15551234567"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
+                href={SITE.contact.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors font-mono"
               >
-                +1 (555) 123-4567
+                {SITE.contact.telegram}
               </a>
             </dd>
           </div>
           <div>
             <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Sede Central
+              Comunidad
             </dt>
             <dd class="mt-2 text-lg leading-relaxed text-[var(--text-secondary)]">
-              123 Innovation Drive
-              <br />
-              San Francisco, CA 94105
-              <br />
-              Estados Unidos
+              {SITE.contact.address}
             </dd>
           </div>
         </dl>
@@ -90,7 +86,7 @@ const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
       <!-- Contact Form (Right) -->
       <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-8 shadow-sm sm:p-10">
         <h2 class="mb-8 font-display text-2xl font-bold text-[var(--text-primary)]">
-          Envíanos un mensaje
+          Enviar mensaje
         </h2>
         <ContactForm />
       </div>

@@ -14,7 +14,7 @@ const blog = defineCollection({
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       heroImage: image().optional(),
-      author: z.string().default('david-rueda'),
+      author: z.string().default('team'),
       tags: z.array(z.string()).default([]),
       draft: z.boolean().default(false),
       // SEO/GEO specific fields

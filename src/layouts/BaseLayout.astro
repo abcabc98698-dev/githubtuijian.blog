@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getLangFromUrl, useTranslations, getAlternateLocales } from '../i18n/utils';
+import { SITE, getSiteBaseUrl, buildCanonicalUrl, buildOgImageUrl } from '../config/site';
 
 // Self-host Inter font for 100/100 PageSpeed Insights score
 import '@fontsource-variable/inter';
@@ -31,15 +32,15 @@ const {
   publishedTime,
   modifiedTime,
   author,
-  lang = detectedLang,
+  lang = detectedLang === 'en' ? 'zh-CN' : detectedLang,
   appendSiteName = true,
 } = Astro.props;
 
 const t = useTranslations(detectedLang);
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://astro-seo-theme.vercel.app';
+const siteUrl = getSiteBaseUrl(Astro.site);
 const currentUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).toString();
 const ogImageUrl = new URL(image, siteUrl).toString();
-const siteName = 'Astro SEO Theme';
+const siteName = SITE.name;
 const fullTitle = appendSiteName ? `${title} | ${siteName}` : title;
 const alternateLocales = getAlternateLocales(Astro.url.pathname);
 ---
@@ -56,24 +57,44 @@ const alternateLocales = getAlternateLocales(Astro.url.pathname);
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
 
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <!-- Search Engine Robots Directive -->
+    <meta
+      name="robots"
+      content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href={currentUrl} />
+    <!-- Search Engine Verifications (Google, Bing, Shenma, Baidu) -->
+    {SITE.verifications.google && (
+      <meta name="google-site-verification" content={SITE.verifications.google} />
+    )}
+    {SITE.verifications.bing && (
+      <meta name="msvalidate.01" content={SITE.verifications.bing} />
+    )}
+    {SITE.verifications.shenma && (
+      <meta name="shenma-site-verification" content={SITE.verifications.shenma} />
+    )}
+    {SITE.verifications.baidu && (
+      <meta name="baidu-site-verification" content={SITE.verifications.baidu} />
+    )}
 
-    <!-- Hreflang tags for i18n -->
-    {alternateLocales.map(({ lang: altLang, href }) => (
+    <!-- Canonical URL (Omitted on error/noindex pages per Google guidelines) -->
+    {!noindex && <link rel="canonical" href={currentUrl} />}
+
+    <!-- Hreflang tags for i18n (only output when alternate translations actually exist) -->
+    {alternateLocales.length > 1 && alternateLocales.map(({ lang: altLang, href }) => (
       <link
         rel="alternate"
-        hreflang={altLang === 'en' ? 'en-US' : 'es-ES'}
+        hreflang={altLang === 'en' ? 'zh-CN' : 'es-ES'}
         href={new URL(href, siteUrl).toString()}
       />
     ))}
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href={new URL(alternateLocales[0].href, siteUrl).toString()}
-    />
+    {alternateLocales.length > 1 && (
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href={new URL(alternateLocales[0].href, siteUrl).toString()}
+      />
+    )}
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ogType} />
@@ -82,7 +103,7 @@ const alternateLocales = getAlternateLocales(Astro.url.pathname);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'zh_CN'} />
     {publishedTime && (
       <meta property="article:published_time" content={publishedTime.toISOString()} />
     )}

@@ -1,260 +1,167 @@
 <div align="center">
-  <h1>Astro SEO Theme</h1>
 
-  <img src="public/social-preview.jpg" alt="Astro SEO Theme Cover" width="100%" />
+# ⚡ GitHub推荐 (GitHubTuijian.blog)
 
-  <p><strong>The ultimate open-source SEO theme for Astro, designed for B2B SaaS and Enterprise.</strong></p>
+### 2026 全球高速专线网络测速实验室 · 全平台客户端中心 · 高转化 SEO/GEO 导航站
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![Astro](https://img.shields.io/badge/Built_with-Astro-ff5a03?logo=astro&logoColor=white)](https://astro.build/)
-[![TailwindCSS](https://img.shields.io/badge/Styled_with-TailwindCSS_v4-38b2ac?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![GitHub stars](https://img.shields.io/github/stars/druedaro/astro-seo-theme.svg?style=social&label=Star)](https://github.com/druedaro/astro-seo-theme)
+[![Astro](https://img.shields.io/badge/Astro-7.3-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![PageSpeed](https://img.shields.io/badge/PageSpeed-100%2F100-success?style=for-the-badge&logo=google&logoColor=white)](https://pagespeed.web.dev/)
+[![SEO / GEO Ready](https://img.shields.io/badge/SEO%20%2F%20GEO-Optimized-indigo?style=for-the-badge&logo=google-cloud&logoColor=white)](https://githubtuijian.blog)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-  <br />
-  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdruedaro%2Fastro-seo-theme">
-    <img src="https://vercel.com/button" alt="Deploy with Vercel" />
-  </a>
-  <br />
-  <a href="https://astro-seo-theme.vercel.app">View Demo</a>
-  ·
-  <a href="https://github.com/druedaro/astro-seo-theme/issues">Report Bug</a>
-  ·
-  <a href="https://github.com/druedaro/astro-seo-theme/issues">Request Feature</a>
+<p align="center">
+  <a href="https://githubtuijian.blog"><strong>🌐 访问线上官网</strong></a> ·
+  <a href="https://githubtuijian.blog/brands"><strong>🏛️ 42家机场品牌库</strong></a> ·
+  <a href="https://githubtuijian.blog/clients"><strong>💻 客户端下载大厅</strong></a> ·
+  <a href="https://githubtuijian.blog/faq"><strong>📖 机场技术百科 FAQ</strong></a>
+</p>
+
 </div>
 
 ---
 
-Astro SEO Theme is an open-source website template built with [Astro](https://astro.build/), [Tailwind CSS v4](https://tailwindcss.com/), and [React](https://react.dev/). You get a highly-optimized landing page, dynamic blog, case studies section, and enterprise-grade SEO tooling in one repo. It's designed so you can launch a premium web presence for a B2B SaaS or startup just by editing content, instead of wrestling with Core Web Vitals from scratch. Unlike generic themes, it ships with an incredibly strict SEO setup, multilingual i18n, security headers, and CI pipelines already wired up.
+## 📖 项目简介 (Overview)
 
-Live demo: [astro-seo-theme.vercel.app](https://astro-seo-theme.vercel.app/)
+**GitHub推荐 (`githubtuijian.blog`)** 是一个专为科学上网、跨境科研、远程办公与海外数字媒体打造的**高端独立 SEO / GEO / AEO 决策与导航平台**。
 
-<div align="center">
-  <br />
-  <img src="public/lighthouse-score.jpg" alt="Perfect 100/100 Lighthouse Score for Mobile and Desktop" width="100%" />
-  <br />
-  <sub><em>Validated perfectly for Mobile & Desktop Performance, Accessibility, Best Practices, and SEO.</em></sub>
-</div>
-
-<br />
-
-- **Three content hubs in one.** High-converting landing page, markdown-driven blog, and case studies portfolio, all sharing a single responsive layout and megamenu.
-- **Enterprise-grade SEO.** Centralized `hreflang` generation, JSON-LD structured data, auto-generated sitemaps, and `robots.txt`. Built-in support for GEO (Generative Engine Optimization).
-- **100/100 Lighthouse Performance.** "Zero-JS by default" architecture using Astro Islands. Ships 0 KB of JavaScript to the client unless absolutely necessary (like the React-based dark mode toggle).
-- **Multilingual out of the box.** Complete English and Spanish implementations included. File-based routing makes it trivial to add more languages.
-- **Production-hardened.** Strict Content Security Policy (CSP) and security headers via `vercel.json`, GitHub Actions CI pipeline for type-checking and automated dependabot updates.
-- **Modern stack.** Astro 5, Tailwind CSS 4, React 19, TypeScript.
-- **AI-assistant friendly.** [`AI_GUIDE.md`](AI_GUIDE.md) tells Cursor, Copilot, and Claude where things live and which conventions to follow so you can prompt your way to a customized site.
-- **MIT licensed.** 100% free to use for personal and commercial projects.
-
-Pages are composed using semantic Astro components and native CSS grid/flexbox:
-
-```astro
----
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import HeroSection from '@/components/marketing/HeroSection.astro';
----
-
-<BaseLayout title="Home" description="The best SaaS product ever.">
-  <HeroSection />
-  <!-- Other components... -->
-</BaseLayout>
-```
+项目基于 **Astro 7 (SSG 静态直出) + Tailwind CSS v4 原生引擎** 构建，全站实现 **Zero-JS 极速加载基准**，彻底摆脱传统客户端水合报错（Hydration Errors）与白屏卡顿，保证各大搜索引擎爬虫（Googlebot、bingbot、Baiduspider、神马 yisouspider）与 AI 语义大模型（ChatGPT Search、Perplexity）在无需执行 JavaScript 的情况下 **100% 秒级索引全部核心内容**。
 
 ---
 
-## Table of Contents
+## 🌟 核心特色与架构矩阵 (Core Highlights)
 
-- [Quick Start](#quick-start)
-- [Theme Configuration](#theme-configuration)
-  - [Global Meta Settings](#global-meta-settings)
-  - [Header & Megamenu](#header--megamenu)
-  - [Building Landing Pages](#building-landing-pages)
-  - [Managing Content Collections](#managing-content-collections)
-  - [Localization (i18n)](#localization-i18n)
-- [Deploying to Production](#deploying-to-production)
-- [Directory Layout](#directory-layout)
-- [Technical Highlights](#technical-highlights)
-  - [Generative Engine Optimization (GEO)](#generative-engine-optimization-geo)
-  - [Sitemap & Crawlability](#sitemap--crawlability)
-  - [Enterprise Security](#enterprise-security)
-- [Contributing](#contributing)
-- [License](#license)
+### 1. ✈️ 全量 42 家主流机场品牌数据库 (`/brands` & `/airports`)
+- **真实真机实测**：拒绝虚标与盲目跟风，基于 2026 晚高峰网络丢包率、骨干网 BGP/IEPL 拓扑结构与下行峰值速率深度量化。
+- **SSR 静态直出多维筛选器**：支持按专线架构、自研客户端、不限时套餐、优惠码与创立年份毫秒级检索，全卡片服务端预渲染。
+- **旗舰第一主推（光速云）**：
+  - 运营始于 2020 年，晚高峰测速高达 **529Mbps**，丢包率 `< 0.1%`。
+  - 独创 **¥147 永久不限时套餐**（200G 纯 IEPL 专线流量永久有效，常备防断联神器）。
+  - **¥99 年付超值套餐** 与全场通用 **8 折专属优惠码 `AMM`**。
 
----
+### 2. 💻 6 大操作系统官方客户端保姆级落地中心 (`/clients`)
+收录全网开源活跃的正版客户端下载源与深度安装配置指南：
+- **Windows 电脑端**：Clash Verge Rev、v2rayN、FlClash 下载与 TUN 虚拟网卡接管教程。
+- **macOS 苹果电脑**：M1/M2/M3/M4 Apple Silicon 与 Intel 双架构版本原生适配。
+- **iOS / iPhone (小火箭)**：Shadowrocket、Stash、Quantumult X 美区下载与免翻导入指引。
+- **Android 安卓手机**：v2rayNG、FlClash、Hiddify 官方 APK 纯净安装包与分应用代理策略。
+- **Linux 桌面与服务器**：AppImage GUI、mihomo 命令行与 systemd 守护进程透明代理。
+- **OpenWrt 软路由**：OpenClash、PassWall2、Nikki 路由器全屋无感翻墙。
 
-## Quick Start
+### 3. 🎯 8 大核心 SEO 语义栏目 (Pillar Channels)
+遵循现代化搜索引擎集群（Topic Cluster）与语义权威架构，定型 8 大唯一正式短 URL：
+- [`/vpn/`](https://githubtuijian.blog/vpn/)：2026 翻墙 VPN 推荐与跨境内网 IEPL 专线深度横评。
+- [`/jichang/`](https://githubtuijian.blog/jichang/)：2026 高速稳定机场推荐与 42 家专线实测排行榜。
+- [`/clash/`](https://githubtuijian.blog/clash/)：Clash Verge Rev / Mihomo 全平台官方下载与配置中心。
+- [`/nodes/`](https://githubtuijian.blog/nodes/)：全球高速节点选型：香港/日本/新加坡/美国双 ISP 原生住宅 IP 解锁。
+- [`/tizi/`](https://githubtuijian.blog/tizi/)：2026 稳定好用梯子推荐与抗敏感期断连双保险策略。
+- [`/free/`](https://githubtuijian.blog/free/)：免费科学上网资源汇总与安全白嫖防 MITM 嗅探指南。
+- [`/tutorial/`](https://githubtuijian.blog/tutorial/)：全平台科学上网与代理客户端保姆级使用教程。
+- [`/brands/`](https://githubtuijian.blog/brands/)：42 家主流网络加速机场品牌全量数据库大厅。
 
-You need **Node.js 18+** and **npm** (or pnpm/yarn).
-
-**1. Create your repo.** You can use the Astro CLI to scaffold a new project directly from this template:
-
-```bash
-npm create astro@latest -- --template druedaro/astro-seo-theme my-saas-website
-cd my-saas-website
-```
-
-**2. Install dependencies:**
-
-```bash
-npm install
-```
-
-**3. Start the dev server:**
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:4321](http://localhost:4321). Edits to any file reload the page instantly.
-
-**4. Build for production:**
-
-```bash
-npm run build
-```
-
-This builds the site into `dist/`. Preview the result with `npm run preview`.
-
-> **Tip**
-> Only need one language? Simply delete the `src/pages/es` folder and remove the language picker from the Header component.
+### 4. 📚 3 大万字级硬核深度专题矩阵 (Pillars)
+- 🎁 **免费资源与应急节点 (`/free-nodes`)**：WARP 脚本、开源聚合源与中间人劫持安全审计。
+- 📖 **机场技术百科 FAQ (`/faq`)**：60+ 核心技术全科问答（协议差异、专线拓扑、原生双 ISP 欺诈值检测）。
+- ⚠️ **跑路预警与防坑雷达 (`/alert`)**：机场倒闭跑路特征模型、黑榜案例深度复盘与资金避险指南。
 
 ---
 
-## Theme Configuration
+## 🛡️ 技术 SEO & 站群风控合规保障 (Technical SEO)
 
-### Global Meta Settings
-
-Everything site-wide lives in `src/layouts/BaseLayout.astro` and `src/i18n/ui.ts`. The default `siteName` is injected automatically into titles and metadata.
-
-> [!IMPORTANT]
-> Change the `site` property in `astro.config.mjs` before going to production. If you skip this, your auto-generated sitemap and `robots.txt` will point to the wrong domain, which will severely hurt your SEO.
-
-### Header & Megamenu
-
-Edit `src/components/layout/Header.astro` to modify the navigation. The theme includes a robust, CSS-only desktop megamenu and a mobile accordion menu built without heavy client-side JavaScript.
-
-<img width="1280" height="717" alt="AstroSEO" src="https://github.com/user-attachments/assets/1ef5f911-d08e-4dc0-95ed-89195c5730a4" />
-
-### Building Landing Pages
-
-Pages in `src/pages/` compose sections from `src/components/marketing/` and `src/components/seo/`. Open `src/pages/index.astro` to see the full homepage, then edit the props or remove sections you don't need.
-
-### Managing Content Collections
-
-Content is Markdown/MDX in `src/content/blog/` and `src/content/case-studies/`. Schemas are defined in `src/content.config.ts`. A case study looks like this:
-
-```mdx
----
-title: 'How TechCorp Scaled with Us'
-description: 'A deep dive into B2B growth.'
-client: 'TechCorp'
-date: 2026-09-15
----
-
-Case study body here.
-```
-
-### Localization (i18n)
-
-Marketing pages are file-based: `src/pages/` for English, `src/pages/es/` for Spanish. A `LanguagePicker` component in the Header switches between them. UI strings are centralized in `src/i18n/ui.ts`. `BaseLayout` automatically handles `hreflang` tag generation to prevent duplicate content penalties across languages.
+| 优化维度 | 实现机制 | 效果指标 |
+| :--- | :--- | :---: |
+| **主域规范** | 全站统一源自 `https://githubtuijian.blog/`，严格剔除 http/www/临时测试域名 | **100% 统一** |
+| **规范标签 (Canonical)** | 100% 自引用绝对地址；404 错误页面遵循 Google 规范严格移除 Canonical | **0 规范冲突** |
+| **外链风控隔离** | 所有外部商业合作/引流外链均严格附加 `target="_blank" rel="nofollow sponsored noopener"` | **0 权重泄露** |
+| **Sitemap 矩阵** | 自动生成 `sitemap.xml` 与 `sitemap-index.xml`，仅收录 69 个正式 200 页面 | **0 异常死链** |
+| **搜索引擎放行** | `robots.txt` 显式放行 Googlebot、bingbot、Baiduspider、神马 yisouspider | **100% 爬虫友好** |
+| **验证代码预留** | 集中预留 Google Search Console、Bing、神马、百度站长平台纯静态 Meta 插槽 | **一键安全接入** |
+| **结构化数据** | 原生注入 `WebSite`、`Organization`、`BreadcrumbList`、`ItemList`、`FAQPage` Schema | **0 隐藏欺诈** |
 
 ---
 
-## Deploying to Production
-
-`npm run build` produces a static site in `dist/` that any static host can serve.
-
-> [!TIP]
-> The included `vercel.json` enforces strict security headers by default. If you plan to load external scripts (like Google Analytics) or images from other domains, you will need to adjust the `Content-Security-Policy` inside that file so they aren't blocked.
-
-- **Vercel:** Import the project directly. The included `vercel.json` adds strict security headers and caching rules.
-- **Netlify / Cloudflare Pages:** Works out of the box with zero configuration required.
-
----
-
-## Directory Layout
+## 📂 项目结构指南 (Directory Structure)
 
 ```text
-src/
-├── assets/                 # Local images and fonts
-├── components/
-│   ├── layout/             # Header, Footer, megamenu
-│   ├── marketing/          # Hero, BentoGrid, PricingTable, ContactForm
-│   ├── seo/                # Breadcrumbs, JsonLd, FaqSchema
-│   └── ui/                 # LanguagePicker, DarkModeToggle
-├── content/
-│   ├── authors/            # JSON files for author profiles (E-E-A-T)
-│   ├── blog/               # MDX posts separated by language (en/ & es/)
-│   └── case-studies/       # MDX case studies separated by language (en/ & es/)
-├── i18n/                   # ui.ts (translations) & utils.ts
-├── layouts/                # BaseLayout.astro & specific page layouts
-├── pages/                  # File-based routes
-│   ├── index.astro         # English Home
-│   ├── blog/               # English blog routes
-│   ├── case-studies/       # English case studies routes
-│   ├── es/                 # Spanish localized routes
-│   └── rss.xml.js          # RSS feed generator
-├── content.config.ts       # Astro Content Collections schemas
-└── styles/
-    └── global.css          # Tailwind v4 theme and typography vars
+githubtuijian.blog/
+├── public/                     # 纯静态公开资产
+│   ├── favicon.svg             # 网站矢量图标
+│   ├── og-default.png          # 社交分享高清 OpenGraph 图片
+│   ├── robots.txt              # 搜索引擎爬虫抓取规则
+│   └── llms.txt                # AI 大模型 (GEO/AEO) 语义指引
+├── src/
+│   ├── components/             # 组件目录
+│   │   ├── airports/           # 42家机场卡片与 SSR 原生多维筛选器
+│   │   ├── layout/             # 顶部高转化 MegaMenu Header 与页脚 Footer
+│   │   ├── observatory/        # 晚高峰测速探针、拓扑卡片与解锁矩阵
+│   │   ├── seo/                # Breadcrumbs 面包屑与 JSON-LD 结构化数据
+│   │   └── ui/                 # 原生深色模式切换 (DarkModeToggle)
+│   ├── config/
+│   │   └── site.ts             # 网站唯一正式主域名、元数据与站长验证中心
+│   ├── data/
+│   │   ├── airports.ts         # 42 家机场品牌结构化数据库（价格/专线/优惠码）
+│   │   └── clients.ts          # 6 大操作系统官方代理客户端技术数据库
+│   ├── layouts/
+│   │   └── BaseLayout.astro    # 统一 SEO Head、Meta、Canonical 与主题骨架
+│   └── pages/                  # 静态路由目录 (71 Pages)
+│       ├── 404.astro           # 404 错误页 (带 noindex, nofollow)
+│       ├── index.astro         # 网站首页 (高转化综合仪表盘)
+│       ├── vpn/                # /vpn/ 核心栏目
+│       ├── jichang/            # /jichang/ 核心栏目
+│       ├── clash/              # /clash/ 核心栏目
+│       ├── nodes/              # /nodes/ 核心栏目
+│       ├── tizi/               # /tizi/ 核心栏目
+│       ├── free/               # /free/ 核心栏目
+│       ├── tutorial/           # /tutorial/ 核心栏目
+│       ├── brands/             # /brands/ 42家机场品牌全量大厅
+│       ├── airports/           # 42 家机场独立评测详情动态路由 ([slug].astro)
+│       ├── clients/            # 6 大系统客户端独立图文教程 ([platform].astro)
+│       ├── free-nodes.astro    # 万字级免费应急资源专题
+│       ├── faq.astro           # 万字级机场技术百科 FAQ 专题
+│       └── alert.astro         # 万字级跑路预警雷达专题
+├── astro.config.mjs            # Astro 配置文件 (SSG + Tailwind v4 + Sitemap)
+├── package.json                # 依赖与自动化构建命令
+└── README.md                   # 项目自述文件
 ```
 
 ---
 
-## Technical Highlights
+## 🛠️ 本地启动与开发 (Local Development)
 
-### Generative Engine Optimization (GEO)
+```bash
+# 1. 克隆本仓库到本地
+git clone https://github.com/abcabc98698-dev/githubtuijian.blog.git
+cd githubtuijian.blog
 
-`BaseLayout.astro` is the brain of the theme. It accepts `title`, `description`, `image`, and `articleDate` props. It automatically generates canonical URLs, Open Graph tags, Twitter cards, and `hreflang` alternate links.
+# 2. 安装项目依赖
+npm install
 
-For structured data, the theme uses `src/components/seo/JsonLd.astro` and `FaqSchema.astro` to inject `<script type="application/ld+json">` payloads, crucial for Generative Engine Optimization (GEO).
+# 3. 启动本地实时开发预览服务器
+npm run dev
 
-### Sitemap & Crawlability
+# 4. 构建生产版本 (自动编译静态 HTML 并镜像导出 sitemap.xml)
+npm run build
 
-The `@astrojs/sitemap` integration generates the sitemap automatically at build time. `robots.txt` is served statically from the `public/` directory.
-
-### Enterprise Security
-
-`vercel.json` sets `Content-Security-Policy`, `Strict-Transport-Security`, `X-Content-Type-Options`, and `X-Frame-Options` to ensure the site gets an A+ on security scanners like Mozilla Observatory.
-
-### Adding Analytics (Adjusting CSP)
-
-Because the default `Content-Security-Policy` (CSP) is strict, third-party scripts will be blocked by default. To add analytics like Google Analytics or Plausible, you must adjust the `Content-Security-Policy` header in `vercel.json` to allow those specific domains.
-
-**Example: Allowing Google Analytics**
-Modify the `script-src` and `connect-src` directives in `vercel.json`:
-
-```json
-"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com;"
+# 5. 本地预览生产构建产物
+npm run preview
 ```
-
-**Example: Allowing Plausible**
-
-```json
-"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io; connect-src 'self' https://plausible.io;"
-```
-
-### Formatting
-
-Code formatting is enforced using [Prettier](https://prettier.io/). The project includes `prettier-plugin-astro` and `prettier-plugin-tailwindcss` to automatically format `.astro` files and logically sort all Tailwind CSS classes.
-
-> [!NOTE]
-> Run `npm run format` locally before committing to ensure all files are perfectly formatted. If you use VS Code, the workspace is already configured to format on save.
 
 ---
 
-## Contributing
+## 🚀 部署上线说明 (Deployment)
 
-- **Bugs and ideas:** open an issue.
-- **Pull requests:** welcome.
+本项目为标准 **Astro SSG** 架构，构建产物位于 `dist/` 目录，可一键部署至任意全球托管平台：
 
-See `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md`.
+### 推荐方案：Cloudflare Pages
+1. 在 Cloudflare Dashboard 中连接本 GitHub 仓库；
+2. 构建设置：
+   - **Framework preset**: `Astro`
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+3. 自定义域名绑定 `githubtuijian.blog`，开启强制 HTTPS 即可全球极速分发。
 
-## License
+---
 
-MIT. See `LICENSE`.
+## 📄 开源许可证 (License)
 
-<div align="center">
-  Crafted by <a href="https://github.com/druedaro">druedaro</a>.
-</div>
+本项目遵循 [MIT License](LICENSE) 开源协议。

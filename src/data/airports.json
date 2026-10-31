@@ -1,0 +1,3854 @@
+[
+  {
+    "id": "guangsu",
+    "slug": "guangsu",
+    "name": "光速云",
+    "rank": 1,
+    "isPrimary": true,
+    "affUrl": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y",
+    "coupon": "AMM",
+    "discount": "半年9折 / 年付8折 / 两年75折 / 三年7折",
+    "entryPrice": "年付折合8元/月",
+    "established": "2020",
+    "lineType": "IEPL / IPLC 混合双专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "80+",
+    "nodeRegions": [
+      "香港×20",
+      "台湾×5",
+      "日本×10",
+      "新加坡×10",
+      "美国×10",
+      "英国",
+      "德国",
+      "法国",
+      "土耳其",
+      "巴西"
+    ],
+    "plans": [
+      {
+        "name": "光速云·轻量版",
+        "billing": "年付",
+        "price": "¥99",
+        "traffic": "69GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "光速云·极速版",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "168GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "光速云·流光版",
+        "billing": "月付",
+        "price": "¥34",
+        "traffic": "238GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "光速云·量子版",
+        "billing": "月付",
+        "price": "¥68",
+        "traffic": "500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "光速云·无界版",
+        "billing": "月付",
+        "price": "¥138",
+        "traffic": "900GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "光速云·致敬斯诺克147永久套餐",
+        "billing": "一次性付费",
+        "price": "¥147",
+        "traffic": "247GB不过期",
+        "cycle": "每月"
+      },
+      {
+        "name": "光速云·定制套餐",
+        "billing": "月付",
+        "price": "¥680",
+        "traffic": "500GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "22ms",
+        "speed": "529Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "41ms",
+        "speed": "114Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "46ms",
+        "speed": "387Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "57ms",
+        "speed": "135Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "143ms",
+        "speed": "18Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "partial",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "光速云在便宜机场推荐里属于价格有优势的一类，99 元/年左右的最低套餐，换算下来每月成本不高，在高性价比机场推荐里比较有竞争力。它把 IPLC 专线和隧道中转结合着用，第三方测试显示香港、日本节点速度表现还不错，也支持 Netflix、Disney+、YouTube 等主流流媒体。不过要注意，ChatGPT、Gemini 这类 AI 工具并不是所有节点都稳定支持，实际用的时候可能需要手动切换节点，这点官方也承认。套餐里特殊商品不支持退款，所以更建议先买月付或者小额套餐，实测晚高峰速度和稳定性之后，再考虑要不要长期用。",
+    "tags": [
+      "2020年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "致敬147永久包",
+      "2.5Gbps高带宽",
+      "主推旗舰",
+      "不限时套餐",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "weifeng",
+    "slug": "weifeng",
+    "name": "微风网络",
+    "rank": 2,
+    "isPrimary": false,
+    "affUrl": "https://edp01.breezenetaff.com/#/?code=t3huofyI",
+    "coupon": "flat888",
+    "discount": "限时优惠",
+    "entryPrice": "2",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "清风 (Breeze)",
+        "billing": "年付",
+        "price": "¥137",
+        "traffic": "100GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "乘风 (Riding)",
+        "billing": "月付",
+        "price": "¥27",
+        "traffic": "200GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "破风 (Breaking)",
+        "billing": "月付",
+        "price": "¥57",
+        "traffic": "500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "御风 (Mastery)",
+        "billing": "月付",
+        "price": "¥127",
+        "traffic": "1200GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "信风·不限时",
+        "billing": "一次性付费",
+        "price": "¥200",
+        "traffic": "270GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "长风·不限时",
+        "billing": "一次性付费",
+        "price": "¥370",
+        "traffic": "570GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "25ms",
+        "speed": "546Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "40ms",
+        "speed": "115Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "43ms",
+        "speed": "384Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "54ms",
+        "speed": "131Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "167ms",
+        "speed": "17Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "微风网络在便宜机场推荐里经常被提到，价格是它最直接的优势——11 元/月起，比不少同类 IEPL 机场推荐都要低，对学生党和轻度用户比较友好。走的是 IEPL 专线而不是纯中转，所以稳定性比一些更便宜的中转机场要好一点，日常刷网页、看视频、用 ChatGPT 基本没问题，节点也覆盖了香港、新加坡、日本、美国这几个热门地区。客服口碑在这个价位段里算是不错的，第一次用机场遇到问题至少有地方问，这对刚接触机场的新手来说挺重要。不过 100GB 的流量对重度用户可能不太够，属于入门够用但称不上顶配的类型，如果每天长时间在线，可能需要额外留意用量。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "muguang",
+    "slug": "muguang",
+    "name": "暮光加速",
+    "rank": 3,
+    "isPrimary": false,
+    "affUrl": "https://varnexa.twilightaff.com/#/?code=D1LHglg3",
+    "coupon": "muguang5555",
+    "discount": "限时优惠",
+    "entryPrice": "3",
+    "established": "2023",
+    "lineType": "BGP 智能中转线路",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "【暮光·基础版】",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "120GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "【暮光·标准版】",
+        "billing": "月付",
+        "price": "¥40",
+        "traffic": "240GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "【暮光·旗舰版】",
+        "billing": "月付",
+        "price": "¥100",
+        "traffic": "700GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "【暮光·至尊版】",
+        "billing": "月付",
+        "price": "¥180",
+        "traffic": "1500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "【暮光·年付轻量版】",
+        "billing": "年付",
+        "price": "¥109",
+        "traffic": "70GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "【暮光·不限时轻量包】",
+        "billing": "一次性付费",
+        "price": "¥219",
+        "traffic": "150GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "【暮光·不限时标准包】",
+        "billing": "一次性付费",
+        "price": "¥529",
+        "traffic": "400GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "【暮光·不限时大容量包】",
+        "billing": "一次性付费",
+        "price": "¥959",
+        "traffic": "800GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "26ms",
+        "speed": "509Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "40ms",
+        "speed": "107Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "43ms",
+        "speed": "419Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "53ms",
+        "speed": "150Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "160ms",
+        "speed": "19Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "暮光加速 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2023年运营",
+      "BGP",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "feimao",
+    "slug": "feimao",
+    "name": "飞猫云",
+    "rank": 4,
+    "isPrimary": false,
+    "affUrl": "https://guangs.flycataff.com/#/?code=6uq0Xe9y",
+    "coupon": "flycat888",
+    "discount": "限时优惠",
+    "entryPrice": "4",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "飞猫·学生版",
+        "billing": "年付",
+        "price": "¥84",
+        "traffic": "50GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "飞猫·星耀版",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "飞猫·星环版",
+        "billing": "月付",
+        "price": "¥45",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "飞猫·银河版",
+        "billing": "月付",
+        "price": "¥85",
+        "traffic": "600GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "飞猫·宇宙版",
+        "billing": "月付",
+        "price": "¥150",
+        "traffic": "1000GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "飞猫·不限时套餐",
+        "billing": "一次性付费",
+        "price": "¥680",
+        "traffic": "1000GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "飞猫·定制套餐",
+        "billing": "月付",
+        "price": "¥550",
+        "traffic": "500GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "21ms",
+        "speed": "526Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "41ms",
+        "speed": "116Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "45ms",
+        "speed": "413Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "54ms",
+        "speed": "138Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "178ms",
+        "speed": "14Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "飞猫云更适合放进新手机场推荐这个分类——它的重点不是极致速度或专线，而是省事：走的是专属客户端模式，下载 App、登录就能用，不用找订阅链接、不用配 Clash，第一次用机场的人也能快速上手。7 元/月起的价格也不算贵，节点覆盖亚太和欧美常见地区，日常看视频、用 AI 工具都能应付，作为轻量日常使用足够。它不是那种主打顶级专线体验的机场，如果你要的是极致稳定，可能得看看更偏专线机场推荐的选项，但作为日常主力或备用机场，飞猫云的易用性是个明显加分项。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "dalaoyun",
+    "slug": "dalaoyun",
+    "name": "大佬云",
+    "rank": 5,
+    "isPrimary": false,
+    "affUrl": "https://qwerty.dalaoyunaff.com/#/?code=jCPLmoWN",
+    "coupon": "dly888",
+    "discount": "限时优惠",
+    "entryPrice": "5",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "大佬云 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "xingdaomeng",
+    "slug": "xingdaomeng",
+    "name": "星岛梦",
+    "rank": 6,
+    "isPrimary": false,
+    "affUrl": "https://guangs.xingdaomeng.com/#/?code=1TynBYnR",
+    "coupon": "nmw888",
+    "discount": "限时优惠",
+    "entryPrice": "6",
+    "established": "2020",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "Trojan"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "星岛梦·贴心小包",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "星岛梦·超量150G",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "星岛梦·进阶300G",
+        "billing": "月付",
+        "price": "¥50",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "星岛梦·闪光500G",
+        "billing": "月付",
+        "price": "¥70",
+        "traffic": "500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "星岛梦·旗舰1T版",
+        "billing": "月付",
+        "price": "¥130",
+        "traffic": "1000GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "星岛梦·永久不限时100",
+        "billing": "一次性付费",
+        "price": "¥100",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "星岛梦·永久不限时300",
+        "billing": "一次性付费",
+        "price": "¥300",
+        "traffic": "300GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "星岛梦·永久不限时1TB",
+        "billing": "一次性付费",
+        "price": "¥600",
+        "traffic": "1000GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "27ms",
+        "speed": "504Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "41ms",
+        "speed": "103Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "44ms",
+        "speed": "411Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "57ms",
+        "speed": "136Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "177ms",
+        "speed": "18Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "星岛梦走的是 IEPL 专线，Trojan 协议，1 倍流量不限设备，节点覆盖香港、台湾、日本、美国、新加坡，还延伸到韩国和东南亚等地区，在 IEPL 机场推荐里节点覆盖算是比较广的一个。适合多设备家庭或者小团队一起用，日常流媒体解锁（Netflix、Disney+、YouTube Premium）和 ChatGPT、Gemini 等 AI 工具访问都在支持范围内，TikTok 跨区使用也有涉及。8 元/月起的价格放在稳定机场推荐里不算贵，配合海外技术团队和多人客服，属于综合体验还不错的选项。具体线路表现建议结合自己的地区先测一轮，再决定要不要长期订阅。",
+    "tags": [
+      "2020年运营",
+      "IEPL",
+      "Trojan",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "ermao",
+    "slug": "ermao",
+    "name": "二猫云",
+    "rank": 7,
+    "isPrimary": false,
+    "affUrl": "https://guangs.2maoyunaff.cc/#/?code=7mjvgGbW",
+    "coupon": "ermao5555",
+    "discount": "限时优惠",
+    "entryPrice": "7",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "二猫云·不限时套餐",
+        "billing": "一次性付费",
+        "price": "¥99",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "二猫年付小包",
+        "billing": "年付",
+        "price": "¥89",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "二猫云·白猫套餐",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "130GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "二猫云·橘猫畅玩版",
+        "billing": "月付",
+        "price": "¥40",
+        "traffic": "230GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "二猫云·牛奶猫尊享版",
+        "billing": "月付",
+        "price": "¥80",
+        "traffic": "430GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "二猫云·黑猫重度用户版",
+        "billing": "月付",
+        "price": "¥160",
+        "traffic": "850GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "22ms",
+        "speed": "481Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "41ms",
+        "speed": "118Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "46ms",
+        "speed": "407Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "53ms",
+        "speed": "143Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "134ms",
+        "speed": "17Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "二猫云走 IEPL 专线，VLESS 协议，20 元/月起，130GB 流量。官方强调自己不做低价跑路盘那一套，主打长期稳定，还配了一套独家定制客户端。账号不限设备连接数，Netflix、YouTube、ChatGPT 这些日常场景基本能覆盖，但 Claude 和 Gemini 官方没给出确定说法，能不能用建议自己先测一下。节点覆盖香港、日本、美国，比不少同类机场少了新加坡这一站。套餐从月付到三年付都有，摆明是想留长期用户，价格在这个价位的专线机场里不算便宜，预算有限或者只是短期用用，可以先看看其他更便宜的选项。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "wuyou",
+    "slug": "wuyou",
+    "name": "无忧链接",
+    "rank": 8,
+    "isPrimary": false,
+    "affUrl": "https://wep01.worryfreeaff.com/#/?code=4ZoSbLdL",
+    "coupon": "wuyou666",
+    "discount": "限时优惠",
+    "entryPrice": "7",
+    "established": "2025",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "MINI链接",
+        "billing": "年付",
+        "price": "¥79",
+        "traffic": "40GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "舒心链接",
+        "billing": "月付",
+        "price": "¥19",
+        "traffic": "100GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "省心链接",
+        "billing": "月付",
+        "price": "¥33",
+        "traffic": "200GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "随心链接",
+        "billing": "月付",
+        "price": "¥77",
+        "traffic": "500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "忘忧链接",
+        "billing": "月付",
+        "price": "¥117",
+        "traffic": "1000GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "100G永久不限时 无忧链接",
+        "billing": "一次性付费",
+        "price": "¥108",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "300G永久不限时 无忧链接",
+        "billing": "一次性付费",
+        "price": "¥298",
+        "traffic": "300GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "23ms",
+        "speed": "531Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "41ms",
+        "speed": "107Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "42ms",
+        "speed": "418Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "55ms",
+        "speed": "147Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "145ms",
+        "speed": "17Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "无忧链接 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2025年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "weitu",
+    "slug": "weitu",
+    "name": "唯兔云",
+    "rank": 9,
+    "isPrimary": false,
+    "affUrl": "https://guangs.v2yunvipaff.com/#/?code=xIutqOBA",
+    "coupon": "weitu666",
+    "discount": "限时优惠",
+    "entryPrice": "7",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "Trojan"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "唯兔云·年付加强专线",
+        "billing": "年付",
+        "price": "¥120",
+        "traffic": "75GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·年付版限量款",
+        "billing": "年付",
+        "price": "¥79.90",
+        "traffic": "45GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·节假日限时开启（14.9元）",
+        "billing": "月付",
+        "price": "¥14.9",
+        "traffic": "100GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·普通版",
+        "billing": "月付",
+        "price": "¥19.90",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·进阶版",
+        "billing": "月付",
+        "price": "¥29.90",
+        "traffic": "200GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·专业版",
+        "billing": "月付",
+        "price": "¥59.90",
+        "traffic": "500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·至尊版",
+        "billing": "月付",
+        "price": "¥119.90",
+        "traffic": "1000GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "唯兔云·永久不限时",
+        "billing": "一次性付费",
+        "price": "¥100",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "27ms",
+        "speed": "500Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "37ms",
+        "speed": "100Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "44ms",
+        "speed": "414Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "56ms",
+        "speed": "147Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "179ms",
+        "speed": "17Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "唯兔云走 IPLC 专线，Trojan 协议，主打 1 倍流量、不限速、不限设备连接，比较适合个人、家庭甚至小团队一起用，属于 IPLC 机场推荐里综合能力不错的选项。它同时支持 ChatGPT、Gemini、Claude 等 AI 工具和 Netflix、Disney+、YouTube Premium、TikTok 等流媒体解锁，覆盖的使用场景比较全，日常娱乐和 AI 办公都能兼顾。价格在 15 元/月左右，比一些入门中转机场贵，但比顶级专线机场便宜，算是中间档位的选择。海外技术团队加多人客服是它宣传的增值服务，具体套餐细节和优惠力度建议下单前以官网当前显示为准，价格可能随时调整。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "Trojan",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "firefly",
+    "slug": "firefly",
+    "name": "Firefly",
+    "rank": 10,
+    "isPrimary": false,
+    "affUrl": "https://vip02.fireflyaff.com/#/?code=2n7VURre",
+    "coupon": "firefly",
+    "discount": "8折",
+    "entryPrice": "8",
+    "established": "2026",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "Firefly 年付版",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Plus",
+        "billing": "月付",
+        "price": "¥45",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Blaze",
+        "billing": "月付",
+        "price": "¥85",
+        "traffic": "600GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Nova",
+        "billing": "月付",
+        "price": "¥150",
+        "traffic": "1000GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly 不限时",
+        "billing": "一次性付费",
+        "price": "¥100",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "27ms",
+        "speed": "547Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "39ms",
+        "speed": "135Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "42ms",
+        "speed": "445Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "57ms",
+        "speed": "147Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "143ms",
+        "speed": "30Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "如果你在找 2026 年靠谱的 IPLC 机场推荐，Firefly 算是专线机场推荐里性价比不错的一个选择。8 元/月起的价格，比很多同样走 IPLC 专线的机场便宜一些，晚高峰稳定性是它的核心卖点，对每天要用 ChatGPT 办公、或者经常在深夜追剧的人来说，这一点比单纯堆节点数量更实际。节点覆盖香港、新加坡、日本、美国这几个常见地区，原生 IP 让 Netflix、Disney+ 这类流媒体解锁相对稳定，2026 年 10 月起直接用官方专属客户端，下载登录就能连，不用再配订阅链接，使用门槛更低。不限设备数量也算是个加分项，家里几台设备一起用不会受限制。当然，专线机场的价格门槛终归比中转线路高，如果只是偶尔上网、预算有限，没必要非选它不可。",
+    "tags": [
+      "2026年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "yuzhou",
+    "slug": "yuzhou",
+    "name": "宇宙云",
+    "rank": 11,
+    "isPrimary": false,
+    "affUrl": "https://wzjc.yuzoucloud.cc/#/?code=yrThwMP1",
+    "coupon": "YUZHOU553",
+    "discount": "8折",
+    "entryPrice": "10",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [
+      {
+        "region": "暂无可核实实测数据",
+        "ping": "—",
+        "speed": "—"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "宇宙云 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "u1s1",
+    "slug": "u1s1",
+    "name": "U1S1",
+    "rank": 12,
+    "isPrimary": false,
+    "affUrl": "https://guangs.vipaff.cc/#/?code=xhX5X22f",
+    "coupon": "akaka",
+    "discount": "限时优惠",
+    "entryPrice": "11",
+    "established": "2025",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "u1s1·就是好用包",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "u1s1·普通人真够了包",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "120GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "u1s1·你以为用不到包",
+        "billing": "月付",
+        "price": "¥40",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "u1s1·瘾大就拉满包",
+        "billing": "月付",
+        "price": "¥100",
+        "traffic": "700GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "u1s1·我全都要包",
+        "billing": "月付",
+        "price": "¥180",
+        "traffic": "1500GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "24ms",
+        "speed": "538Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "39ms",
+        "speed": "107Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "46ms",
+        "speed": "414Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "57ms",
+        "speed": "133Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "134ms",
+        "speed": "20Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "U1S1 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2025年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "lingmao",
+    "slug": "lingmao",
+    "name": "灵猫网络",
+    "rank": 13,
+    "isPrimary": false,
+    "affUrl": "https://vip01.civetnet.com/#/?code=8MIAyxak",
+    "coupon": "lmao888",
+    "discount": "8折",
+    "entryPrice": "12",
+    "established": "2025",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "灵猫·年付小包",
+        "billing": "年付",
+        "price": "¥85",
+        "traffic": "45GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵猫·年付Small",
+        "billing": "年付",
+        "price": "¥195",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵猫·年付Big",
+        "billing": "年付",
+        "price": "¥295",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵猫·季付Big",
+        "billing": "季付",
+        "price": "¥125",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵猫·月付Small",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵猫·月付Big",
+        "billing": "月付",
+        "price": "¥45",
+        "traffic": "300GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "22ms",
+        "speed": "492Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "40ms",
+        "speed": "109Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "46ms",
+        "speed": "409Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "57ms",
+        "speed": "147Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "164ms",
+        "speed": "19Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "灵猫走的是中转优化线路，7.1 元/月起，主打 1 倍流量、不限速、不限设备，这一点对家里多台设备同时用的人比较实用。节点覆盖了香港、新加坡、日本、美国这几个常见地区，2026 年 10 月起直接用官方专属客户端，下载登录就能用，不用自己配置，属于比较适合放进不限设备机场推荐的选项。官方也提到可以解锁 Netflix、Disney+ 等流媒体，以及 ChatGPT、TikTok 之类的应用，覆盖场景算是比较全面。不过具体解锁效果和线路参数会因账号和时段有差异，建议先用月付套餐测一测晚高峰体验，而不是直接冲年付套餐。",
+    "tags": [
+      "2025年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "jilian",
+    "slug": "jilian",
+    "name": "极连云",
+    "rank": 14,
+    "isPrimary": false,
+    "affUrl": "https://guangs.jlyvipaff.com/#/?code=VM1rKGUu",
+    "coupon": "ji8888",
+    "discount": "限时优惠",
+    "entryPrice": "13",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "极连云 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "guangnian",
+    "slug": "guangnian",
+    "name": "光年梯",
+    "rank": 15,
+    "isPrimary": false,
+    "affUrl": "https://guangs.gntaff.com/#/?code=X1FoxjGE",
+    "coupon": "gnt6666",
+    "discount": "限时优惠",
+    "entryPrice": "14",
+    "established": "2025",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "光年梯 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2025年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "yifan",
+    "slug": "yifan",
+    "name": "一翻云",
+    "rank": 16,
+    "isPrimary": false,
+    "affUrl": "https://guangs.1flyunaff.cc/#/register?code=Yr7FhB7r",
+    "coupon": "yfy6666",
+    "discount": "限时优惠",
+    "entryPrice": "15",
+    "established": "2025",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks",
+      "Hysteria2"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "轻享版",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "舒享版",
+        "billing": "月付",
+        "price": "¥35",
+        "traffic": "350GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "尊享版",
+        "billing": "月付",
+        "price": "¥55",
+        "traffic": "600GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "极致版",
+        "billing": "月付",
+        "price": "¥95",
+        "traffic": "1.2TB",
+        "cycle": "每月"
+      },
+      {
+        "name": "98¥·年付小包",
+        "billing": "年付",
+        "price": "¥98",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "轻享版·不限时包",
+        "billing": "一次性付费",
+        "price": "¥100",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "舒享版·不限时包",
+        "billing": "一次性付费",
+        "price": "¥200",
+        "traffic": "250GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "尊享版·不限时包",
+        "billing": "一次性付费",
+        "price": "¥400",
+        "traffic": "500GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "23ms",
+        "speed": "477Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "40ms",
+        "speed": "117Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "42ms",
+        "speed": "390Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "53ms",
+        "speed": "136Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "180ms",
+        "speed": "20Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "一翻云全节点走 IEPL 物理专线，搭配原生住宅 IP，官方称晚高峰 0 丢包、单节点 2Gbps 带宽。协议给了 Hysteria 2、VLESS-Reality 和 Shadowsocks 三种，客户端选择比较宽松。节点覆盖香港、日本、美国、新加坡、台湾五地，比不少同价位机场多了台湾这一站。不限速也不限设备数量，另外提供永久不过期的一次性流量包，适合用量不固定、不想按月续费的人。年付小包 98 元一年、每月 60GB，折合每月约 8.2 元；想要更多流量可以看月付档，轻享版 20 元给到 150GB。优惠码 1FLYYUN 可以再打 9 折。官方没有提供试用，想先验证线路没有零成本的办法。",
+    "tags": [
+      "2025年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "sogo",
+    "slug": "sogo",
+    "name": "SOGO 云",
+    "rank": 17,
+    "isPrimary": false,
+    "affUrl": "https://guangs.sogoyunaff.cc/#/?code=327Vs0w7",
+    "coupon": "SOGO10000",
+    "discount": "9折",
+    "entryPrice": "16",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "小包-年付版",
+        "billing": "年付",
+        "price": "¥98",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "基础版",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "优选版",
+        "billing": "月付",
+        "price": "¥45",
+        "traffic": "350GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "强化版",
+        "billing": "月付",
+        "price": "¥80",
+        "traffic": "550GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "顶配版",
+        "billing": "月付",
+        "price": "¥150",
+        "traffic": "1.1TB",
+        "cycle": "每月"
+      },
+      {
+        "name": "SOGO基础餐不限时版",
+        "billing": "一次性付费",
+        "price": "¥120",
+        "traffic": "120GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "SOGO优选餐不限时版",
+        "billing": "一次性付费",
+        "price": "¥220",
+        "traffic": "250GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "SOGO强化餐不限时版",
+        "billing": "一次性付费",
+        "price": "¥450",
+        "traffic": "500GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "26ms",
+        "speed": "488Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "39ms",
+        "speed": "118Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "43ms",
+        "speed": "401Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "57ms",
+        "speed": "137Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "140ms",
+        "speed": "17Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "Sogo 云由海外团队运营，全线 IEPL 专线接入并做了三网 BGP 优化，协议用 VLESS，不限速也不限设备数量。节点覆盖香港、台湾、日本、新加坡、美国、韩国等 15 个国家和地区，是本站收录里覆盖面最广的一家。需要留意的是它不提供订阅链接，只能通过自研客户端使用，Clash、Shadowrocket 这类第三方客户端用不了。年付小包 98 元一年、每月 60GB，折合每月约 8.2 元；月付从 25 元 150GB 起。优惠码 SOGO10000 可打 9 折。官方没有提供试用。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "kexin",
+    "slug": "kexin",
+    "name": "可信云",
+    "rank": 18,
+    "isPrimary": false,
+    "affUrl": "https://guangs.kosingaff.com/#/register?code=UYDtNlCY",
+    "coupon": "kkk333",
+    "discount": "限时优惠",
+    "entryPrice": "17",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "可信云 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "sujie",
+    "slug": "sujie",
+    "name": "速界",
+    "rank": 19,
+    "isPrimary": false,
+    "affUrl": "https://guangs.speedworldaff.cc/#/register?code=xgXzEfZB",
+    "coupon": "sss1111",
+    "discount": "限时优惠",
+    "entryPrice": "18",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "速界 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "shanyue",
+    "slug": "shanyue",
+    "name": "闪跃",
+    "rank": 20,
+    "isPrimary": false,
+    "affUrl": "https://vip02.flashleapaff.com/#/?code=3lgzm9mm",
+    "coupon": "shanyue",
+    "discount": "8折",
+    "entryPrice": "19",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "闪跃年付版",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "闪动 (Flicker)",
+        "billing": "月付",
+        "price": "¥24",
+        "traffic": "150GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "飞跃 (Leap)",
+        "billing": "月付",
+        "price": "¥44",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "瞬移 (Teleport)",
+        "billing": "月付",
+        "price": "¥84",
+        "traffic": "600GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "跃迁 (Warp)",
+        "billing": "月付",
+        "price": "¥134",
+        "traffic": "1000GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "23ms",
+        "speed": "548Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "38ms",
+        "speed": "110Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "44ms",
+        "speed": "383Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "53ms",
+        "speed": "144Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "143ms",
+        "speed": "18Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "闪跃在专线机场推荐里定位偏高端，走的是纯 IPLC 专线，晚高峰不掉速是它反复强调的卖点，官方说法是依托强大骨干网接入实现的。对经常用 ChatGPT、Claude、Gemini 这类 AI 工具办公，或者追剧追到深夜的人来说，这种稳定性确实比便宜机场更有意义，节点也覆盖香港、日本、美国等热门地区，原生 IP 解锁 Netflix、Disney+、HBO 等流媒体的体验相对可靠。8 元/月的起步价放在 IPLC 机场推荐里不算贵，但比中转线路的机场肯定要高一些。如果你只是想偶尔上网查资料，这个价位没必要，适合的是长期高频、对稳定性有明确要求的用户。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "quanqiu",
+    "slug": "quanqiu",
+    "name": "全球云",
+    "rank": 21,
+    "isPrimary": false,
+    "affUrl": "https://guangs.gcvipaff.com/#/?code=Ov2nvU9C",
+    "coupon": "qqy7777",
+    "discount": "8折",
+    "entryPrice": "20",
+    "established": "2023",
+    "lineType": "IEPL / IPLC 混合双专线",
+    "protocols": [
+      "Shadowsocks",
+      "Trojan"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "BGP 智能优化·不限时轻量包",
+        "billing": "一次性付费",
+        "price": "¥100",
+        "traffic": "100GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "BGP 智能优化·不限时标准包",
+        "billing": "一次性付费",
+        "price": "¥360",
+        "traffic": "400GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "BGP 智能优化·不限时大容量包",
+        "billing": "一次性付费",
+        "price": "¥700",
+        "traffic": "800GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "轻量版",
+        "billing": "年付",
+        "price": "¥99",
+        "traffic": "59GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "BGP 智能优化·入门方案",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "120GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "BGP 智能优化·进阶方案",
+        "billing": "月付",
+        "price": "¥40",
+        "traffic": "300GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "BGP 智能优化·高端方案",
+        "billing": "月付",
+        "price": "¥100",
+        "traffic": "700GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "BGP 智能优化·商业方案",
+        "billing": "月付",
+        "price": "¥180",
+        "traffic": "1500GB",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "25ms",
+        "speed": "489Mbps"
+      },
+      {
+        "region": "台湾",
+        "ping": "37ms",
+        "speed": "117Mbps"
+      },
+      {
+        "region": "新加坡",
+        "ping": "45ms",
+        "speed": "430Mbps"
+      },
+      {
+        "region": "日本",
+        "ping": "55ms",
+        "speed": "133Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "138ms",
+        "speed": "18Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "partial",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "全球云号称覆盖全球 60 多个节点，采用 Trojan 和 Shadowsocks 双协议，专线中转搭配 2Gbps+ 带宽资源，是这份榜单里节点规模比较大的一个，走的是专属客户端模式，下载 App 登录就能用，具体覆盖哪些平台以官网说明为准。20 元/月起的价格在专线机场推荐里属于中等偏上，胜在多地区节点和流媒体解锁能力比较全面，Netflix、Disney+、TikTok 等常见需求都能兼顾。如果你更看重节点数量和地区覆盖，而不是单纯追求最低价格，全球云值得放进对比名单，但具体节点速度还是建议实际测过再判断，官方数据仅供参考。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "Shadowsocks",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "shandianshu",
+    "slug": "shandianshu",
+    "name": "闪电鼠",
+    "rank": 22,
+    "isPrimary": false,
+    "affUrl": "https://qwerty.shandianshuaff.com/#/?code=rUE75iYh",
+    "coupon": "sd88",
+    "discount": "限时优惠",
+    "entryPrice": "21",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "闪电鼠 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "yunjiexian",
+    "slug": "yunjiexian",
+    "name": "云界线",
+    "rank": 23,
+    "isPrimary": false,
+    "affUrl": "https://qwerty.yunjiexianaff.com/?code=HBaZ91c6",
+    "coupon": "yjx888",
+    "discount": "限时优惠",
+    "entryPrice": "23",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "云界线 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "liulianyun",
+    "slug": "liulianyun",
+    "name": "榴莲云",
+    "rank": 24,
+    "isPrimary": false,
+    "affUrl": "https://qwerty.liulianyunaff.com#/?code=hS5pvbfE",
+    "coupon": "ll88",
+    "discount": "限时优惠",
+    "entryPrice": "24",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "榴莲云 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "shenxing",
+    "slug": "shenxing",
+    "name": "神行加速",
+    "rank": 25,
+    "isPrimary": false,
+    "affUrl": "https://qwerty.shenxingaff.com/#/?code=gawDQqVE",
+    "coupon": "xs0077",
+    "discount": "限时优惠",
+    "entryPrice": "25",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "神行加速 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "huanqiuti",
+    "slug": "huanqiuti",
+    "name": "环球梯",
+    "rank": 26,
+    "isPrimary": false,
+    "affUrl": "https://qwerty.huanqiutiaff.com/?code=9I4KRNPH",
+    "coupon": "HQ66",
+    "discount": "限时优惠",
+    "entryPrice": "26",
+    "established": "2024",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "环球梯 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "yinxingren",
+    "slug": "yinxingren",
+    "name": "隐形人",
+    "rank": 27,
+    "isPrimary": false,
+    "affUrl": "https://yinxingren1.invisibleaff.com/#/?code=kcyEeoJT",
+    "coupon": "yxr888",
+    "discount": "8折",
+    "entryPrice": "27",
+    "established": "2024",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "隐形人 白银纪元",
+        "billing": "月付",
+        "price": "¥24",
+        "traffic": "144GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "隐形人 黄金序列",
+        "billing": "月付",
+        "price": "¥48",
+        "traffic": "360GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "隐形人 铂金至臻",
+        "billing": "月付",
+        "price": "¥105",
+        "traffic": "750GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "隐形人 钻石穹顶",
+        "billing": "月付",
+        "price": "¥185",
+        "traffic": "1.6TB",
+        "cycle": "每月"
+      },
+      {
+        "name": "王者定制版",
+        "billing": "月付",
+        "price": "¥680",
+        "traffic": "500GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "星耀风暴 365天不熄",
+        "billing": "年付",
+        "price": "¥109",
+        "traffic": "80GB",
+        "cycle": "每月"
+      },
+      {
+        "name": "一次性小流量",
+        "billing": "一次性付费",
+        "price": "¥229",
+        "traffic": "160GB",
+        "cycle": "一次性"
+      },
+      {
+        "name": "一次性标准流量包",
+        "billing": "一次性付费",
+        "price": "¥549",
+        "traffic": "420GB",
+        "cycle": "一次性"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "香港",
+        "ping": "—",
+        "speed": "—"
+      },
+      {
+        "region": "日本",
+        "ping": "—",
+        "speed": "—"
+      },
+      {
+        "region": "美国",
+        "ping": "—",
+        "speed": "—"
+      },
+      {
+        "region": "新加坡",
+        "ping": "—",
+        "speed": "—"
+      },
+      {
+        "region": "台湾",
+        "ping": "—",
+        "speed": "—"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "隐形人 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2024年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "tiziyun",
+    "slug": "tiziyun",
+    "name": "梯子云",
+    "rank": 28,
+    "isPrimary": false,
+    "affUrl": "https://tiziyun3.ladderaff.com/#/?code=7EmnpHs0",
+    "coupon": "tiziyun",
+    "discount": "8折",
+    "entryPrice": "28",
+    "established": "2025",
+    "lineType": "IEPL / IPLC 混合双专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "梯子云 是一家支持全平台连接与主流流媒体、AI 解锁的高速专线网络服务，提供稳定海外加速通道。",
+    "tags": [
+      "2025年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐",
+      "自研客户端"
+    ]
+  },
+  {
+    "id": "wgetcloud",
+    "slug": "wgetcloud",
+    "name": "WgetCloud",
+    "rank": 29,
+    "isPrimary": false,
+    "affUrl": "https://invite.wgetcloud.ltd/auth/register?code=VLG2xb",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "Trojan"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "基础专线服务",
+        "billing": "季付",
+        "price": "¥297",
+        "traffic": "230GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "优质专线服务",
+        "billing": "季付",
+        "price": "¥327",
+        "traffic": "250GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "精品专线服务",
+        "billing": "季付",
+        "price": "¥357",
+        "traffic": "270GB/月",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "套餐名称",
+        "ping": "计费方式",
+        "speed": "价格"
+      },
+      {
+        "region": "基础专线服务",
+        "ping": "季付",
+        "speed": "¥297"
+      },
+      {
+        "region": "优质专线服务",
+        "ping": "季付",
+        "speed": "¥327"
+      },
+      {
+        "region": "精品专线服务",
+        "ping": "季付",
+        "speed": "¥357"
+      },
+      {
+        "region": "日本",
+        "ping": "69.4ms",
+        "speed": "462.04Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "WgetCloud是一项网络代理服务。当前资料整理了 3 档套餐，当前没有可直接按月购买的最低价记录。本站保留了 2026-05-02 的实测资料；测试结果只代表当次环境，不等于长期在线率。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "Trojan"
+    ]
+  },
+  {
+    "id": "baiyueguang",
+    "slug": "baiyueguang",
+    "name": "白月光",
+    "rank": 30,
+    "isPrimary": false,
+    "affUrl": "https://www.sibker.com/register?invite_code=gg6puAId",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "小包",
+        "billing": "季付",
+        "price": "¥66",
+        "traffic": "每月100GB高速流量",
+        "cycle": "每月"
+      },
+      {
+        "name": "中包",
+        "billing": "季付",
+        "price": "¥126",
+        "traffic": "每月250GB高速流量",
+        "cycle": "每月"
+      },
+      {
+        "name": "大包",
+        "billing": "季付",
+        "price": "¥156",
+        "traffic": "每月400GB高速流量",
+        "cycle": "每月"
+      },
+      {
+        "name": "超大包",
+        "billing": "季付",
+        "price": "¥216",
+        "traffic": "每月750GB高速流量",
+        "cycle": "每月"
+      },
+      {
+        "name": "不差钱",
+        "billing": "季付",
+        "price": "¥231",
+        "traffic": "每月900GB高速流量",
+        "cycle": "每月"
+      },
+      {
+        "name": "旗舰包",
+        "billing": "年付",
+        "price": "¥2500",
+        "traffic": "每月2500GB超大流量",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "套餐名称",
+        "ping": "计费方式",
+        "speed": "价格"
+      },
+      {
+        "region": "小包",
+        "ping": "季付",
+        "speed": "¥66"
+      },
+      {
+        "region": "中包",
+        "ping": "季付",
+        "speed": "¥126"
+      },
+      {
+        "region": "大包",
+        "ping": "季付",
+        "speed": "¥156"
+      },
+      {
+        "region": "超大包",
+        "ping": "季付",
+        "speed": "¥216"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "白月光是一项网络代理服务。当前资料整理了 6 档套餐，当前没有可直接按月购买的最低价记录。本站保留了 2026-07-17 的实测资料；测试结果只代表当次环境，不等于长期在线率。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS"
+    ]
+  },
+  {
+    "id": "flyingbird",
+    "slug": "flyingbird",
+    "name": "FlyingBird",
+    "rank": 31,
+    "isPrimary": false,
+    "affUrl": "https://githubtuijian.blog",
+    "coupon": "theo",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "青铜套餐",
+        "billing": "月付",
+        "price": "¥15",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "青铜套餐",
+        "billing": "季付",
+        "price": "¥41",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "青铜套餐",
+        "billing": "半年付",
+        "price": "¥77",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "青铜套餐",
+        "billing": "年付",
+        "price": "¥144",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "白银套餐",
+        "billing": "月付",
+        "price": "¥30",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "白银套餐",
+        "billing": "季付",
+        "price": "¥81",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "白银套餐",
+        "billing": "半年付",
+        "price": "¥153",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "白银套餐",
+        "billing": "年付",
+        "price": "¥288",
+        "traffic": "200G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "飞鸟机场以 Shadowsocks、全专线 IPLC、无倍率和不限速为主要卖点，套餐覆盖多档长期订阅。资料显示它是一云梯/飞鸟同源站群的核心品牌之一。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "Shadowsocks",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "cyberguard",
+    "slug": "cyberguard",
+    "name": "CyberGuard",
+    "rank": 32,
+    "isPrimary": false,
+    "affUrl": "https://cyberguard.best/#/register?code=AxXNNYng",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "29",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "Trojan"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "150G｜轻量套餐",
+        "billing": "半年付",
+        "price": "¥95",
+        "traffic": "150GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "350G｜标准套餐",
+        "billing": "月付",
+        "price": "¥32",
+        "traffic": "350GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "650G｜高速套餐",
+        "billing": "月付",
+        "price": "¥55",
+        "traffic": "650GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "220G流量包｜不限时",
+        "billing": "一次性付费",
+        "price": "¥79",
+        "traffic": "220GB",
+        "cycle": "一次性（具体有效期待核实）"
+      },
+      {
+        "name": "840G流量包｜不限时",
+        "billing": "一次性付费",
+        "price": "¥188",
+        "traffic": "840GB",
+        "cycle": "一次性（具体有效期待核实）"
+      },
+      {
+        "name": "2050G｜企业套餐",
+        "billing": "月付",
+        "price": "¥200",
+        "traffic": "2050GB/月",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "日本",
+        "ping": "123.8ms",
+        "speed": "488.83Mbps"
+      },
+      {
+        "region": "美国",
+        "ping": "614ms",
+        "speed": "245.6Mbps"
+      },
+      {
+        "region": "澳大利亚",
+        "ping": "277ms",
+        "speed": "279.64Mbps"
+      },
+      {
+        "region": "韩国",
+        "ping": "6000ms",
+        "speed": "552.8Mbps"
+      },
+      {
+        "region": "德国",
+        "ping": "390.5ms",
+        "speed": "159.96Mbps"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "CyberGuard是一项网络代理服务。当前资料整理了 6 档套餐，最低真实月付价为 ¥32。本站保留了 2025-06-21 的实测资料；测试结果只代表当次环境，不等于长期在线率。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "Trojan",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "longmaoyun",
+    "slug": "longmaoyun",
+    "name": "龙猫云",
+    "rank": 33,
+    "isPrimary": false,
+    "affUrl": "https://githubtuijian.blog",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "VIP1",
+        "billing": "月付",
+        "price": "¥15",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "季付",
+        "price": "¥41",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "半年付",
+        "price": "¥77",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "年付",
+        "price": "¥144",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "月付",
+        "price": "¥30",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "季付",
+        "price": "¥81",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "半年付",
+        "price": "¥153",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "年付",
+        "price": "¥288",
+        "traffic": "200G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "龙猫云以 Shadowsocks 和 IPLC 全专线为主要定位，原资料记载最高 2000Mbps，并提供较完整的使用教程。它已被站长核实为一云梯/飞鸟同源站群成员。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "Shadowsocks"
+    ]
+  },
+  {
+    "id": "fatcat",
+    "slug": "fatcat",
+    "name": "FATCAT",
+    "rank": 34,
+    "isPrimary": false,
+    "affUrl": "https://githubtuijian.blog",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IEPL / IPLC 混合双专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "年付加强版",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60G",
+        "cycle": "每月"
+      },
+      {
+        "name": "基础套餐",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "基础套餐",
+        "billing": "季付",
+        "price": "¥54",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "基础套餐",
+        "billing": "半年付",
+        "price": "¥102",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "基础套餐",
+        "billing": "年付",
+        "price": "¥192",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "标准套餐",
+        "billing": "月付",
+        "price": "¥40",
+        "traffic": "300G",
+        "cycle": "每月"
+      },
+      {
+        "name": "标准套餐",
+        "billing": "季付",
+        "price": "¥108",
+        "traffic": "300G",
+        "cycle": "每月"
+      },
+      {
+        "name": "标准套餐",
+        "billing": "半年付",
+        "price": "¥204",
+        "traffic": "300G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "肥猫云以企业级 IEPL/IPLC 内网专线为主要定位，强调抗干扰和抗封锁，套餐包含年付加强版及多档流量。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS"
+    ]
+  },
+  {
+    "id": "tntcloud",
+    "slug": "tntcloud",
+    "name": "TNTCloud",
+    "rank": 35,
+    "isPrimary": false,
+    "affUrl": "https://githubtuijian.blog",
+    "coupon": "TNT85",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "轻量包",
+        "billing": "季付",
+        "price": "¥30",
+        "traffic": "60G",
+        "cycle": "每月"
+      },
+      {
+        "name": "轻量包",
+        "billing": "半年付",
+        "price": "¥56",
+        "traffic": "60G",
+        "cycle": "每月"
+      },
+      {
+        "name": "轻量包",
+        "billing": "年付",
+        "price": "¥98",
+        "traffic": "60G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "110G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "季付",
+        "price": "¥54",
+        "traffic": "110G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "半年付",
+        "price": "¥102",
+        "traffic": "110G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "年付",
+        "price": "¥192",
+        "traffic": "110G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "月付",
+        "price": "¥40",
+        "traffic": "220G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "TNT Cloud 以 IPLC 内网专线为主要定位，曾用名 3A 加速器/AAA Speed，资料记载 2000Mbps，并提供季付限量包及跨境电商、TikTok 直播定制。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "qingyunti",
+    "slug": "qingyunti",
+    "name": "青云梯",
+    "rank": 36,
+    "isPrimary": false,
+    "affUrl": "https://githubtuijian.blog",
+    "coupon": "qyt85",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "年付小包",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "季付",
+        "price": "¥67",
+        "traffic": "150G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "半年付",
+        "price": "¥127",
+        "traffic": "150G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP1",
+        "billing": "年付",
+        "price": "¥240",
+        "traffic": "150G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "月付",
+        "price": "¥45",
+        "traffic": "300G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "季付",
+        "price": "¥121",
+        "traffic": "300G",
+        "cycle": "每月"
+      },
+      {
+        "name": "VIP2",
+        "billing": "半年付",
+        "price": "¥229",
+        "traffic": "300G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "青云梯是运营六年以上的成熟品牌，原资料显示采用 SS 与企业级 IPLC、三网优化和智能负载均衡，并支持企业定制。现有资料记录（未独立实测）覆盖 10 多个地区、80 多个节点。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "Shadowsocks",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "shanshuiyun",
+    "slug": "shanshuiyun",
+    "name": "山水云",
+    "rank": 37,
+    "isPrimary": false,
+    "affUrl": "https://sldm1.ssyylf.com/#/register?code=YD5iQ888",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "64G/轻量套餐",
+        "billing": "年付",
+        "price": "¥88",
+        "traffic": "64GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "128G/轻量套餐",
+        "billing": "半年付",
+        "price": "¥88",
+        "traffic": "128GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "256G/轻量套餐",
+        "billing": "季付",
+        "price": "¥75",
+        "traffic": "256GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "100G/月-琴",
+        "billing": "月付",
+        "price": "¥15",
+        "traffic": "100GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "200G/月-棋",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "200GB/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "500G/月-书",
+        "billing": "月付",
+        "price": "¥50",
+        "traffic": "500GB/月",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [
+      {
+        "region": "套餐名称",
+        "ping": "计费方式",
+        "speed": "价格"
+      },
+      {
+        "region": "64G/轻量套餐",
+        "ping": "年付",
+        "speed": "¥88"
+      },
+      {
+        "region": "128G/轻量套餐",
+        "ping": "半年付",
+        "speed": "¥88"
+      },
+      {
+        "region": "256G/轻量套餐",
+        "ping": "季付",
+        "speed": "¥75"
+      },
+      {
+        "region": "100G/月-琴",
+        "ping": "月付",
+        "speed": "¥15"
+      }
+    ],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "山水云是一项网络代理服务。当前资料整理了 6 档套餐，最低真实月付价为 ¥15。本站保留了 2026-06-29 的实测资料；测试结果只代表当次环境，不等于长期在线率。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS"
+    ]
+  },
+  {
+    "id": "lingdongyun",
+    "slug": "lingdongyun",
+    "name": "灵动云",
+    "rank": 38,
+    "isPrimary": false,
+    "affUrl": "https://varnexa.lingdongaff.com/#/?code=wZvEhEoI",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2025",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Trojan"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "灵动·拂风",
+        "billing": "月付",
+        "price": "¥20",
+        "traffic": "100G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·拂风",
+        "billing": "季付",
+        "price": "¥57",
+        "traffic": "100G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·拂风",
+        "billing": "半年付",
+        "price": "¥108",
+        "traffic": "100G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·拂风",
+        "billing": "年付",
+        "price": "¥204",
+        "traffic": "100G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·拂风",
+        "billing": "两年付",
+        "price": "¥384",
+        "traffic": "100G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·拂风",
+        "billing": "三年付",
+        "price": "¥540",
+        "traffic": "100G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·驭浪",
+        "billing": "月付",
+        "price": "¥50",
+        "traffic": "300G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "灵动·驭浪",
+        "billing": "季付",
+        "price": "¥142.5",
+        "traffic": "300G/月",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "partial"
+    },
+    "description": "灵动云是 2025 年开业的 VLESS 专线机场，截图标注 IEPL，套餐覆盖 70G 年付、100G–1.5T 周期流量、单次流量包和私人定制。已有站长速度与解锁实测。",
+    "tags": [
+      "2025年运营",
+      "IEPL",
+      "VLESS"
+    ]
+  },
+  {
+    "id": "langwang",
+    "slug": "langwang",
+    "name": "浪网",
+    "rank": 39,
+    "isPrimary": false,
+    "affUrl": "https://varnexa.wavenetaff.com/#/?code=xwAM4tTd",
+    "coupon": "",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "浪网 高端",
+        "billing": "月付",
+        "price": "¥120",
+        "traffic": "800G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 高端",
+        "billing": "季付",
+        "price": "¥342",
+        "traffic": "800G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 高端",
+        "billing": "半年付",
+        "price": "¥648",
+        "traffic": "800G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 高端",
+        "billing": "年付",
+        "price": "¥1224",
+        "traffic": "800G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 高端",
+        "billing": "两年付",
+        "price": "¥2304",
+        "traffic": "800G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 高端",
+        "billing": "三年付",
+        "price": "¥3240",
+        "traffic": "800G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 商业",
+        "billing": "月付",
+        "price": "¥200",
+        "traffic": "2000G",
+        "cycle": "每月"
+      },
+      {
+        "name": "浪网 商业",
+        "billing": "季付",
+        "price": "¥570",
+        "traffic": "2000G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "浪网在截图中标注 IEPL 专线，提供入门、进阶、高端、商业周期档，以及年付标准、流量包和定制线路。套餐流量与设备限制被遮挡。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS"
+    ]
+  },
+  {
+    "id": "edgenova",
+    "slug": "edgenova",
+    "name": "EdgeNova",
+    "rank": 40,
+    "isPrimary": false,
+    "affUrl": "https://work.edgenovaaff.cc/#/register?code=cl3iB5YG",
+    "coupon": "TH888",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS",
+      "Shadowsocks"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "限时月付",
+        "billing": "月付",
+        "price": "¥15",
+        "traffic": "72G",
+        "cycle": "每月"
+      },
+      {
+        "name": "限时年付",
+        "billing": "年付",
+        "price": "¥108",
+        "traffic": "45G",
+        "cycle": "每月"
+      },
+      {
+        "name": "极界·标准",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "极界·标准",
+        "billing": "季付",
+        "price": "¥70",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "极界·标准",
+        "billing": "半年付",
+        "price": "¥130",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "极界·标准",
+        "billing": "年付",
+        "price": "¥270",
+        "traffic": "120G",
+        "cycle": "每月"
+      },
+      {
+        "name": "极界·进阶",
+        "billing": "月付",
+        "price": "¥50",
+        "traffic": "250G",
+        "cycle": "每月"
+      },
+      {
+        "name": "极界·进阶",
+        "billing": "季付",
+        "price": "¥145",
+        "traffic": "250G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "边缘节点 EdgeNova 以高速直连、IPLC 和多线路自动分配为主要定位，套餐覆盖年付小包及多档常规流量，并支持主流国内支付与 USDT。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码"
+    ]
+  },
+  {
+    "id": "yinghuochong",
+    "slug": "yinghuochong",
+    "name": "萤火虫",
+    "rank": 41,
+    "isPrimary": false,
+    "affUrl": "https://vip02.fireflyaff.com/#/?code=jTp9wSgZ",
+    "coupon": "firefly",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IPLC 纯内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "Firefly年付版",
+        "billing": "年付",
+        "price": "¥96",
+        "traffic": "60G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "月付",
+        "price": "¥25",
+        "traffic": "150G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "季付",
+        "price": "¥67",
+        "traffic": "150G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "半年付",
+        "price": "¥127",
+        "traffic": "150G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "年付",
+        "price": "¥240",
+        "traffic": "150G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "两年付",
+        "price": "¥420",
+        "traffic": "150G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Lite",
+        "billing": "三年付",
+        "price": "¥540",
+        "traffic": "150G/月",
+        "cycle": "每月"
+      },
+      {
+        "name": "Firefly Plus",
+        "billing": "月付",
+        "price": "¥45",
+        "traffic": "300G/月",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "Firefly 采用 IPLC + VLESS 定位，资料称不限速不限设备、提供原生 IP，并覆盖多档周期套餐与不限时流量。它与微风、飞鸟和一云梯存在明确同系关系。",
+    "tags": [
+      "2023年运营",
+      "IPLC",
+      "VLESS",
+      "有优惠码",
+      "不限时套餐"
+    ]
+  },
+  {
+    "id": "sslar",
+    "slug": "sslar",
+    "name": "sslar",
+    "rank": 42,
+    "isPrimary": false,
+    "affUrl": "https://githubtuijian.blog",
+    "coupon": "ko3eTt0w",
+    "discount": "限时优惠",
+    "entryPrice": "2026",
+    "established": "2023",
+    "lineType": "IEPL 跨境内网专线",
+    "protocols": [
+      "VLESS"
+    ],
+    "nodeCount": "50+",
+    "nodeRegions": [
+      "香港",
+      "日本",
+      "新加坡",
+      "美国",
+      "台湾"
+    ],
+    "plans": [
+      {
+        "name": "Basic",
+        "billing": "月付",
+        "price": "¥17",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Basic",
+        "billing": "季付",
+        "price": "¥46",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Basic",
+        "billing": "半年付",
+        "price": "¥87",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Basic",
+        "billing": "年付",
+        "price": "¥163",
+        "traffic": "100G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Standard",
+        "billing": "月付",
+        "price": "¥28",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Standard",
+        "billing": "季付",
+        "price": "¥76",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Standard",
+        "billing": "半年付",
+        "price": "¥143",
+        "traffic": "200G",
+        "cycle": "每月"
+      },
+      {
+        "name": "Standard",
+        "billing": "年付",
+        "price": "¥268",
+        "traffic": "200G",
+        "cycle": "每月"
+      }
+    ],
+    "speedTests": [],
+    "unlocks": {
+      "chatgpt": "yes",
+      "claude": "yes",
+      "gemini": "yes",
+      "netflix": "yes",
+      "disney": "yes",
+      "youtube": "yes",
+      "tiktok": "yes"
+    },
+    "description": "SSLAR 定位企业级 IEPL 与多线 BGP，支持 SS/VLESS 自适应，并提供 Windows、macOS、Android 自研客户端和远程协助。",
+    "tags": [
+      "2023年运营",
+      "IEPL",
+      "VLESS",
+      "有优惠码",
+      "自研客户端"
+    ]
+  }
+]

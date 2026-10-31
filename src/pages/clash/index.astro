@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: '首页', href: '/' },
+  { label: 'Clash 客户端', href: '/clash' },
+];
+
+const clashPlatforms = [
+  {
+    name: 'Windows 电脑端',
+    client: 'Clash Verge Rev / FlClash',
+    kernel: 'Mihomo (Meta) 内核',
+    description: '支持 Windows 10/11 64位系统。内置 WebUI、TUN 模式一键开启与系统级防 DNS 泄漏。',
+    href: '/clients/windows',
+    tag: '主流首选',
+  },
+  {
+    name: 'macOS 苹果电脑',
+    client: 'Clash Verge Rev for Mac',
+    kernel: 'Apple Silicon & Intel 双架构',
+    description: '原生适配 M1/M2/M3/M4 系列芯片与 Intel 处理器，深色模式完美贴合 macOS 系统设计规范。',
+    href: '/clients/macos',
+    tag: 'M芯片适配',
+  },
+  {
+    name: 'Android 安卓手机',
+    client: 'FlClash / Clash Meta for Android',
+    kernel: 'Mihomo 内核',
+    description: '支持分应用代理、暗黑主题、开机自启与状态栏网速实时监控，极低电量消耗。',
+    href: '/clients/android',
+    tag: '低功耗',
+  },
+  {
+    name: 'iOS / iPhone 手机',
+    client: 'Shadowrocket / Stash (Clash 替代)',
+    kernel: 'iOS 网络扩展 (NE)',
+    description: '支持完整 Clash YAML 配置文件与订阅链接一键解析，无缝代理外网与去广告规则。',
+    href: '/clients/ios',
+    tag: '小火箭/Stash',
+  },
+  {
+    name: 'Linux 桌面与服务器',
+    client: 'Clash Verge Rev (AppImage) / mihomo CLI',
+    kernel: 'Systemd 服务模式',
+    description: 'Ubuntu/Debian/Arch Linux 图形界面与 CLI 守护进程支持，兼顾开发环境与系统透明代理。',
+    href: '/clients/linux',
+    tag: '开源活跃',
+  },
+  {
+    name: 'OpenWrt 软路由',
+    client: 'OpenClash / Nikki / PassWall2',
+    kernel: 'Tproxy / Redir 模式',
+    description: '路由器端接管全屋设备（PS5、Switch、Apple TV、智能家居）网络流量，全屋免客户端无感科学上网。',
+    href: '/clients/openwrt',
+    tag: '全屋无感翻墙',
+  },
+];
+---
+
+<BaseLayout
+  title="Clash 客户端官方下载中心：Clash Verge Rev / Mihomo 全平台配置教程"
+  description="2026最新 Clash 系列客户端官方下载与进阶配置中心。涵盖 Clash Verge Rev、Mihomo (Clash.Meta)、FlClash 等最新版本，提供 Windows/Mac/Android/iOS/Linux/软路由全平台安装、TUN模式开启及防DNS泄漏规则指南。"
+  canonicalUrl="https://githubtuijian.blog/clash/"
+>
+  <Header slot="header" />
+
+  <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Hero Header -->
+    <header class="mt-6 space-y-4">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-500">
+        <span>⚡ 2026 Clash 官方正版生态中心</span>
+      </div>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+        Clash 客户端官方下载中心与全平台订阅配置指南
+      </h1>
+      <p class="max-w-4xl text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+        针对 2023 年原版 Clash for Windows (CFW) 停更后的生态格局，本文为您梳理 2026 年最新主流、持续维护的开源分支客户端（Clash Verge Rev、Mihomo / Meta 内核生态），并提供 6 大系统下载、TUN 虚拟网卡配置及防 DNS 污染指南。
+      </p>
+    </header>
+
+    <!-- Important Notice: Core Ecology in 2026 -->
+    <section class="mt-8 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 backdrop-blur-sm">
+      <h2 class="text-lg font-bold text-amber-500">
+        ⚠️ 2026 年 Clash 选型警示：远离带木马的冒牌 CFW 汉化版
+      </h2>
+      <p class="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+        原版 Clash 核心库与 CFW 已经停止维护，搜索引擎中充斥着大量夹带后门木马的“Clash for Windows 汉化破解版”钓鱼网站。2026 年请务必认准社区公认的开源活跃分支：<strong>Clash Verge Rev</strong> 与 <strong>Mihomo (Meta)</strong> 内核，请直接通过官方开源 Release 渠道获取安装包。
+      </p>
+    </section>
+
+    <!-- All Platform Cards Grid -->
+    <section class="mt-12 space-y-6">
+      <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+        一、全平台 Clash 客户端下载与使用指引
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {clashPlatforms.map((platform) => (
+          <div class="flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 shadow-sm transition-all hover:border-indigo-500/50 hover:shadow-md">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="rounded-lg bg-indigo-500/10 px-2.5 py-1 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                  {platform.tag}
+                </span>
+                <span class="text-xs text-[var(--text-tertiary)]">{platform.kernel}</span>
+              </div>
+              <h3 class="mt-4 text-lg font-bold text-[var(--text-primary)]">
+                {platform.name}
+              </h3>
+              <div class="mt-1 text-xs font-mono text-indigo-500 font-medium">
+                {platform.client}
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-[var(--text-secondary)]">
+                {platform.description}
+              </p>
+            </div>
+
+            <div class="mt-6 border-t border-[var(--border)] pt-4">
+              <a
+                href={platform.href}
+                class="block w-full rounded-xl bg-[var(--bg-secondary)] py-2.5 text-center text-xs font-bold text-[var(--text-primary)] transition-colors hover:bg-indigo-600 hover:text-white"
+              >
+                查看保姆级安装与配置教程 →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Advanced TUN Mode Guide -->
+    <section class="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-6 md:p-8 space-y-4">
+      <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+        二、进阶核心技巧：为什么一定要开启 TUN 虚拟网卡模式？
+      </h2>
+      <div class="grid gap-4 md:grid-cols-3 text-sm text-[var(--text-secondary)]">
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+          <h3 class="font-bold text-[var(--text-primary)]">1. 接管不遵循系统代理的应用</h3>
+          <p class="mt-1 text-xs leading-relaxed">
+            如 Steam/Epic 游戏客户端、Telegram 桌面版或部分命令行终端，普通系统代理无法生效。开启 TUN 模式后在操作系统级创建虚拟网卡，实现 100% 流量无缝代理。
+          </p>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+          <h3 class="font-bold text-[var(--text-primary)]">2. 彻底杜绝 DNS 污染与泄漏</h3>
+          <p class="mt-1 text-xs leading-relaxed">
+            开启 Fake-IP 或 Redir-Host 模式，将所有远程域名的 DNS 解析交给海外专线节点执行，国内运营商无法通过 DNS 查询记录窥探您的访问目标。
+          </p>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+          <h3 class="font-bold text-[var(--text-primary)]">3. 智能国内外双向分流</h3>
+          <p class="mt-1 text-xs leading-relaxed">
+            国内网站（如百度、淘宝、微信）直连不走代理，节约宝贵专线流量并保持极速；国外受限服务（Google、ChatGPT、GitHub）智能走专线加速。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Hub Navigation -->
+    <section class="mt-12 border-t border-[var(--border)] pt-8">
+      <h2 class="font-display text-xl font-bold text-[var(--text-primary)]">
+        相关客户端与教程导航
+      </h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <a href="/tutorial" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">📖 使用教程中心</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">全平台保姆级翻墙代理配置实操</p>
+        </a>
+        <a href="/jichang" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">✈️ 机场推荐</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">42 家主流专线机场实测与选型指南</p>
+        </a>
+        <a href="/nodes" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">🌐 高速节点</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">全球节点延迟对比与原生IP解锁</p>
+        </a>
+        <a href="/free" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">🎁 免费资源</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">应急节点、WARP 脚本与安全避坑</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

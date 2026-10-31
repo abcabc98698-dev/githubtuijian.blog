@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import { PLATFORMS, type PlatformGuide } from '../../data/clients';
+import { PRIMARY_AIRPORT } from '../../data/airports';
+import { getSiteBaseUrl } from '../../config/site';
+
+export async function getStaticPaths() {
+  return PLATFORMS.map((platform) => ({
+    params: { platform: platform.slug },
+    props: { platform },
+  }));
+}
+
+interface Props {
+  platform: PlatformGuide;
+}
+
+const { platform } = Astro.props;
+const siteUrl = getSiteBaseUrl(Astro.site);
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: '首页',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: '客户端中心',
+      item: `${siteUrl}/clients`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: platform.name,
+      item: `${siteUrl}/clients/${platform.slug}`,
+    },
+  ],
+};
+
+const howToLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: `${platform.name} 代理客户端安装与节点订阅导入教程`,
+  description: platform.tagline,
+  step: platform.setupSteps.map((step, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: `步骤 ${index + 1}`,
+    text: step,
+  })),
+};
+---
+
+<BaseLayout
+  title={`${platform.name} 代理客户端下载与配置教程 · 2026 官方最新版`}
+  description={`${platform.name}平台主流代理客户端推荐及配置教程。收录 ${platform.clients.map((c) => c.name).join('、')}，支持芯片架构适配、TUN虚拟网卡接管与节点订阅导入。`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(howToLd)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-[var(--text-tertiary)] mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[var(--text-primary)] transition-colors">首页</a>
+      <span>/</span>
+      <a href="/clients" class="hover:text-[var(--text-primary)] transition-colors">客户端中心</a>
+      <span>/</span>
+      <span class="text-[var(--text-primary)] font-medium">{platform.name}</span>
+    </nav>
+
+    <!-- Platform Hero Header -->
+    <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-6 sm:p-8 shadow-sm mb-12">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-3xl">
+              {platform.slug === 'windows' && '🪟'}
+              {platform.slug === 'android' && '🤖'}
+              {platform.slug === 'ios' && '🍎'}
+              {platform.slug === 'macos' && '💻'}
+              {platform.slug === 'linux' && '🐧'}
+              {platform.slug === 'openwrt' && '📡'}
+            </span>
+            <h1 class="font-display text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)]">
+              {platform.name} 代理客户端推荐
+            </h1>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mt-2 leading-relaxed">
+            {platform.tagline}
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {platform.coreKeywords.map((kw) => (
+              <span class="rounded-md bg-[var(--bg-secondary)] px-2.5 py-0.5 text-xs text-[var(--text-tertiary)] border border-[var(--border)]">
+                {kw}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <a
+          href="#tutorial"
+          class="inline-flex items-center justify-center rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 text-xs font-bold transition-colors whitespace-nowrap"
+        >
+          查看配置教程 ↓
+        </a>
+      </div>
+
+      {platform.notice && (
+        <div class="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-xs text-indigo-700 dark:text-indigo-300 leading-relaxed flex items-start gap-2.5">
+          <span class="font-bold text-sm">💡</span>
+          <div>
+            <strong class="font-semibold">使用建议：</strong>
+            {platform.notice}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <!-- CLIENT APPS LIST -->
+    <section class="space-y-6 mb-16">
+      <div class="flex items-center justify-between">
+        <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+          精选客户端清单与下载
+        </h2>
+        <span class="text-xs text-[var(--text-tertiary)]">官方开源渠道 · 无毒纯净</span>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        {platform.clients.map((app) => (
+          <div
+            class:list={[
+              'rounded-2xl border p-6 flex flex-col justify-between transition-all duration-200 bg-[var(--bg)] shadow-sm',
+              app.isRecommended
+                ? 'border-indigo-500/60 ring-1 ring-indigo-500/20'
+                : 'border-[var(--border)] hover:border-slate-400 dark:hover:border-slate-600',
+            ]}
+          >
+            <div>
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-lg font-bold text-[var(--text-primary)]">
+                      {app.name}
+                    </h3>
+                    {app.isRecommended && (
+                      <span class="rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 px-2 py-0.5 text-[11px] font-bold">
+                        ★ 编辑推荐
+                      </span>
+                    )}
+                  </div>
+                  <div class="text-xs text-[var(--text-tertiary)] font-mono mt-0.5">
+                    核心内核: {app.kernel}
+                  </div>
+                </div>
+
+                <span class="rounded-lg bg-[var(--bg-secondary)] border border-[var(--border)] px-2.5 py-1 text-[11px] text-[var(--text-secondary)] font-medium">
+                  {app.targetUser}
+                </span>
+              </div>
+
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-4">
+                {app.features}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-[var(--border)] flex items-center justify-between gap-3">
+              <span class="text-[11px] text-[var(--text-tertiary)]">
+                来源: {app.downloadType}
+              </span>
+              <a
+                href={app.downloadUrl}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                class:list={[
+                  'rounded-xl px-4 py-2 text-xs font-bold transition-all inline-flex items-center gap-1',
+                  app.isRecommended
+                    ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm'
+                    : 'bg-[var(--bg-secondary)] hover:bg-[var(--border)] text-[var(--text-primary)] border border-[var(--border)]',
+                ]}
+              >
+                前往官方下载 ↗
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE & CHIP COMPATIBILITY ADVICE -->
+    <section class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-6 mb-16 space-y-4">
+      <h3 class="font-display text-base font-bold text-[var(--text-primary)] flex items-center gap-2">
+        <span>⚙️</span>
+        {platform.name} 芯片架构与安装包选择指南
+      </h3>
+      <div class="text-xs text-[var(--text-secondary)] leading-relaxed space-y-2">
+        {platform.slug === 'windows' && (
+          <p>
+            • 绝大多数 Intel / AMD 电脑选择 <strong>x64-setup.exe</strong> 安装包。<br />
+            • 搭载高通骁龙（如 Snapdragon X Elite / X Plus）或 Surface Pro X 选择 <strong>arm64-setup.exe</strong> 安装包。
+          </p>
+        )}
+        {platform.slug === 'macos' && (
+          <p>
+            • 搭载 Apple M1 / M2 / M3 / M4 芯片的 Mac 必须选择 <strong>aarch64.dmg (Apple Silicon)</strong>，以获得最佳能效与无损性能。<br />
+            • 较老的 Intel 处理器 Mac 选择 <strong>x64.dmg (Intel)</strong>。如遇「已损坏无法打开」，在终端执行 <code>sudo xattr -r -d com.apple.quarantine /Applications/软件名.app</code>。
+          </p>
+        )}
+        {platform.slug === 'android' && (
+          <p>
+            • 近 5 年内绝大部分主流安卓手机直接下载 <strong>arm64-v8a.apk</strong>。<br />
+            • 极少数老旧机型或平板如果报架构不兼容，可尝试 <strong>armeabi-v7a.apk</strong>。
+          </p>
+        )}
+        {platform.slug === 'ios' && (
+          <p>
+            • iOS 系统代理客户端由于政策原因无法在国区 App Store 上架。<br />
+            • 需登录<strong>美区 / 港区 Apple ID</strong> 进行下载。Shadowrocket 为付费应用（通常 $2.99），亦可选择免费的 Sing-box 官方客户端或 Karing。
+          </p>
+        )}
+        {platform.slug === 'linux' && (
+          <p>
+            • Ubuntu / Debian 推荐使用 <code>.deb</code> 安装包；Fedora / CentOS 推荐 <code>.rpm</code> 或通用 <code>AppImage</code>。<br />
+            • 需要 systemd 开机自启的可配置为系统服务，并给 <code>tun</code> 设备赋予 <code>CAP_NET_ADMIN</code> 权限。
+          </p>
+        )}
+        {platform.slug === 'openwrt' && (
+          <p>
+            • x86_64 软路由（如工控机）下载 <strong>x86_64.ipk</strong>。<br />
+            • 常见硬路由（如 MT7981/MT7986 芯片）通常下载 <strong>aarch64_cortex-a53.ipk</strong>。<br />
+            • 请根据内核版本核对 <code>nftables</code> 与 <code>iptables</code> 依赖包。
+          </p>
+        )}
+      </div>
+    </section>
+
+    <!-- STEP BY STEP TUTORIAL -->
+    <section id="tutorial" class="space-y-6 mb-16 scroll-mt-20">
+      <div class="flex items-center justify-between">
+        <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+          {platform.name} 保姆级配置教程
+        </h2>
+        <span class="text-xs text-[var(--text-tertiary)]">4 步极速打通全球网络</span>
+      </div>
+
+      <div class="space-y-4">
+        {platform.setupSteps.map((step, index) => (
+          <div class="flex items-start gap-4 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white font-mono font-bold text-sm">
+              0{index + 1}
+            </span>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed pt-1">
+              {step}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- AIRPORT COMPATIBILITY CALLOUT: 光速云 -->
+    <div class="rounded-3xl border border-indigo-500/40 bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-950 p-6 sm:p-8 shadow-xl mb-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center sm:text-left">
+          <span class="rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-xs font-bold text-amber-400">
+            全协议节点搭配推荐
+          </span>
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-white">
+            让 {platform.name} 跑满带宽：{PRIMARY_AIRPORT.name}
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+            支持一键导入订阅，全内网 IEPL 专线，晚高峰 529Mbps。独创 <strong>¥147 永久不限时套餐</strong>（200G 永久有效备用神器），输入优惠码 <strong>{PRIMARY_AIRPORT.coupon}</strong> 享全场 8 折！
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href={`/airports/${PRIMARY_AIRPORT.slug}`}
+            class="rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 px-4 py-2.5 text-center text-xs font-bold text-white transition-colors"
+          >
+            查看光速云评测
+          </a>
+          <a
+            href={PRIMARY_AIRPORT.affUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            class="rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 px-5 py-2.5 text-center text-xs font-bold text-white shadow-lg shadow-indigo-500/30 transition-all"
+          >
+            8 折直达购买 →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER PLATFORMS NAVIGATION -->
+    <div class="border-t border-[var(--border)] pt-10">
+      <div class="text-xs font-bold text-[var(--text-tertiary)] uppercase tracking-wider mb-4">
+        切换查看其他平台客户端教程:
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {PLATFORMS.filter((p) => p.slug !== platform.slug).map((p) => (
+          <a
+            href={`/clients/${p.slug}`}
+            class="rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-3.5 py-2 text-xs font-medium text-[var(--text-primary)] hover:border-indigo-500 transition-colors"
+          >
+            {p.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>

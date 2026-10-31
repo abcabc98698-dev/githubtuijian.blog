@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-seo-theme.vercel.app',
+  site: 'https://githubtuijian.blog',
   output: 'static',
 
   i18n: {

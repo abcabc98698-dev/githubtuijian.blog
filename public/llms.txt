@@ -1,17 +1,19 @@
-# Astro SEO Theme
+# GitHubTuijian
 
-> The ultimate open-source Astro theme for B2B/SaaS marketing websites with advanced SEO, GEO & AEO optimization.
+> Curated Open-Source Projects, Developer Tools & High-Performance Web Architectures.
 
 ## About
-Astro SEO Theme is an open-source website template built with Astro, Tailwind CSS, and React. It is specifically designed to provide perfect Lighthouse scores, Semantic HTML, and Generative Engine Optimization (GEO) out of the box.
+GitHubTuijian is an independent technical publication and developer platform built with Astro, Tailwind CSS, and modern web standards. It delivers in-depth architectural reviews, technical SEO insights, and high-quality open-source recommendations with perfect Lighthouse performance.
 
 ## Key Technical Features
-- Built on Astro 5.0 and Tailwind CSS v4.
-- Generates 100/100 Lighthouse SEO and Accessibility scores.
-- Implements comprehensive Schema.org JSON-LD structured data.
-- Includes a fully responsive, CSS-only megamenu and zero-JS mobile navigation.
-- Native multi-language (i18n) support with automatic `hreflang` tag generation.
+- Built on Astro 5+ and Tailwind CSS v4 with Static Site Generation (SSG).
+- 100/100 Core Web Vitals and Lighthouse scores for SEO, Performance, Best Practices, and Accessibility.
+- Comprehensive Schema.org JSON-LD structured data (Organization, WebSite, Breadcrumbs, Articles).
+- Accessible design system with zero-FOUC dark mode and native responsive navigation.
+- Native multi-language (i18n) support with canonical URLs and automated hreflang tagging.
 
 ## Resources
-- [GitHub Repository](https://github.com/druedaro/astro-seo-theme)
-- [Live Demo](https://astro-seo-theme.vercel.app)
+- [Website](https://githubtuijian.blog)
+- [Blog](https://githubtuijian.blog/blog)
+- [Case Studies](https://githubtuijian.blog/case-studies)
+- [Documentation](https://githubtuijian.blog/docs)

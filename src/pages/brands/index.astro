@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import AirportFilter from '../../components/airports/AirportFilter.astro';
+import { PRIMARY_AIRPORT, AIRPORTS } from '../../data/airports';
+
+const breadcrumbs = [
+  { label: '首页', href: '/' },
+  { label: '品牌库', href: '/brands' },
+];
+---
+
+<BaseLayout
+  title="42家主流网络加速机场品牌全量数据库与多维选型大厅"
+  description="全网最全42家机场品牌信息库。支持按线路架构（IEPL/IPLC/BGP）、自研客户端、不限时套餐、优惠码与创立年份多维检索，提供客观透明的品牌档案与配置落地指南。"
+  canonicalUrl="https://githubtuijian.blog/brands/"
+>
+  <Header slot="header" />
+
+  <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Hero Header -->
+    <header class="mt-6 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-500">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>2026 晚高峰网络可观测实验室 · 42家品牌在测</span>
+      </div>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+        42 家主流机场品牌全量数据库大厅
+      </h1>
+      <p class="mx-auto max-w-3xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
+        告别虚标与断连。基于晚高峰真实网络丢包率、流媒体 AI 解锁能力与跨国 BGP/IEPL 拓扑结构，为您提供中立、透明、客观的科学选型数据库。
+      </p>
+
+      <!-- Key Stats Bar -->
+      <div class="mx-auto grid max-w-4xl grid-cols-2 gap-3 pt-4 sm:grid-cols-4">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-4 text-center">
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+            42
+          </div>
+          <div class="mt-1 text-xs text-[var(--text-secondary)]">收录品牌</div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-4 text-center">
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">
+            529+<span class="text-sm font-normal">Mbps</span>
+          </div>
+          <div class="mt-1 text-xs text-[var(--text-secondary)]">最高峰值速率</div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-4 text-center">
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-amber-500">
+            100%
+          </div>
+          <div class="mt-1 text-xs text-[var(--text-secondary)]">真机高峰实测</div>
+        </div>
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-4 text-center">
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-purple-600 dark:text-purple-400">
+            6 大
+          </div>
+          <div class="mt-1 text-xs text-[var(--text-secondary)]">全系统客户端支持</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Flagship Spotlight -->
+    <section class="mt-10 rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-indigo-950/40 via-[var(--bg-secondary)] to-[var(--bg)] p-6 md:p-10 shadow-xl">
+      <div class="flex flex-col lg:flex-row gap-8 items-start justify-between">
+        <div class="space-y-4 max-w-2xl">
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-amber-500/20 px-3 py-1 font-bold text-amber-400 border border-amber-500/30">
+              ★ 2026 年度编辑首推 · 综合实力第 1 名
+            </span>
+            <span class="rounded-full bg-indigo-500/20 px-3 py-1 font-medium text-indigo-400 border border-indigo-500/30">
+              全IEPL内网专线 · 晚高峰0丢包
+            </span>
+            <span class="rounded-full bg-emerald-500/20 px-3 py-1 font-medium text-emerald-400 border border-emerald-500/30">
+              原生解锁 ChatGPT / Claude / 4K Netflix
+            </span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)]">
+            光速云 — 旗舰高性价比专线首选
+          </h2>
+
+          <p class="text-sm sm:text-base leading-relaxed text-[var(--text-secondary)]">
+            全内网 IEPL 专线，多入口智能负载均衡，晚高峰实测下行最高 <strong>529Mbps</strong>。独创 <strong>147 永久不限时套餐</strong>（200G 永久有效，适合备用与低频用户），同时拥有年付 99 高性价比主力方案与定制大带宽。
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center text-xs">
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-3">
+              <div class="text-[var(--text-tertiary)]">🔥 永久不限时</div>
+              <div class="font-bold text-amber-500 text-base mt-0.5">¥147</div>
+              <div class="text-[10px] text-[var(--text-tertiary)]">200G 用完为止</div>
+            </div>
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-3">
+              <div class="text-[var(--text-tertiary)]">★ 超值年付</div>
+              <div class="font-bold text-emerald-500 text-base mt-0.5">¥99/年</div>
+              <div class="text-[10px] text-[var(--text-tertiary)]">1200G 年付大包</div>
+            </div>
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-3">
+              <div class="text-[var(--text-tertiary)]">入门轻量版</div>
+              <div class="font-bold text-indigo-500 text-base mt-0.5">¥25/月</div>
+              <div class="text-[10px] text-[var(--text-tertiary)]">120G 高速体验</div>
+            </div>
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-3">
+              <div class="text-[var(--text-tertiary)]">👑 至尊定制</div>
+              <div class="font-bold text-purple-500 text-base mt-0.5">¥680/年</div>
+              <div class="text-[10px] text-[var(--text-tertiary)]">1000G/月 旗舰带宽</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coupon Card -->
+        <div class="w-full lg:w-80 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5 shadow-lg space-y-4">
+          <div class="text-xs font-bold text-[var(--text-tertiary)] uppercase tracking-wider text-center">
+            EXCLUSIVE DISCOUNT CODE
+          </div>
+          <div class="rounded-xl border border-dashed border-amber-500/40 bg-amber-500/5 p-4 text-center">
+            <div class="text-xs text-[var(--text-secondary)]">立享专属 8 折优惠券（全场通用）</div>
+            <div class="text-2xl font-mono font-extrabold text-amber-500 mt-1">AMM</div>
+          </div>
+          <a
+            href={PRIMARY_AIRPORT.affUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            class="block w-full rounded-xl bg-indigo-600 py-3 text-center text-sm font-bold text-white shadow-lg shadow-indigo-600/30 transition-all hover:bg-indigo-700"
+          >
+            直达光速云官网 · 享 8 折特惠购 →
+          </a>
+          <a
+            href="/airports/guangsu"
+            class="block text-center text-xs text-indigo-500 hover:underline"
+          >
+            查看光速云完整测速报告与流媒体实测 »
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SSR Airport Filter & Card Grid (42 Brands) -->
+    <section class="mt-14">
+      <AirportFilter airports={AIRPORTS} />
+    </section>
+
+    <!-- Internal Navigation Hub Links -->
+    <section class="mt-14 border-t border-[var(--border)] pt-8">
+      <h2 class="font-display text-xl font-bold text-[var(--text-primary)]">
+        相关专线加速专题导航
+      </h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <a href="/jichang" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">✈️ 机场推荐</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">42 家主流专线机场实测与选型指南</p>
+        </a>
+        <a href="/nodes" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">🌐 高速节点</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">全球节点延迟对比与原生IP解锁</p>
+        </a>
+        <a href="/clash" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">⚡ Clash 客户端</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">全平台客户端下载与保姆级订阅配置</p>
+        </a>
+        <a href="/alert" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-red-500">
+          <div class="text-sm font-bold text-red-500">⚠️ 跑路预警雷达</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">机场倒闭跑路特征模型与资金避险指南</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

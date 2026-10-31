@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { PRIMARY_AIRPORT } from '../../data/airports';
+
+const breadcrumbs = [
+  { label: '首页', href: '/' },
+  { label: '梯子推荐', href: '/tizi' },
+];
+---
+
+<BaseLayout
+  title="2026稳定好用梯子推荐：防封锁抗敏感期科学上网工具指南"
+  description="盘点2026年抗封锁能力强、晚高峰稳定的网络梯子服务。深度剖析长效不限时备用梯子方案，传授特殊敏感时期不断连策略与防骗防跑路资金避险法则。"
+  canonicalUrl="https://githubtuijian.blog/tizi/"
+>
+  <Header slot="header" />
+
+  <div class="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Hero Header -->
+    <header class="mt-6 space-y-4">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-500">
+        <span>🪜 稳定防封锁梯子深度指南</span>
+      </div>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+        2026 稳定好用翻墙梯子深度推荐与防封避坑指南
+      </h1>
+      <p class="max-w-4xl text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+        市面上充斥着大量打着“9.9包年”、“无限流量”幌子的小作坊梯子，往往在收割一波资金后在敏感时期直接跑路。如何挑选一家真正抗封锁、晚高峰不掉线、即便在特殊时期也能顺畅连通的靠谱梯子？本文给您最真实的避坑法则。
+      </p>
+    </header>
+
+    <!-- The Dual-Insurance Architecture Card -->
+    <section class="mt-8 rounded-2xl border border-indigo-500/30 bg-gradient-to-br from-indigo-950/30 to-[var(--bg-secondary)] p-6 md:p-8 space-y-4">
+      <div class="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-bold text-indigo-400">
+        🛡️ 资深翻墙用户的核心法则
+      </div>
+      <h2 class="text-2xl font-bold text-[var(--text-primary)]">
+        “主用高速年付专线 + 不限时常驻备用梯子” 双保险策略
+      </h2>
+      <p class="text-sm leading-relaxed text-[var(--text-secondary)]">
+        永远不要把所有鸡蛋放在一个篮子里。GFW 具有阶段性主动嗅探与封锁特征，即便是头部大机场也可能偶遇入口域名被污染维护。成熟用户的标准配置是：日常工作主力使用大流量专线套餐，同时设备中常驻一个<strong>不限时长、永不过期的备用梯子包</strong>，确保无论外界风控如何突变，随时可以 1 秒切换应急上网。
+      </p>
+    </section>
+
+    <!-- Why Guangsu Cloud 147 is the Best Backup Tizi -->
+    <section class="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 md:p-8 space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <span class="rounded-lg bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-500">
+            ★ 最佳不限时备用梯子推荐
+          </span>
+          <h2 class="text-2xl font-bold text-[var(--text-primary)]">
+            光速云 — ¥147 永久不限时 200G 纯专线套餐
+          </h2>
+          <p class="text-sm leading-relaxed text-[var(--text-secondary)]">
+            光速云自 2020 年持续稳健运营，其独创的 <strong>¥147 永久套餐</strong> 包含 200G 全内网 IEPL 高速流量，<strong>永久有效，用完为止</strong>，不强制任何续费周期。对于低频使用、科研查资料或充当主力断线时的常备急救梯子而言，是全网性价比最高的选择。
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1">全内网 IEPL 专线</span>
+            <span class="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1">永久不过期</span>
+            <span class="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1">支持全平台客户端</span>
+            <span class="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1 text-indigo-500 font-bold">全场8折码：AMM</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 min-w-[200px]">
+          <a
+            href={PRIMARY_AIRPORT.affUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            class="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-600/25 transition-all hover:bg-indigo-700"
+          >
+            直达光速云官网选购 →
+          </a>
+          <a
+            href="/airports/guangsu"
+            class="text-center text-xs text-indigo-500 hover:underline"
+          >
+            查看光速云完整测评与测速数据 »
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Steps During Blockade -->
+    <section class="mt-12 space-y-6">
+      <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+        二、突发断连与敏感期：4 大紧急恢复步骤
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5">
+          <div class="font-mono text-xs font-bold text-indigo-500">STEP 01</div>
+          <h3 class="mt-2 text-base font-bold text-[var(--text-primary)]">更新客户端订阅</h3>
+          <p class="mt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+            机场技术团队通常在入口受阻后 10 分钟内切换至备用入口。在客户端右键订阅选择“更新”，即可自动拉取最新有效节点。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5">
+          <div class="font-mono text-xs font-bold text-indigo-500">STEP 02</div>
+          <h3 class="mt-2 text-base font-bold text-[var(--text-primary)]">切换小众冷门节点</h3>
+          <p class="mt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+            当香港、日本等热门节点拥堵时，优先切换至新加坡、英国、德国等冷门专线节点，往往能避开拥堵迅速建立连接。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5">
+          <div class="font-mono text-xs font-bold text-indigo-500">STEP 03</div>
+          <h3 class="mt-2 text-base font-bold text-[var(--text-primary)]">启动备用梯子</h3>
+          <p class="mt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+            切换至光速云 147 永久不限时备用套餐，不同机场走不同的跨境专线链路，能够瞬间绕开单一路由故障。
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5">
+          <div class="font-mono text-xs font-bold text-indigo-500">STEP 04</div>
+          <h3 class="mt-2 text-base font-bold text-[var(--text-primary)]">开启 TUN 虚拟网卡</h3>
+          <p class="mt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+            开启 Clash 的 TUN 模式以接管全局流量并强制 Fake-IP 解析，阻断本地运营商的 DNS 投毒与污染。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Navigation Hub Links -->
+    <section class="mt-12 border-t border-[var(--border)] pt-8">
+      <h2 class="font-display text-xl font-bold text-[var(--text-primary)]">
+        相关梯子与防坑专题导航
+      </h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <a href="/alert" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-red-500">
+          <div class="text-sm font-bold text-red-500">⚠️ 跑路预警雷达</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">机场倒闭跑路特征模型与资金避险指南</p>
+        </a>
+        <a href="/jichang" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">✈️ 机场推荐</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">42 家主流专线机场实测与选型指南</p>
+        </a>
+        <a href="/free" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">🎁 免费资源</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">应急节点、WARP 脚本与安全避坑</p>
+        </a>
+        <a href="/clash" class="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all hover:border-indigo-500">
+          <div class="text-sm font-bold text-[var(--text-primary)]">⚡ Clash 客户端</div>
+          <p class="mt-1 text-xs text-[var(--text-secondary)]">全平台客户端下载与保姆级订阅配置</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

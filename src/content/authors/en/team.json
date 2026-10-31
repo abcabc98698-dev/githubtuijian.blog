@@ -1,0 +1,14 @@
+{
+  "name": "GitHubTuijian Editorial Team",
+  "role": "Open-Source Research & Technical SEO Specialist",
+  "avatar": "../../../assets/authors/team.png",
+  "bio": "Curating high-impact open-source architectures, performance optimization benchmarks, and modern web standards.",
+  "credentials": [
+    "Open-Source Community Contributors",
+    "Technical Architecture & Web Vitals Specialists"
+  ],
+  "social": {
+    "github": "https://githubtuijian.blog",
+    "website": "https://githubtuijian.blog"
+  }
+}

@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import AirportFilter from '../../components/airports/AirportFilter.astro';
+import { AIRPORTS, PRIMARY_AIRPORT } from '../../data/airports';
+import { SITE, getSiteBaseUrl } from '../../config/site';
+
+const siteUrl = getSiteBaseUrl(Astro.site);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: '42家主流机场品牌横评与晚高峰测速排行榜',
+  description: '收录42家主流高速网络加速机场，涵盖全IEPL内网专线、BGP隧道与多协议支持，晚高峰测速与解锁能力评测。',
+  itemListElement: AIRPORTS.map((airport, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Product',
+      name: airport.name,
+      description: airport.description,
+      url: `${siteUrl}/airports/${airport.slug}`,
+      offers: {
+        '@type': 'Offer',
+        price: airport.entryPrice.replace(/[^0-9.]/g, '') || '15',
+        priceCurrency: 'CNY',
+        availability: 'https://schema.org/InStock',
+      },
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="42家主流机场品牌库 · 2026晚高峰测速与线路深度横评"
+  description="全网首发2026年42家主流机场品牌横评数据库。涵盖全IEPL内网专线、BGP中继隧道、光速云专属8折优惠码、ChatGPT/Claude与Netflix原生解锁晚高峰实测。"
+  canonicalUrl="https://githubtuijian.blog/brands/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <main class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        2026 晚高峰网络可观测实验室 · 42家品牌在测
+      </div>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
+        42 家主流机场品牌库
+      </h1>
+      <p class="mt-4 text-base text-[var(--text-secondary)] sm:text-lg leading-relaxed">
+        告别虚标与断连。基于晚高峰真实网络丢包率、流媒体 AI 解锁能力与跨国 BGP/IEPL 拓扑结构，为您提供中立、透明、客观的科学选型指南。
+      </p>
+
+      <!-- Key Metrics Counter -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] p-3">
+          <div class="font-mono text-2xl font-black text-indigo-600 dark:text-indigo-400">42</div>
+          <div class="text-xs text-[var(--text-tertiary)]">收录品牌</div>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] p-3">
+          <div class="font-mono text-2xl font-black text-emerald-500">529+<span class="text-xs font-normal">Mbps</span></div>
+          <div class="text-xs text-[var(--text-tertiary)]">最高峰值速率</div>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] p-3">
+          <div class="font-mono text-2xl font-black text-amber-500">100%</div>
+          <div class="text-xs text-[var(--text-tertiary)]">真机高峰实测</div>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] p-3">
+          <div class="font-mono text-2xl font-black text-purple-500">6 大</div>
+          <div class="text-xs text-[var(--text-tertiary)]">全系统客户端支持</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIMARY AIRPORT SPOTLIGHT BANNER: 光速云 (High-Conversion) -->
+    <div class="mb-14 overflow-hidden rounded-3xl border border-indigo-500/40 bg-gradient-to-br from-indigo-950/40 via-[#0d121f] to-slate-900 p-6 sm:p-8 shadow-2xl relative">
+      <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none"></div>
+      
+      <div class="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
+        <!-- Left: Brand Info & Value Proposition -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-xs font-bold text-amber-400">
+              ★ 2026 年度编辑首推 · 综合实力第 1 名
+            </span>
+            <span class="rounded-full bg-indigo-500/20 border border-indigo-500/30 px-3 py-1 text-xs font-medium text-indigo-300">
+              全IEPL内网专线 · 晚高峰0丢包
+            </span>
+            <span class="rounded-full bg-emerald-500/20 border border-emerald-500/30 px-3 py-1 text-xs font-medium text-emerald-300">
+              原生解锁 ChatGPT / Claude / 4K Netflix
+            </span>
+          </div>
+
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            {PRIMARY_AIRPORT.name} — 旗舰高性价比专线首选
+          </h2>
+
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            全内网 IEPL 专线，多入口智能负载均衡，晚高峰实测下行最高 <strong>529Mbps</strong>。独创 <strong>147 永久不限时套餐</strong>（200G 永久有效，适合备用与低频用户），同时拥有年付 99 高性价比主力方案与定制大带宽。
+          </p>
+
+          <!-- Plan Highlights Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+              <div class="text-[11px] text-slate-400">🔥 永久不限时</div>
+              <div class="font-mono text-base font-extrabold text-amber-400">¥147</div>
+              <div class="text-[10px] text-slate-500">200G 用完为止</div>
+            </div>
+            <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+              <div class="text-[11px] text-slate-400">⭐ 超值年付</div>
+              <div class="font-mono text-base font-extrabold text-emerald-400">¥99<span class="text-xs">/年</span></div>
+              <div class="text-[10px] text-slate-500">1200G 年付大包</div>
+            </div>
+            <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+              <div class="text-[11px] text-slate-400">入门轻量版</div>
+              <div class="font-mono text-base font-extrabold text-indigo-400">¥25<span class="text-xs">/月</span></div>
+              <div class="text-[10px] text-slate-500">120G 高速体验</div>
+            </div>
+            <div class="rounded-xl border border-slate-700/60 bg-slate-800/40 p-2.5 text-center">
+              <div class="text-[11px] text-slate-400">👑 至尊定制</div>
+              <div class="font-mono text-base font-extrabold text-purple-400">¥680<span class="text-xs">/年</span></div>
+              <div class="text-[10px] text-slate-500">1000G/月 旗舰带宽</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Action CTA & Coupon Box -->
+        <div class="lg:col-span-5 rounded-2xl border border-indigo-500/30 bg-[#090d16]/90 p-5 sm:p-6 text-center space-y-4">
+          <div class="text-xs text-indigo-300 font-semibold uppercase tracking-wider">
+            EXCLUSIVE DISCOUNT CODE
+          </div>
+
+          <div class="rounded-xl border border-dashed border-amber-500/60 bg-amber-500/10 p-3.5">
+            <div class="text-xs text-amber-300 mb-1">立享专属 8 折优惠券（全场通用）</div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="font-mono text-2xl font-black tracking-widest text-amber-400">
+                {PRIMARY_AIRPORT.coupon}
+              </span>
+              <button
+                type="button"
+                id="hero-copy-btn"
+                data-coupon={PRIMARY_AIRPORT.coupon}
+                class="rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 px-3 py-1 text-xs font-bold transition-colors cursor-pointer"
+              >
+                复制优惠码
+              </button>
+            </div>
+            <div id="hero-copy-status" class="text-[11px] text-amber-400 mt-1 hidden">
+              ✓ 优惠码已成功复制到剪贴板
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <a
+              href={PRIMARY_AIRPORT.affUrl}
+              target="_blank"
+              rel="nofollow sponsored noopener"
+              class="block w-full rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 py-3.5 px-4 text-center text-sm font-bold text-white shadow-lg shadow-indigo-500/30 hover:from-indigo-400 hover:to-indigo-600 transition-all hover:scale-[1.02]"
+            >
+              直达光速云官网 · 享 8 折特惠购 →
+            </a>
+            <a
+              href={`/airports/${PRIMARY_AIRPORT.slug}`}
+              class="block text-xs text-slate-400 hover:text-white transition-colors"
+            >
+              查看光速云完整测速报告与流媒体实测 »
+            </a>
+          </div>
+
+          <div class="text-[11px] text-slate-500 flex items-center justify-center gap-3 pt-1">
+            <span>✓ 极速交付</span>
+            <span>✓ 多客户端一键导入</span>
+            <span>✓ 7×24H 专线保障</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Search & Filter Matrix -->
+    <div class="mb-16">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="font-display text-2xl font-bold text-[var(--text-primary)]">
+            全量 42 家机场多维筛选
+          </h2>
+          <p class="text-xs text-[var(--text-secondary)] mt-1">
+            支持按专线架构、自研客户端、不限时套餐、优惠码与创立年份多维检索
+          </p>
+        </div>
+      </div>
+
+      <AirportFilter airports={AIRPORTS} />
+    </div>
+
+    <!-- GEO & Technical Guide (In-Depth SEO Architecture Content) -->
+    <section class="mt-20 border-t border-[var(--border)] pt-16">
+      <div class="mx-auto max-w-4xl space-y-12">
+        <div class="text-center">
+          <h2 class="font-display text-2xl font-extrabold text-[var(--text-primary)] sm:text-3xl">
+            科学选型指南：如何甄别优质专线机场？
+          </h2>
+          <p class="mt-3 text-sm text-[var(--text-secondary)]">
+            拒绝盲目跟风。从网络工程视角剖析 IEPL、IPLC、BGP 隧道与直连线路的技术差异。
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-bold mb-4">
+              01
+            </div>
+            <h3 class="font-display text-lg font-bold text-[var(--text-primary)] mb-2">
+              全 IEPL 专线架构
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              数据走内网物理光缆直达海外机房，不经过公网 GFW 审查。晚高峰丢包率通常低于 0.1%，不受国际出口拥堵影响，适合游戏联机与 4K 直播。
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold mb-4">
+              02
+            </div>
+            <h3 class="font-display text-lg font-bold text-[var(--text-primary)] mb-2">
+              BGP 多线智能中继
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              国内入口接入电信、联通、移动三网 BGP，自动根据用户当地运营商就近分流至最优接入点，再通过加密隧道转发至出口节点，性价比极高。
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold mb-4">
+              03
+            </div>
+            <h3 class="font-display text-lg font-bold text-[var(--text-primary)] mb-2">
+              原生家庭宽带 IP 落地
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              ChatGPT、Claude、Netflix 等主流服务对机房机柜 IP 审查极为严格。优质机场会在出口部署双 ISP 家宽住宅 IP，实现 100% 欺诈值检测通过。
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Section for GEO (Generative Engine Optimization) -->
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-6 sm:p-8 space-y-6">
+          <h3 class="font-display text-xl font-bold text-[var(--text-primary)]">
+            机场选型常见问题解答 (FAQ)
+          </h3>
+
+          <div class="space-y-4">
+            <div class="border-b border-[var(--border)] pb-4">
+              <h4 class="text-sm font-bold text-[var(--text-primary)]">
+                Q1: 为什么强烈推荐常备一个「不限时按量套餐」？
+              </h4>
+              <p class="mt-1.5 text-xs text-[var(--text-secondary)] leading-relaxed">
+                主力月付/年付机场在遭遇国际光缆抢修或敏感时期可能出现短暂波动。备用一个像光速云 147 永久套餐（200G 永久不过期）的节点池，可以在主力断连时无缝切换，避免工作、会议或学术研究断联。
+              </p>
+            </div>
+
+            <div class="border-b border-[var(--border)] pb-4">
+              <h4 class="text-sm font-bold text-[var(--text-primary)]">
+                Q2: 为什么有些便宜机场白天很快，晚上 8 点后极度卡顿？
+              </h4>
+              <p class="mt-1.5 text-xs text-[var(--text-secondary)] leading-relaxed">
+                便宜机场多采用公网直连（Straight）或低成本普通单线，未购买昂贵的独享专线带宽。晚高峰（20:00 - 23:00）全网出口拥堵，QoS 优先级被大幅下调，导致丢包率飙升到 30% 以上。
+              </p>
+            </div>
+
+            <div>
+              <h4 class="text-sm font-bold text-[var(--text-primary)]">
+                Q3: 新手小白该选择什么客户端软件？
+              </h4>
+              <p class="mt-1.5 text-xs text-[var(--text-secondary)] leading-relaxed">
+                Windows/macOS 推荐 <strong>Clash Verge Rev</strong>（现代界面、TUN 虚拟网卡接管），Android 推荐 <strong>Clash Meta / FlClash</strong>，iOS 首选 <strong>Shadowrocket（小火箭）</strong>。可在本站「客户端下载中心」获取全平台下载与 4 步导入教程。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script is:inline>
+  const heroBtn = document.getElementById('hero-copy-btn');
+  const heroStatus = document.getElementById('hero-copy-status');
+  if (heroBtn && heroStatus) {
+    heroBtn.addEventListener('click', () => {
+      const coupon = heroBtn.getAttribute('data-coupon');
+      if (coupon) {
+        navigator.clipboard.writeText(coupon).then(() => {
+          heroStatus.classList.remove('hidden');
+          heroBtn.textContent = '已复制✓';
+          setTimeout(() => {
+            heroStatus.classList.add('hidden');
+            heroBtn.textContent = '复制优惠码';
+          }, 2500);
+        });
+      }
+    });
+  }
+</script>
